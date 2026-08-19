@@ -8,14 +8,17 @@ vase. So Petals learns taste at three levels — individual stems, colour palett
 and bouquet style/filler — and then applies real floral design rules when it
 builds recommendations, rather than just stacking up the highest-scoring flowers.
 
+**Live:** https://krishmaheshwari-netizen.github.io/petals/
+
 ```bash
 npm install
 npm run dev        # http://localhost:5173
 npm run build      # static output in dist/
+npm run deploy     # build + publish to GitHub Pages
 ```
 
 No backend, no accounts, no database. State lives in `localStorage`; results
-travel in a URL.
+travel in a URL, or get emailed via a form relay (see below).
 
 ---
 
@@ -33,7 +36,13 @@ signals):
 
 Swipe right = love, left = pass, up = obsessed (2× weight). Tap to flip for
 details. Arrow keys and the on-screen buttons do the same thing, so it works on
-a desktop. `Backspace` undoes.
+a desktop; `Backspace` or the back button steps back a card.
+
+The commit thresholds (`DISTANCE_THRESHOLD` / `VELOCITY_THRESHOLD` in
+`SwipeCard.jsx`) are deliberately generous — the card can be pushed well
+off-centre and still spring back, so a decision feels chosen rather than
+triggered. Every decision is confirmed by a mark that punches in over the deck,
+the way a double-tap heart does.
 
 ### Bouquet cards are drawn, not photographed
 
@@ -155,13 +164,34 @@ summarised, or fed to the generator. The structured chips (never-colours, scent
 sensitivity, vessel, occasion, budget, disliked flowers) *are* machine-readable
 and act as hard exclusions that beat any swipe score.
 
-## Sharing
+## Getting the results back
 
-Swipes and preferences are packed into a `?r=` query parameter (short keys,
-single-character verdicts, base64url). A full 130-card deck plus preferences
-encodes to about 4.3 KB. Opening such a link puts the app in read-only mode:
-"What she likes", with the order cards ready to paste into a florist's contact
-form.
+Two routes, on the results screen.
+
+**Send my flowers to him** (the main one) posts a plain-text report to
+[FormSubmit](https://formsubmit.co), which forwards it as an email. No account
+and no API key, which is what makes it work from a static site. The report
+contains the taste profile, top stems, her note verbatim, her hard rules, and
+every generated bouquet with its exact stem list, counts, colours, wrap and
+price band — so it can be pasted straight into a florist's contact form.
+
+- The destination address and endpoint are the `DELIVERY` object at the top of
+  `src/lib/sendResults.js`.
+- **The first send to a new address needs confirming once.** FormSubmit emails
+  that address a confirmation link; until it is clicked, sends come back with an
+  activation notice (which the UI reports rather than pretending it worked).
+- The report passes through FormSubmit's servers on the way to the inbox. If you
+  would rather nothing be relayed, the copy-link button is a direct alternative.
+- To keep the address out of the built JavaScript, activate it once, then swap in
+  the random alias FormSubmit gives you. It works identically.
+- If the request fails, the UI falls back to a `mailto:` link through the user's
+  own mail app.
+
+**Copy my link** packs swipes and preferences into a `?r=` query parameter (short
+keys, single-character verdicts, base64url). A full 130-card deck plus preferences
+encodes to about 4.3 KB. Opening such a link puts the app in read-only mode —
+"What she likes" — with the order cards ready to use. This route touches no third
+party at all.
 
 ---
 

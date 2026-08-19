@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "data": "node scripts/build-data.mjs && node scripts/build-bouquets.mjs",
     "data:verify": "node scripts/build-data.mjs --verify",
-    "sanity": "node scripts/sanity.mjs"
+    "sanity": "node scripts/sanity.mjs",
+    "deploy": "bash scripts/deploy.sh"
   },
   "dependencies": {
     "framer-motion": "^13.1.0",
