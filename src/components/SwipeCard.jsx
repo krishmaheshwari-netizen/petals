@@ -5,8 +5,8 @@
 // carries past the threshold, and the tilt is proportional to horizontal offset
 // so it feels like a physical card being pushed off a pile.
 
-import { useRef, useState } from 'react';
-import { motion, useMotionValue, useTransform, useMotionValueEvent } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { animate, motion, useMotionValue, useTransform, useMotionValueEvent } from 'framer-motion';
 import BouquetComposition, { PaletteBar } from './BouquetComposition.jsx';
 import { INDEX } from '../lib/deck.js';
 
@@ -15,8 +15,15 @@ import { INDEX } from '../lib/deck.js';
 // misfire rather than a choice, and there is no satisfaction in it. You should
 // be able to push the card well off-centre, look at it there, and still change
 // your mind by letting it spring back.
-const DISTANCE_THRESHOLD = 170;
-const VELOCITY_THRESHOLD = 850;
+// Commit distance is a FRACTION OF THE CARD, not a fixed pixel count. 170px was
+// ~40% of the width of a phone screen, which meant an ordinary swipe fell short
+// and sprang back -- the card felt like it was ignoring you. A third of the card
+// is far enough to feel deliberate and short enough to be reachable with a thumb.
+const COMMIT_FRACTION = 0.32;
+const MIN_DISTANCE = 90;
+const MAX_DISTANCE = 150;
+// A flick should also commit even if it never travels far.
+const VELOCITY_THRESHOLD = 500;
 
 const STYLE_LABEL = {
   'loose-garden': 'Loose garden',
@@ -47,20 +54,38 @@ const SCENT_LABEL = {
 export default function SwipeCard({ card, onDecide, isTop, offset }) {
   const [flipped, setFlipped] = useState(false);
   // A drag that falls short of the threshold springs back -- but the browser
-  // still fires a click afterwards, which was flipping the card. So a swipe that
-  // didn't quite commit ALSO turned the card over, which reads as "it ignored my
-  // swipe and did something random". Any gesture that became a drag suppresses
-  // the tap.
-  const draggedRef = useRef(false);
+  // still fires a click afterwards, which would flip the card, so a swipe that
+  // didn't quite commit ALSO turned the card over.
+  //
+  // Two wrong guards were tried first, both of which broke tapping:
+  //   1. "did Framer report a drag" -- it starts dragging after ~3px, and a
+  //      finger tap always jitters, so real taps were discarded.
+  //   2. comparing pointerdown to click coordinates -- motion components own the
+  //      pointer props, so the handler never ran, pressRef stayed at {0,0}, and
+  //      every tap measured as a ~400px drag and was discarded.
+  // Framer's own drag report is the reliable signal: onDragEnd fires only when a
+  // drag actually happened, and it fires before the click.
+  const dragDistanceRef = useRef(0);
+
+  // The flip is driven by a motion value rather than `animate={{ rotateY }}` so
+  // that face visibility can be derived from the ACTUAL angle. Switching faces on
+  // a fixed timer instead left a window where the front had been hidden but the
+  // back was still culled by backface-visibility -- the card went completely
+  // transparent and you saw the card behind it.
+  const flipAngle = useMotionValue(0);
+  const faceUp = (r) => { const a = ((r % 360) + 360) % 360; return a < 90 || a > 270; };
+  const frontVisibility = useTransform(flipAngle, (r) => (faceUp(r) ? 'visible' : 'hidden'));
+  const backVisibility = useTransform(flipAngle, (r) => (faceUp(r) ? 'hidden' : 'visible'));
+  const cardRef = useRef(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
   const rotate = useTransform(x, [-300, 0, 300], [-22, 0, 22]);
   // Stamps fade in across the second half of the throw, so they read as
   // "this is where it will land" rather than firing on the first pixel.
-  const loveOpacity = useTransform(x, [70, 190], [0, 1]);
-  const passOpacity = useTransform(x, [-190, -70], [1, 0]);
-  const obsessedOpacity = useTransform(y, [-190, -70], [1, 0]);
+  const loveOpacity = useTransform(x, [45, 130], [0, 1]);
+  const passOpacity = useTransform(x, [-130, -45], [1, 0]);
+  const obsessedOpacity = useTransform(y, [-130, -45], [1, 0]);
   // A little lift as the card is pulled away from the pile.
   const lift = useTransform(x, [-300, 0, 300], [1.04, 1, 1.04]);
 
@@ -68,17 +93,21 @@ export default function SwipeCard({ card, onDecide, isTop, offset }) {
   const [dir, setDir] = useState(null);
   useMotionValueEvent(x, 'change', (v) => {
     const yv = y.get();
-    if (yv < -90 && Math.abs(v) < 110) setDir('obsessed');
-    else if (v > 70) setDir('love');
-    else if (v < -70) setDir('pass');
+    if (yv < -70 && Math.abs(v) < 90) setDir('obsessed');
+    else if (v > 45) setDir('love');
+    else if (v < -45) setDir('pass');
     else setDir(null);
   });
 
   function handleDragEnd(_e, info) {
     const { offset: o, velocity: v } = info;
-    const upward = o.y < -DISTANCE_THRESHOLD || v.y < -VELOCITY_THRESHOLD;
-    const rightward = o.x > DISTANCE_THRESHOLD || v.x > VELOCITY_THRESHOLD;
-    const leftward = o.x < -DISTANCE_THRESHOLD || v.x < -VELOCITY_THRESHOLD;
+    // Remembered so the click that follows a spring-back can be ignored.
+    dragDistanceRef.current = Math.hypot(o.x, o.y);
+    const cardWidth = cardRef.current?.offsetWidth ?? 360;
+    const threshold = Math.min(MAX_DISTANCE, Math.max(MIN_DISTANCE, cardWidth * COMMIT_FRACTION));
+    const upward = o.y < -threshold || v.y < -VELOCITY_THRESHOLD;
+    const rightward = o.x > threshold || v.x > VELOCITY_THRESHOLD;
+    const leftward = o.x < -threshold || v.x < -VELOCITY_THRESHOLD;
 
     // Up wins only when the throw was genuinely more vertical than horizontal.
     if (upward && Math.abs(o.y) > Math.abs(o.x)) onDecide('obsessed');
@@ -87,19 +116,24 @@ export default function SwipeCard({ card, onDecide, isTop, offset }) {
     setDir(null);
   }
 
+  useEffect(() => {
+    const controls = animate(flipAngle, flipped ? 180 : 0, {
+      type: 'spring', stiffness: 260, damping: 30,
+    });
+    return () => controls.stop();
+  }, [flipped, flipAngle]);
+
   const isBouquet = card.type === 'bouquet';
   const depth = Math.min(offset, 2);
 
   return (
     <motion.div
+      ref={cardRef}
       className="absolute inset-0 no-drag"
       style={{ x, y, rotate, scale: isTop ? lift : 1, zIndex: 100 - offset, touchAction: 'none' }}
       drag={isTop}
       dragElastic={0.95}
-      dragMomentum={false}
       dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-      onPointerDownCapture={() => { draggedRef.current = false; }}
-      onDragStart={() => { draggedRef.current = true; }}
       onDragEnd={handleDragEnd}
       initial={{ scale: 0.94, y: 14, opacity: 0 }}
       animate={{
@@ -122,20 +156,28 @@ export default function SwipeCard({ card, onDecide, isTop, offset }) {
         style={{ perspective: 1400 }}
         onClick={() => {
           if (!isTop) return;
-          if (draggedRef.current) { draggedRef.current = false; return; }
+          // A gesture that travelled was a swipe, not a tap. Reset either way,
+          // so one ignored swipe can never wedge tapping permanently.
+          const travelled = dragDistanceRef.current;
+          dragDistanceRef.current = 0;
+          if (travelled > 12) return;
           setFlipped((f) => !f);
         }}
       >
         <motion.div
           className="relative h-full w-full"
-          style={{ transformStyle: 'preserve-3d' }}
-          animate={{ rotateY: flipped ? 180 : 0 }}
-          transition={{ type: 'spring', stiffness: 260, damping: 30 }}
+          style={{ transformStyle: 'preserve-3d', rotateY: flipAngle }}
         >
           {/* ---------------- front ---------------- */}
-          <div
+          {/* `backface-visibility: hidden` does NOT cull descendants that carry
+              their own transforms -- and every bloom in a composed bouquet is a
+              transformed element -- so in Safari the circles stayed visible on
+              top of the flipped-over description. Visibility is therefore
+              switched explicitly at the halfway point of the turn, where the
+              face is edge-on and the change cannot be seen. */}
+          <motion.div
             className="absolute inset-0 overflow-hidden rounded-[28px] bg-paper-deep shadow-[0_18px_40px_-12px_rgba(52,44,36,0.35),0_2px_6px_rgba(52,44,36,0.12)] ring-1 ring-line"
-            style={{ backfaceVisibility: 'hidden' }}
+            style={{ backfaceVisibility: 'hidden', visibility: frontVisibility }}
           >
             {isBouquet ? (
               <BouquetFront bouquet={card.data} />
@@ -146,15 +188,15 @@ export default function SwipeCard({ card, onDecide, isTop, offset }) {
             <Stamp label="Love" color="#4C7A5A" opacity={loveOpacity} position="left-6 top-7 -rotate-12" />
             <Stamp label="Pass" color="#9C6154" opacity={passOpacity} position="right-6 top-7 rotate-12" />
             <Stamp label="Obsessed" color="#B14A63" opacity={obsessedOpacity} position="left-1/2 top-10 -translate-x-1/2 -rotate-3" />
-          </div>
+          </motion.div>
 
           {/* ---------------- back ---------------- */}
-          <div
+          <motion.div
             className="absolute inset-0 overflow-y-auto rounded-[28px] bg-paper px-6 py-7 shadow-[0_18px_40px_-12px_rgba(52,44,36,0.35)] ring-1 ring-line"
-            style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+            style={{ backfaceVisibility: 'hidden', rotateY: 180, visibility: backVisibility }}
           >
             {isBouquet ? <BouquetBack bouquet={card.data} /> : <FlowerBack flower={card.data} />}
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </motion.div>
