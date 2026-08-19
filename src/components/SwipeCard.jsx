@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from 'react';
 import { animate, motion, useMotionValue, useTransform, useMotionValueEvent } from 'framer-motion';
 import BouquetComposition, { PaletteBar } from './BouquetComposition.jsx';
 import { INDEX } from '../lib/deck.js';
+import { Leaf } from './Ornament.jsx';
 
 // How far the card has to actually travel before the decision locks in. These
 // are deliberately generous: a card that commits after a twitch feels like a
@@ -176,7 +177,7 @@ export default function SwipeCard({ card, onDecide, isTop, offset }) {
               switched explicitly at the halfway point of the turn, where the
               face is edge-on and the change cannot be seen. */}
           <motion.div
-            className="absolute inset-0 overflow-hidden rounded-[28px] bg-paper-deep shadow-[0_18px_40px_-12px_rgba(52,44,36,0.35),0_2px_6px_rgba(52,44,36,0.12)] ring-1 ring-line"
+            className="absolute inset-0 overflow-hidden rounded-[22px] bg-paper-deep shadow-[0_22px_44px_-18px_rgba(43,37,31,0.42),0_1px_3px_rgba(43,37,31,0.10)] ring-1 ring-line"
             style={{ backfaceVisibility: 'hidden', visibility: frontVisibility }}
           >
             {isBouquet ? (
@@ -192,7 +193,7 @@ export default function SwipeCard({ card, onDecide, isTop, offset }) {
 
           {/* ---------------- back ---------------- */}
           <motion.div
-            className="absolute inset-0 overflow-y-auto rounded-[28px] bg-paper px-6 py-7 shadow-[0_18px_40px_-12px_rgba(52,44,36,0.35)] ring-1 ring-line"
+            className="absolute inset-0 overflow-y-auto rounded-[22px] bg-paper px-6 py-7 shadow-[0_22px_44px_-18px_rgba(43,37,31,0.42)] ring-1 ring-line"
             style={{ backfaceVisibility: 'hidden', rotateY: 180, visibility: backVisibility }}
           >
             {isBouquet ? <BouquetBack bouquet={card.data} /> : <FlowerBack flower={card.data} />}
@@ -206,8 +207,12 @@ export default function SwipeCard({ card, onDecide, isTop, offset }) {
 function Stamp({ label, color, opacity, position }) {
   return (
     <motion.div
-      className={`pointer-events-none absolute ${position} rounded-lg border-[3px] px-3 py-1 font-display text-xl tracking-wide`}
-      style={{ opacity, color, borderColor: color, backgroundColor: 'rgba(250,245,236,0.72)' }}
+      className={`pointer-events-none absolute ${position} rounded-[3px] border px-3.5 py-1 font-display text-[17px] uppercase tracking-[0.16em]`}
+      style={{
+        opacity, color, borderColor: color,
+        backgroundColor: 'rgba(251,247,239,0.82)',
+        boxShadow: `inset 0 0 0 1px rgba(251,247,239,0.9), inset 0 0 0 2px ${color}`,
+      }}
     >
       {label}
     </motion.div>
@@ -224,23 +229,24 @@ function FlowerFront({ flower, isFiller }) {
         draggable={false}
         loading="eager"
       />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[rgba(28,23,18,0.88)] via-[rgba(28,23,18,0.45)] to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 p-6">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[46%] bg-gradient-to-t from-[rgba(24,20,16,0.9)] via-[rgba(24,20,16,0.42)] to-transparent" />
+      {/* A hairline inset all the way round, the way a printed plate is framed. */}
+      <div className="pointer-events-none absolute inset-[10px] rounded-[15px] border border-white/20" />
+      <div className="absolute inset-x-0 bottom-0 p-7">
         {isFiller && (
-          <div className="mb-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-white/70">
-            Greenery
+          <div className="mb-2 flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] text-white/75">
+            <Leaf size={12} /> Greenery
           </div>
         )}
-        <h2 className="font-display text-[34px] leading-[1.05] text-white drop-shadow-sm">
-          {flower.commonName}
-        </h2>
-        <p className="mt-1 font-display text-sm italic text-white/70">{flower.scientificName}</p>
+        <h2 className="font-display text-[33px] leading-[1.03] text-white">{flower.commonName}</h2>
+        <div className="mt-2 h-px w-9 bg-white/40" />
+        <p className="mt-2 font-display text-[13px] italic text-white/65">{flower.scientificName}</p>
       </div>
       <div className="absolute right-5 top-5 flex items-center gap-1.5">
         {flower.colors.slice(0, 4).map((c) => (
           <span
             key={c.hex}
-            className="h-3.5 w-3.5 rounded-full ring-1 ring-white/70"
+            className="h-3 w-3 rounded-full ring-1 ring-white/60"
             style={{ backgroundColor: c.hex }}
           />
         ))}
@@ -253,15 +259,15 @@ function BouquetFront({ bouquet }) {
   return (
     <div className="flex h-full w-full flex-col bg-[#F6EEE1]">
       <BouquetComposition bouquet={bouquet} className="min-h-0 flex-1" />
-      <div className="border-t border-line/70 bg-paper px-6 pb-6 pt-4">
-        <div className="mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-ink-faint">
-          Arrangement
+      <div className="relative border-t border-line/70 bg-paper px-7 pb-6 pt-5">
+        <div className="label-caps mb-2.5 flex items-center gap-1.5">
+          <Leaf size={12} className="text-sage" /> Arrangement
         </div>
-        <h2 className="font-display text-[30px] leading-[1.05] text-ink">{bouquet.name}</h2>
-        <p className="mt-1 text-[13px] text-ink-soft">
+        <h2 className="font-display text-[29px] leading-[1.04] text-ink">{bouquet.name}</h2>
+        <p className="mt-1.5 text-[12.5px] italic text-ink-soft">
           {STYLE_LABEL[bouquet.style] ?? bouquet.style} · {WRAP_LABEL[bouquet.wrap] ?? bouquet.wrap}
         </p>
-        <PaletteBar hexes={bouquet.paletteHexes} className="mt-3.5 ring-1 ring-line" />
+        <PaletteBar hexes={bouquet.paletteHexes} className="mt-4 ring-1 ring-line" />
       </div>
     </div>
   );
@@ -270,9 +276,10 @@ function BouquetFront({ bouquet }) {
 function FlowerBack({ flower }) {
   return (
     <div className="flex h-full flex-col">
-      <h2 className="font-display text-3xl leading-tight text-ink">{flower.commonName}</h2>
-      <p className="font-display text-sm italic text-ink-faint">{flower.scientificName}</p>
-      <p className="mt-4 text-[15px] leading-relaxed text-ink-soft">{flower.blurb}</p>
+      <h2 className="font-display text-[30px] leading-tight text-ink">{flower.commonName}</h2>
+      <p className="font-display text-[13px] italic text-ink-faint">{flower.scientificName}</p>
+      <div className="mt-3 h-px w-10 bg-rose/45" />
+      <p className="prose-serif mt-4 text-[15.5px] leading-[1.62] text-ink-soft">{flower.blurb}</p>
 
       <dl className="mt-5 grid grid-cols-2 gap-x-4 gap-y-3 text-[13px]">
         <Fact label="Shape" value={cap(flower.form)} />
@@ -290,7 +297,7 @@ function FlowerBack({ flower }) {
           {flower.colors.map((c) => (
             <span
               key={c.hex}
-              className="flex items-center gap-1.5 rounded-full border border-line bg-paper-deep py-1 pl-1.5 pr-2.5 text-[12px] text-ink-soft"
+              className="flex items-center gap-1.5 rounded-full border border-line bg-paper py-1 pl-1.5 pr-3 text-[12px] text-ink-soft"
             >
               <span className="h-3 w-3 rounded-full ring-1 ring-black/10" style={{ backgroundColor: c.hex }} />
               {c.name}
@@ -299,7 +306,7 @@ function FlowerBack({ flower }) {
         </div>
       </div>
 
-      <div className="mt-auto pt-5 text-[10px] leading-relaxed text-ink-faint">
+      <div className="mt-auto pt-5 text-[9.5px] leading-relaxed tracking-wide text-ink-faint/80">
         Photo: {flower.imageAttribution.artist} · {flower.imageAttribution.license} · Wikimedia Commons
       </div>
     </div>
@@ -314,8 +321,9 @@ function BouquetBack({ bouquet }) {
   ];
   return (
     <div className="flex h-full flex-col">
-      <h2 className="font-display text-3xl leading-tight text-ink">{bouquet.name}</h2>
-      <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{bouquet.blurb}</p>
+      <h2 className="font-display text-[30px] leading-tight text-ink">{bouquet.name}</h2>
+      <div className="mt-3 h-px w-10 bg-rose/45" />
+      <p className="prose-serif mt-4 text-[15.5px] leading-[1.62] text-ink-soft">{bouquet.blurb}</p>
 
       <dl className="mt-5 grid grid-cols-2 gap-x-4 gap-y-3 text-[13px]">
         <Fact label="Style" value={STYLE_LABEL[bouquet.style] ?? bouquet.style} />
@@ -350,7 +358,7 @@ function BouquetBack({ bouquet }) {
 function Fact({ label, value, className = '' }) {
   return (
     <div className={className}>
-      <dt className="text-[10px] font-medium uppercase tracking-[0.16em] text-ink-faint">{label}</dt>
+      <dt className="label-caps">{label}</dt>
       <dd className="mt-0.5 text-ink">{value}</dd>
     </div>
   );

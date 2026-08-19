@@ -6,6 +6,7 @@ import Results from './components/Results.jsx';
 import { buildDeck, makeSeed, INDEX } from './lib/deck.js';
 import { buildScores } from './lib/scoring.js';
 import { buildShareUrl, readShareFromUrl } from './lib/share.js';
+import { Sprig } from './components/Ornament.jsx';
 
 const STORE_KEY = 'petals.v1';
 
@@ -131,7 +132,7 @@ export default function App() {
           <div className="mx-auto w-full max-w-lg px-5 pb-10">
             <button
               onClick={startOver}
-              className="w-full rounded-xl border border-line py-2.5 text-[13.5px] text-ink-faint transition hover:text-ink-soft"
+              className="w-full rounded-full border border-line py-2.5 text-[11px] uppercase tracking-[0.14em] text-ink-faint transition hover:border-ink-faint hover:text-ink-soft"
             >
               Start the deck over
             </button>
@@ -152,27 +153,37 @@ function TopBar({ tab, setTab, shared, progress }) {
       ];
 
   return (
-    <header className="sticky top-0 z-30 border-b border-line/80 bg-paper/85 backdrop-blur-md">
-      <div className="mx-auto flex w-full max-w-lg items-center justify-between px-5 pb-2.5 pt-3.5">
-        <span className="font-display text-[21px] tracking-tight text-ink">Petals</span>
-        <nav className="flex gap-0.5 rounded-full border border-line bg-paper-deep/60 p-0.5">
+    <header className="sticky top-0 z-30 border-b border-line/70 bg-paper/90 backdrop-blur-md">
+      <div className="mx-auto flex w-full max-w-lg items-end justify-between px-5 pb-2.5 pt-4">
+        <span className="flex items-baseline gap-1.5">
+          <Sprig size={15} className="translate-y-[2px] text-sage" />
+          <span className="font-display text-[22px] leading-none text-ink">Petals</span>
+        </span>
+        {/* Small-caps with a hairline underline: an index page, not a segmented
+            control. The pill toggle was the single most generic thing here. */}
+        <nav className="flex items-baseline gap-3.5">
           {tabs.map((t) => (
             <button
               key={t.id}
               onClick={() => setTab(t.id)}
-              className={`rounded-full px-3.5 py-1.5 text-[12.5px] transition ${
-                tab === t.id ? 'bg-ink text-paper' : 'text-ink-soft hover:text-ink'
+              className={`relative pb-1 text-[10.5px] uppercase tracking-[0.12em] whitespace-nowrap transition-colors ${
+                tab === t.id ? 'text-ink' : 'text-ink-faint hover:text-ink-soft'
               }`}
             >
               {t.label}
+              <span
+                className={`absolute inset-x-0 -bottom-px h-px transition-opacity ${
+                  tab === t.id ? 'bg-rose opacity-100' : 'opacity-0'
+                }`}
+              />
             </button>
           ))}
         </nav>
       </div>
       {!shared && (
-        <div className="h-[2px] w-full bg-line/60">
+        <div className="h-px w-full bg-line/70">
           <div
-            className="h-full bg-rose transition-[width] duration-500"
+            className="h-px bg-gradient-to-r from-sage to-rose transition-[width] duration-700"
             style={{ width: `${Math.min(100, progress * 100)}%` }}
           />
         </div>
@@ -224,13 +235,14 @@ function DeckView({ remaining, done, decide, undo, canUndo, onFinish, swiped, to
   if (done) {
     return (
       <div className="mx-auto flex w-full max-w-lg flex-col items-center px-5 py-24 text-center">
+        <Sprig size={26} className="mb-4 text-sage" />
         <h2 className="font-display text-[34px] leading-tight text-ink">That's the whole deck.</h2>
         <p className="mt-3 max-w-xs text-[15px] leading-relaxed text-ink-soft">
           {swiped} cards. Enough to know what you like and, more usefully, what you like together.
         </p>
         <button
           onClick={onFinish}
-          className="mt-7 rounded-xl bg-rose px-7 py-3 text-[15px] font-medium text-white transition active:scale-[0.99]"
+          className="mt-7 rounded-full bg-rose px-8 py-3 text-[13px] uppercase tracking-[0.14em] text-paper transition active:scale-[0.99]"
         >
           See what it worked out
         </button>
@@ -270,7 +282,7 @@ function DeckView({ remaining, done, decide, undo, canUndo, onFinish, swiped, to
           label="Back"
           onClick={goBack}
           disabled={!canUndo}
-          className="border-line bg-paper text-ink-faint"
+          className="border-line bg-transparent text-ink-faint hover:border-ink-faint"
           small
         >
           <BackIcon />
@@ -279,7 +291,7 @@ function DeckView({ remaining, done, decide, undo, canUndo, onFinish, swiped, to
         <ActionButton
           label="Pass"
           onClick={() => visible[0] && commit(visible[0].id, 'pass')}
-          className="border-line bg-paper text-[#4C7BC4]"
+          className="border-line bg-paper text-[#5B7FA8] shadow-[0_1px_0_rgba(255,255,255,0.8)_inset]"
         >
           <XIcon />
         </ActionButton>
@@ -287,7 +299,7 @@ function DeckView({ remaining, done, decide, undo, canUndo, onFinish, swiped, to
         <ActionButton
           label="Obsessed"
           onClick={() => visible[0] && commit(visible[0].id, 'obsessed')}
-          className="border-rose bg-rose text-white"
+          className="border-rose-deep bg-rose text-paper shadow-[0_2px_10px_-4px_rgba(126,46,68,0.55)]"
           big
         >
           <StarIcon />
@@ -296,16 +308,16 @@ function DeckView({ remaining, done, decide, undo, canUndo, onFinish, swiped, to
         <ActionButton
           label="Love"
           onClick={() => visible[0] && commit(visible[0].id, 'love')}
-          className="border-line bg-paper text-rose"
+          className="border-line bg-paper text-rose shadow-[0_1px_0_rgba(255,255,255,0.8)_inset]"
         >
           <HeartIcon />
         </ActionButton>
       </div>
 
-      <div className="mt-4 flex items-center justify-center gap-4 pb-8 text-[12px] text-ink-faint">
-        <span>{swiped} / {total}</span>
-        <span aria-hidden>·</span>
-        <span>tap a card for details</span>
+      <div className="mt-5 flex items-center justify-center gap-3 pb-8">
+        <span className="font-display text-[13px] text-ink-faint">{swiped}<span className="mx-1 opacity-50">/</span>{total}</span>
+        <span className="h-3 w-px bg-line" aria-hidden />
+        <span className="text-[11.5px] italic text-ink-faint">tap a card for details</span>
       </div>
     </div>
   );
@@ -314,9 +326,9 @@ function DeckView({ remaining, done, decide, undo, canUndo, onFinish, swiped, to
 /** The mark that punches in over the deck to confirm a decision. */
 function DecisionFlash({ flash }) {
   const CONFIG = {
-    love: { color: '#B14A63', Icon: HeartIcon },
-    pass: { color: '#4C7BC4', Icon: XIcon },
-    obsessed: { color: '#D98A2B', Icon: StarIcon },
+    love: { color: '#A8425C', Icon: HeartIcon },
+    pass: { color: '#5B7FA8', Icon: XIcon },
+    obsessed: { color: '#B98F2E', Icon: StarIcon },
   };
   return (
     <AnimatePresence mode="popLayout">
@@ -357,9 +369,9 @@ function ActionButton({ children, label, onClick, className, big, small, disable
       disabled={disabled}
       whileTap={disabled ? undefined : { scale: 0.9 }}
       whileHover={disabled ? undefined : { y: -2 }}
-      className={`flex items-center justify-center rounded-full border shadow-[0_4px_14px_-6px_rgba(52,44,36,0.5)] transition-opacity ${className} ${
-        big ? 'h-[68px] w-[68px]' : small ? 'h-[44px] w-[44px]' : 'h-[56px] w-[56px]'
-      } ${disabled ? 'pointer-events-none opacity-35' : ''}`}
+      className={`flex items-center justify-center rounded-full border transition-opacity ${className} ${
+        big ? 'h-[66px] w-[66px]' : small ? 'h-[42px] w-[42px]' : 'h-[54px] w-[54px]'
+      } ${disabled ? 'pointer-events-none opacity-30' : ''}`}
     >
       {children}
     </motion.button>

@@ -15,6 +15,7 @@ import { generateBouquets } from '../lib/generator.js';
 import { FLOWERS, FILLERS, BOUQUETS, INDEX } from '../lib/deck.js';
 import { colorLabel, colorHex } from '../lib/preference-options.js';
 import { buildReport, sendReport, mailtoUrl } from '../lib/sendResults.js';
+import { Sprig, Leaf, SprigRule } from './Ornament.jsx';
 
 const PALETTE_PROSE = {
   monochrome: 'one colour, held all the way through',
@@ -116,13 +117,15 @@ export default function Results({ deck, swipes, scores, prefs, shareUrl, isShare
 
   return (
     <div className="mx-auto w-full max-w-lg px-5 pb-28 pt-6">
-      <header className="mb-8">
-        <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-ink-faint">
-          {swipeCount} cards · {result.targets.paletteType.replace(/-/g, ' ')}
-        </p>
-        <h1 className="mt-2 font-display text-[38px] leading-[1.05] text-ink">
+      <header className="mb-9 text-center">
+        <Sprig size={30} className="mx-auto text-sage" />
+        <h1 className="mt-3 font-display text-[40px] leading-[1.02] text-ink">
           {isSharedView ? 'What she likes' : 'Your flowers'}
         </h1>
+        <p className="mt-2.5 text-[11px] uppercase tracking-[0.2em] text-ink-faint">
+          {swipeCount} cards · {result.targets.paletteType.replace(/-/g, ' ')}
+        </p>
+        <SprigRule className="mt-5" />
       </header>
 
       <TasteProfile scores={scores} targets={result.targets} deck={deck} swipes={swipes} />
@@ -131,19 +134,19 @@ export default function Results({ deck, swipes, scores, prefs, shareUrl, isShare
       {stems.length > 0 && (
         <section className="mb-10">
           <SectionTitle>Top five stems</SectionTitle>
-          <ol className="mt-3 space-y-2.5">
+          <ol className="mt-4 divide-y divide-line-soft">
             {stems.map(({ flower }, i) => (
-              <li key={flower.id} className="flex items-center gap-3.5">
-                <span className="w-4 shrink-0 font-display text-[15px] text-ink-faint">{i + 1}</span>
+              <li key={flower.id} className="flex items-center gap-3.5 py-2.5 first:pt-0">
+                <span className="w-5 shrink-0 font-display text-[15px] text-ink-faint">{String(i + 1).padStart(2, "0")}</span>
                 <span
-                  className="h-12 w-12 shrink-0 rounded-full bg-cover bg-center ring-1 ring-line"
+                  className="h-12 w-12 shrink-0 rounded-full bg-cover bg-center ring-1 ring-line/80"
                   style={{ backgroundImage: `url("${flower.imageUrl}")` }}
                 />
                 <span className="min-w-0 flex-1">
                   <span className="block font-display text-[17px] leading-tight text-ink">
                     {flower.commonName}
                   </span>
-                  <span className="block truncate text-[12.5px] text-ink-faint">
+                  <span className="block truncate text-[12px] italic text-ink-faint">
                     {FORM_PROSE[flower.form]} · {SCENT_PROSE[flower.scent]}
                   </span>
                 </span>
@@ -182,9 +185,13 @@ export default function Results({ deck, swipes, scores, prefs, shareUrl, isShare
 
 function SectionTitle({ children }) {
   return (
-    <h2 className="border-b border-line pb-2 font-display text-[13px] uppercase tracking-[0.18em] text-ink-faint">
-      {children}
-    </h2>
+    <div className="mb-1">
+      <h2 className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-ink-faint">
+        <Leaf size={13} className="text-sage" />
+        {children}
+      </h2>
+      <div className="rule-fade mt-2" />
+    </div>
   );
 }
 
@@ -204,7 +211,7 @@ function TasteProfile({ scores, targets, deck, swipes }) {
   return (
     <section className="mb-10">
       <SectionTitle>Your taste, in four parts</SectionTitle>
-      <dl className="mt-4 space-y-5">
+      <dl className="mt-5 space-y-5 divide-y divide-line-soft [&>div]:pt-5 [&>div:first-child]:pt-0">
         <Signal label="Stems">
           {forms.length ? (
             <>
@@ -252,8 +259,8 @@ function TasteProfile({ scores, targets, deck, swipes }) {
 function Signal({ label, children }) {
   return (
     <div>
-      <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-faint">{label}</dt>
-      <dd className="mt-1 text-[15.5px] leading-relaxed text-ink">{children}</dd>
+      <dt className="label-caps">{label}</dt>
+      <dd className="prose-serif mt-1.5 text-[16px] leading-[1.6] text-ink">{children}</dd>
     </div>
   );
 }
@@ -263,18 +270,16 @@ function Signal({ label, children }) {
 // ---------------------------------------------------------------------------
 function GeneratedBouquet({ bouquet }) {
   return (
-    <article className="overflow-hidden rounded-3xl border border-line bg-paper shadow-[0_10px_28px_-16px_rgba(52,44,36,0.4)]">
+    <article className="overflow-hidden rounded-[20px] border border-line bg-paper shadow-[0_16px_36px_-22px_rgba(43,37,31,0.45)]">
       <BouquetComposition bouquet={bouquet} className="aspect-[4/3] w-full bg-[#F6EEE1]" />
 
       <div className="px-5 pb-5 pt-4">
-        <h3 className="font-display text-[25px] leading-tight text-ink">{bouquet.name}</h3>
+        <h3 className="font-display text-[26px] leading-tight text-ink">{bouquet.name}</h3>
         <PaletteBar hexes={bouquet.paletteHexes} className="mt-3 ring-1 ring-line" />
 
-        <div className="mt-4 rounded-2xl bg-paper-deep/70 px-4 py-3.5">
-          <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-faint">
-            Why this works
-          </div>
-          <p className="mt-1.5 text-[14px] leading-relaxed text-ink-soft">{bouquet.why}</p>
+        <div className="mt-4 border-l border-sage/50 pl-4">
+          <div className="label-caps">Why this works</div>
+          <p className="prose-serif mt-1.5 text-[14.5px] leading-[1.6] text-ink-soft">{bouquet.why}</p>
         </div>
 
         <OrderCard bouquet={bouquet} />
@@ -317,11 +322,9 @@ function OrderCard({ bouquet }) {
   }
 
   return (
-    <div className="mt-4 rounded-2xl border border-dashed border-ink-faint/50 bg-paper-deep/40 px-4 py-4">
+    <div className="mt-5 rounded-[14px] border border-dashed border-ink-faint/45 bg-paper-deep/45 px-4 py-4">
       <div className="mb-3 flex items-baseline justify-between gap-3">
-        <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-faint">
-          Florist order card
-        </div>
+        <div className="label-caps">Florist order card</div>
         <div className="font-display text-[15px] text-ink">
           ${bouquet.price.low}–${bouquet.price.high}
         </div>
@@ -330,7 +333,7 @@ function OrderCard({ bouquet }) {
       <ul className="space-y-1.5">
         {bouquet.stems.map((r) => (
           <li key={r.id} className="flex items-baseline gap-2.5 text-[14px]">
-            <span className="w-6 shrink-0 text-right font-display text-ink">{r.count}</span>
+            <span className="w-6 shrink-0 text-right font-display text-[15px] text-ink">{r.count}</span>
             <span
               className="h-2.5 w-2.5 shrink-0 translate-y-[1px] rounded-full ring-1 ring-black/10"
               style={{ backgroundColor: r.hex }}
@@ -350,7 +353,7 @@ function OrderCard({ bouquet }) {
       <button
         type="button"
         onClick={copy}
-        className="mt-3.5 w-full rounded-xl bg-ink py-2.5 text-[14px] font-medium text-paper transition active:scale-[0.99]"
+        className="mt-4 w-full rounded-full bg-ink py-2.5 text-[11px] uppercase tracking-[0.14em] text-paper transition active:scale-[0.99]"
       >
         {copied ? 'Copied' : 'Copy as plain text'}
       </button>
@@ -380,8 +383,8 @@ function ManualPrefs({ prefs }) {
 
       {prefs.note && (
         // Verbatim. Never parsed, never summarised.
-        <blockquote className="mt-3.5 rounded-2xl border-l-[3px] border-rose bg-paper-deep/60 px-4 py-3.5">
-          <p className="whitespace-pre-wrap font-display text-[16px] leading-relaxed text-ink">
+        <blockquote className="mt-4 border-l-2 border-rose/70 bg-paper-deep/45 px-5 py-4">
+          <p className="prose-serif whitespace-pre-wrap text-[16.5px] leading-[1.65] text-ink">
             {prefs.note}
           </p>
         </blockquote>
@@ -443,9 +446,9 @@ function Exclusions({ exclusions }) {
   const all = [
     ...exclusions.design.map((e) => ({ key: `d-${e.reason}`, flowers: e.flowers, text: e.text })),
     ...exclusions.manual.map((e) => ({
-      key: `m-${e.flower.id}`,
-      flowers: [e.flower],
-      text: `${e.flower.commonName} is out — ${e.reason}.`,
+      key: `m-${e.reason}`,
+      flowers: e.flowers,
+      text: e.text,
     })),
   ];
   if (!all.length) return null;
@@ -456,16 +459,16 @@ function Exclusions({ exclusions }) {
       <ul className="mt-3.5 space-y-4">
         {all.map(({ key, flowers, text }) => (
           <li key={key} className="flex gap-3.5">
-            <span className="mt-0.5 flex shrink-0 -space-x-2.5">
+            <span className="mt-0.5 flex w-[52px] shrink-0 justify-start -space-x-3">
               {flowers.slice(0, 3).map((f) => (
                 <span
                   key={f.id}
-                  className="h-10 w-10 rounded-full bg-cover bg-center opacity-70 ring-2 ring-paper grayscale"
+                  className="h-9 w-9 rounded-full bg-cover bg-center opacity-65 ring-2 ring-paper grayscale"
                   style={{ backgroundImage: `url("${f.imageUrl}")` }}
                 />
               ))}
             </span>
-            <p className="flex-1 text-[14px] leading-relaxed text-ink-soft">{text}</p>
+            <p className="prose-serif flex-1 text-[14.5px] leading-[1.6] text-ink-soft">{text}</p>
           </li>
         ))}
       </ul>
@@ -502,8 +505,9 @@ function ShareBlock({ url, report }) {
   }
 
   return (
-    <section className="rounded-3xl border border-line bg-paper-deep/60 px-5 py-5">
-      <h2 className="font-display text-[21px] text-ink">Send it to him</h2>
+    <section className="rounded-[20px] border border-line bg-paper-deep/55 px-6 py-6 text-center">
+      <Sprig size={22} className="mx-auto text-sage" />
+      <h2 className="mt-2 font-display text-[23px] text-ink">Send it to him</h2>
       <p className="mt-1.5 text-[13.5px] leading-relaxed text-ink-soft">
         Everything above — what you picked, what you wrote, and the exact stem lists
         for a florist — straight to his inbox.
@@ -513,7 +517,7 @@ function ShareBlock({ url, report }) {
         type="button"
         onClick={send}
         disabled={status === 'sending' || status === 'sent'}
-        className={`mt-4 w-full rounded-xl py-3.5 text-[15px] font-medium text-white transition active:scale-[0.99] ${
+        className={`mt-4 w-full rounded-full py-3.5 text-[12px] uppercase tracking-[0.14em] text-paper transition active:scale-[0.99] ${
           status === 'sent' ? 'bg-[#4C7A5A]' : 'bg-rose'
         } ${status === 'sending' ? 'opacity-70' : ''}`}
       >
@@ -536,7 +540,7 @@ function ShareBlock({ url, report }) {
           <p className="mt-2.5 text-[13px] leading-relaxed text-rose">{detail}</p>
           <a
             href={mailtoUrl(report, url)}
-            className="mt-2.5 block w-full rounded-xl border border-ink py-2.5 text-center text-[14px] font-medium text-ink"
+            className="mt-2.5 block w-full rounded-full border border-ink py-2.5 text-center text-[11px] uppercase tracking-[0.14em] text-ink"
           >
             Open my mail app instead
           </a>
@@ -551,7 +555,7 @@ function ShareBlock({ url, report }) {
         <button
           type="button"
           onClick={copy}
-          className="mt-2.5 w-full rounded-xl border border-line bg-paper py-2.5 text-[14px] text-ink-soft transition active:scale-[0.99]"
+          className="mt-2.5 w-full rounded-full border border-line bg-paper py-2.5 text-[11px] uppercase tracking-[0.14em] text-ink-soft transition active:scale-[0.99]"
         >
           {copied ? 'Link copied' : 'Copy my link'}
         </button>

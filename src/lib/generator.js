@@ -142,17 +142,17 @@ function applyManualExclusions(pool, prefs) {
   const excluded = [];
   const kept = pool.filter((f) => {
     if (dislikedIds.has(f.id)) {
-      excluded.push({ flower: f, reason: 'you told me you actively dislike this one' });
+      excluded.push({ flower: f, kind: 'disliked' });
       return false;
     }
     if (scentSensitive && (f.scent === 'sweet' || f.scent === 'spicy')) {
-      excluded.push({ flower: f, reason: 'strongly scented, and you flagged a scent sensitivity' });
+      excluded.push({ flower: f, kind: 'scent' });
       return false;
     }
     // A flower is only banned on colour if EVERY colour it comes in is banned.
     const usable = f.colors.filter((c) => !bannedFamilies.has(hueFamily(c.hex)));
     if (bannedFamilies.size && usable.length === 0) {
-      excluded.push({ flower: f, reason: `only comes in colours you ruled out` });
+      excluded.push({ flower: f, kind: 'colour' });
       return false;
     }
     return true;
@@ -369,7 +369,7 @@ export function generateBouquets({
     price: (names, sample) =>
       `${names} ${plural(sample)} a long way off the price level of everything else you liked, which would make the bunch look unbalanced as much as expensive.`,
     budget: (names, sample) =>
-      `${names} ${plural(sample)} what pushes the bunch past the budget you set.`,
+      `${names} ${sample.plural ? 'push' : 'pushes'} the bunch past the budget you set.`,
   };
 
   const byReason = new Map();
@@ -424,10 +424,32 @@ export function generateBouquets({
   // Only surface a manual exclusion when she actually liked the thing -- telling
   // her that a flower she never swiped on was ruled out is noise, and a
   // scent-sensitivity flag alone would otherwise list thirty names.
-  const notableManual = manualExclusions
-    .filter((e) => stemScore(e.flower, scores) > 0)
-    .sort((a, b) => stemScore(b.flower, scores) - stemScore(a.flower, scores))
-    .slice(0, 4);
+  // Grouped by reason for the same reason the design exclusions are: four
+  // separate lines all reading "only comes in colours you ruled out" is a
+  // machine talking, not a person.
+  const MANUAL_TEXT = {
+    disliked: (names, many) => `${names} ${many ? 'are' : 'is'} out — you told me you actively dislike ${many ? 'them' : 'it'}.`,
+    scent: (names, many) => `${names} ${many ? 'are' : 'is'} out — strongly scented, and you flagged a scent sensitivity.`,
+    colour: (names, many) => `${names} only ${many ? 'come' : 'comes'} in colours you ruled out.`,
+  };
+
+  const manualByKind = new Map();
+  for (const e of manualExclusions) {
+    if (stemScore(e.flower, scores) <= 0) continue;
+    if (!manualByKind.has(e.kind)) manualByKind.set(e.kind, []);
+    manualByKind.get(e.kind).push(e.flower);
+  }
+  const notableManual = [...manualByKind.entries()].map(([kind, group]) => {
+    const shown = group
+      .sort((a, b) => stemScore(b, scores) - stemScore(a, scores))
+      .slice(0, 5);
+    return {
+      flowers: shown,
+      flower: shown[0],
+      reason: kind,
+      text: MANUAL_TEXT[kind](joinNames(shown.map((f) => f.commonName)), shown.length > 1),
+    };
+  });
 
   return {
     bouquets,

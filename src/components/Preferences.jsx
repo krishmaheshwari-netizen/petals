@@ -11,6 +11,7 @@
 import { useState } from 'react';
 import { FLOWERS, FILLERS } from '../lib/deck.js';
 import { NEVER_COLORS, SCENT_OPTIONS, VESSEL_OPTIONS, OCCASION_OPTIONS } from '../lib/preference-options.js';
+import { Sprig, SprigRule } from './Ornament.jsx';
 
 export default function Preferences({ prefs, setPrefs }) {
   const [flowerQuery, setFlowerQuery] = useState('');
@@ -42,11 +43,13 @@ export default function Preferences({ prefs, setPrefs }) {
 
   return (
     <div className="mx-auto w-full max-w-lg px-5 pb-28 pt-6">
-      <header className="mb-7">
-        <h1 className="font-display text-[32px] leading-tight text-ink">Anything else?</h1>
-        <p className="mt-1.5 text-[14px] leading-relaxed text-ink-soft">
+      <header className="mb-8 text-center">
+        <Sprig size={28} className="mx-auto text-sage" />
+        <h1 className="mt-3 font-display text-[34px] leading-tight text-ink">Anything else?</h1>
+        <p className="prose-serif mx-auto mt-2 max-w-xs text-[15px] italic leading-[1.55] text-ink-soft">
           None of this is guessed from your swipes. Whatever you set here wins.
         </p>
+        <SprigRule className="mt-5" />
       </header>
 
       {/* ---- free text: stored and shown exactly as written ---- */}
@@ -56,7 +59,7 @@ export default function Preferences({ prefs, setPrefs }) {
           onChange={(e) => update({ note: e.target.value })}
           rows={5}
           placeholder="Anything you want me to know…"
-          className="w-full resize-y rounded-2xl border border-line bg-paper-deep/60 px-4 py-3.5 text-[15px] leading-relaxed text-ink placeholder:text-ink-faint focus:border-rose focus:outline-none focus:ring-2 focus:ring-rose-soft"
+          className="prose-serif w-full resize-y rounded-[14px] border border-line bg-paper-deep/45 px-4 py-3.5 text-[16px] leading-[1.6] text-ink placeholder:not-italic placeholder:text-ink-faint focus:border-rose focus:outline-none focus:ring-1 focus:ring-rose-soft"
         />
       </Section>
 
@@ -72,7 +75,7 @@ export default function Preferences({ prefs, setPrefs }) {
                 onClick={() => toggleColor(c.family)}
                 className={`flex items-center gap-2 rounded-full border py-1.5 pl-2 pr-3.5 text-[13px] transition ${
                   on
-                    ? 'border-rose bg-rose text-white line-through decoration-white/60'
+                    ? 'border-rose-deep bg-rose text-paper line-through decoration-paper/60'
                     : 'border-line bg-paper-deep/50 text-ink-soft hover:border-ink-faint'
                 }`}
               >
@@ -127,7 +130,7 @@ export default function Preferences({ prefs, setPrefs }) {
             value={prefs.maxBudget ?? ''}
             onChange={(e) => update({ maxBudget: e.target.value })}
             placeholder="no limit"
-            className="w-36 rounded-xl border border-line bg-paper-deep/60 px-3.5 py-2.5 text-[15px] text-ink placeholder:text-ink-faint focus:border-rose focus:outline-none focus:ring-2 focus:ring-rose-soft"
+            className="w-36 rounded-[12px] border border-line bg-paper-deep/45 px-3.5 py-2.5 text-[15px] text-ink placeholder:text-ink-faint focus:border-rose focus:outline-none focus:ring-1 focus:ring-rose-soft"
           />
         </div>
       </Section>
@@ -138,7 +141,7 @@ export default function Preferences({ prefs, setPrefs }) {
           value={flowerQuery}
           onChange={(e) => setFlowerQuery(e.target.value)}
           placeholder="Search flowers…"
-          className="w-full rounded-xl border border-line bg-paper-deep/60 px-4 py-2.5 text-[15px] text-ink placeholder:text-ink-faint focus:border-rose focus:outline-none focus:ring-2 focus:ring-rose-soft"
+          className="w-full rounded-[12px] border border-line bg-paper-deep/45 px-4 py-2.5 text-[15px] text-ink placeholder:text-ink-faint focus:border-rose focus:outline-none focus:ring-1 focus:ring-rose-soft"
         />
         {matches.length > 0 && (
           <ul className="mt-2 overflow-hidden rounded-xl border border-line">
@@ -172,7 +175,7 @@ export default function Preferences({ prefs, setPrefs }) {
                 key={f.id}
                 type="button"
                 onClick={() => toggleDislike(f.id)}
-                className="flex items-center gap-1.5 rounded-full border border-rose bg-rose px-3 py-1.5 text-[13px] text-white"
+                className="flex items-center gap-1.5 rounded-full border border-rose-deep bg-rose px-3.5 py-1.5 text-[12.5px] text-paper"
               >
                 {f.commonName}
                 <span aria-hidden className="text-white/70">×</span>
@@ -188,8 +191,8 @@ export default function Preferences({ prefs, setPrefs }) {
 function Section({ title, hint, children }) {
   return (
     <section className="mb-8">
-      <h2 className="font-display text-[19px] text-ink">{title}</h2>
-      {hint && <p className="mb-3 mt-0.5 text-[12.5px] leading-relaxed text-ink-faint">{hint}</p>}
+      <h2 className="font-display text-[20px] text-ink">{title}</h2>
+      {hint && <p className="mb-3 mt-1 text-[12.5px] italic leading-relaxed text-ink-faint">{hint}</p>}
       <div className={hint ? '' : 'mt-3'}>{children}</div>
     </section>
   );
@@ -203,7 +206,7 @@ function ChipRow({ options, value, onChange }) {
           key={o.value}
           type="button"
           onClick={() => onChange(o.value)}
-          className={`rounded-full border px-3.5 py-1.5 text-[13px] transition ${
+          className={`rounded-full border px-4 py-1.5 text-[12.5px] transition ${
             value === o.value
               ? 'border-ink bg-ink text-paper'
               : 'border-line bg-paper-deep/50 text-ink-soft hover:border-ink-faint'
