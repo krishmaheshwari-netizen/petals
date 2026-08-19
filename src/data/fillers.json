@@ -749,5 +749,340 @@
       "license": "CC BY-SA 3.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lagurus_ovatus.jpg"
     }
+  },
+  {
+    "id": "lavender",
+    "commonName": "Lavender",
+    "scientificName": "Lavandula angustifolia",
+    "colors": [
+      {
+        "name": "lavender",
+        "hex": "#8F82BE"
+      },
+      {
+        "name": "white",
+        "hex": "#F2EFE6"
+      }
+    ],
+    "form": "spiky",
+    "scale": "filler",
+    "scent": "sweet",
+    "seasons": [
+      "summer"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "aromatic",
+      "dried",
+      "silvery",
+      "airy",
+      "meadow"
+    ],
+    "blurb": "Grey-green stems topped with scented violet spikes. Dries perfectly and keeps its smell for a year.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Lavandula_angustifolia_-_lavender_-_Lavendel_-_01.jpg/1280px-Lavandula_angustifolia_-_lavender_-_Lavendel_-_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#8F82BE",
+    "imageAttribution": {
+      "title": "Lavandula angustifolia - lavender - Lavendel - 01.jpg",
+      "artist": "Norbert Nagel",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lavandula_angustifolia_-_lavender_-_Lavendel_-_01.jpg"
+    }
+  },
+  {
+    "id": "jasmine",
+    "commonName": "Jasmine",
+    "scientificName": "Jasminum polyanthum",
+    "colors": [
+      {
+        "name": "white",
+        "hex": "#F6F3EB"
+      },
+      {
+        "name": "blush",
+        "hex": "#F1CDD0"
+      }
+    ],
+    "form": "star",
+    "scale": "filler",
+    "scent": "sweet",
+    "seasons": [
+      "winter",
+      "spring"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "trailing",
+      "perfumed",
+      "starry",
+      "airy",
+      "delicate"
+    ],
+    "blurb": "Trailing stems of small white stars opening from pink buds. The scent carries across a whole room.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Jasminum_polyanthum_3.jpg/1280px-Jasminum_polyanthum_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F6F3EB",
+    "imageAttribution": {
+      "title": "Jasminum polyanthum 3.jpg",
+      "artist": "Gaurav Dhwaj Khadka",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jasminum_polyanthum_3.jpg"
+    }
+  },
+  {
+    "id": "verbena",
+    "commonName": "Tall Verbena",
+    "scientificName": "Verbena bonariensis",
+    "colors": [
+      {
+        "name": "violet",
+        "hex": "#7A5AA6"
+      }
+    ],
+    "form": "cluster",
+    "scale": "filler",
+    "scent": "none",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "airy",
+      "see-through",
+      "meadow",
+      "movement",
+      "fine"
+    ],
+    "blurb": "Small violet clusters floating on tall bare stems. Adds height you can see straight through.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Verbena_bonariensis%2C_bloeiwijze._28-08-2021._%28d.j.b%29_02.jpg/1280px-Verbena_bonariensis%2C_bloeiwijze._28-08-2021._%28d.j.b%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#7A5AA6",
+    "imageAttribution": {
+      "title": "Verbena bonariensis, bloeiwijze. 28-08-2021. (d.j.b) 02.jpg",
+      "artist": "Dominicus Johannes Bergsma",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Verbena_bonariensis,_bloeiwijze._28-08-2021._(d.j.b)_02.jpg"
+    }
+  },
+  {
+    "id": "forget-me-not",
+    "commonName": "Forget-Me-Not",
+    "scientificName": "Myosotis sylvatica",
+    "colors": [
+      {
+        "name": "sky blue",
+        "hex": "#8FAEDA"
+      },
+      {
+        "name": "white",
+        "hex": "#F3F0E7"
+      }
+    ],
+    "form": "cluster",
+    "scale": "filler",
+    "scent": "none",
+    "seasons": [
+      "spring"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "tiny",
+      "blue",
+      "airy",
+      "woodland",
+      "delicate"
+    ],
+    "blurb": "A haze of pinhead blue flowers with yellow eyes. Softens anything it is threaded through.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Myosotis_sylvatica_FAWalpole.jpg/1280px-Myosotis_sylvatica_FAWalpole.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#8FAEDA",
+    "imageAttribution": {
+      "title": "Myosotis sylvatica FAWalpole.jpg",
+      "artist": "Frederick Andrews Walpole (1861-1904)",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Myosotis_sylvatica_FAWalpole.jpg"
+    }
+  },
+  {
+    "id": "elderflower",
+    "commonName": "Elderflower",
+    "scientificName": "Sambucus nigra",
+    "colors": [
+      {
+        "name": "cream",
+        "hex": "#F2EBD6"
+      }
+    ],
+    "form": "cluster",
+    "scale": "filler",
+    "scent": "sweet",
+    "seasons": [
+      "summer"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "lace",
+      "flat-topped",
+      "wild",
+      "airy",
+      "hedgerow"
+    ],
+    "blurb": "Broad creamy lace-caps on a hedgerow branch, with a heavy honeyed scent on a warm day.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Sambucus_nigra_kz19.jpg/1280px-Sambucus_nigra_kz19.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F2EBD6",
+    "imageAttribution": {
+      "title": "Sambucus nigra kz19.jpg",
+      "artist": "Krzysztof Ziarnek, Kenraiz",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sambucus_nigra_kz19.jpg"
+    }
+  },
+  {
+    "id": "honeysuckle",
+    "commonName": "Honeysuckle",
+    "scientificName": "Lonicera periclymenum",
+    "colors": [
+      {
+        "name": "cream",
+        "hex": "#F2EAD3"
+      },
+      {
+        "name": "apricot",
+        "hex": "#EFB07C"
+      }
+    ],
+    "form": "cluster",
+    "scale": "filler",
+    "scent": "sweet",
+    "seasons": [
+      "summer"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "trailing",
+      "perfumed",
+      "wild",
+      "hedgerow",
+      "airy"
+    ],
+    "blurb": "Whorls of long curved trumpets on a trailing stem. Strongest scented at dusk.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Lonicera_periclymenum_kz13.jpg/1280px-Lonicera_periclymenum_kz13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F2EAD3",
+    "imageAttribution": {
+      "title": "Lonicera periclymenum kz13.jpg",
+      "artist": "Krzysztof Ziarnek, Kenraiz",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lonicera_periclymenum_kz13.jpg"
+    }
+  },
+  {
+    "id": "winterberry",
+    "commonName": "Winterberry",
+    "scientificName": "Ilex verticillata",
+    "colors": [
+      {
+        "name": "scarlet",
+        "hex": "#B72026"
+      },
+      {
+        "name": "gold",
+        "hex": "#E0A32A"
+      }
+    ],
+    "form": "cluster",
+    "scale": "filler",
+    "scent": "none",
+    "seasons": [
+      "fall",
+      "winter"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "berry",
+      "bare-branch",
+      "graphic",
+      "dense",
+      "winter"
+    ],
+    "blurb": "A leafless branch studded solid with red berries. The whole point is that there is no foliage at all.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/American_Winterberry_Ilex_verticillata_%27Winter_Red%27_Berries_3264px.jpg/1280px-American_Winterberry_Ilex_verticillata_%27Winter_Red%27_Berries_3264px.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#B72026",
+    "imageAttribution": {
+      "title": "American Winterberry Ilex verticillata 'Winter Red' Berries 3264px.jpg",
+      "artist": "Photo (c)2007 Derek Ramsey (Ram-Man)",
+      "license": "CC BY-SA 2.5",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:American_Winterberry_Ilex_verticillata_%27Winter_Red%27_Berries_3264px.jpg"
+    }
+  },
+  {
+    "id": "daphne",
+    "commonName": "Daphne",
+    "scientificName": "Daphne odora",
+    "colors": [
+      {
+        "name": "blush",
+        "hex": "#EFC6CC"
+      },
+      {
+        "name": "white",
+        "hex": "#F4F1E8"
+      }
+    ],
+    "form": "cluster",
+    "scale": "filler",
+    "scent": "sweet",
+    "seasons": [
+      "winter",
+      "spring"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "perfumed",
+      "glossy",
+      "compact",
+      "dense",
+      "winter"
+    ],
+    "blurb": "Small waxy clusters on glossy evergreen sprigs, with a scent out of all proportion to their size.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Daphne_Odora_flower.jpg/1280px-Daphne_Odora_flower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#EFC6CC",
+    "imageAttribution": {
+      "title": "Daphne Odora flower.jpg",
+      "artist": "Own Herby talk thyme",
+      "license": "CC BY 2.5",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Daphne_Odora_flower.jpg"
+    }
+  },
+  {
+    "id": "tansy",
+    "commonName": "Tansy",
+    "scientificName": "Tanacetum vulgare",
+    "colors": [
+      {
+        "name": "gold",
+        "hex": "#E5B326"
+      }
+    ],
+    "form": "cluster",
+    "scale": "filler",
+    "scent": "spicy",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "button",
+      "flat-topped",
+      "dried",
+      "meadow",
+      "dense"
+    ],
+    "blurb": "Flat clusters of gold buttons with no petals at all, over ferny aromatic leaves.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Tanacetum_vulgare_4_RF.jpg/1280px-Tanacetum_vulgare_4_RF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#E5B326",
+    "imageAttribution": {
+      "title": "Tanacetum vulgare 4 RF.jpg",
+      "artist": "Robert Flogaus-Faust",
+      "license": "CC BY 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tanacetum_vulgare_4_RF.jpg"
+    }
   }
 ]

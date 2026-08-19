@@ -3212,5 +3212,659 @@
       "license": "CC BY-SA 2.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paeonia_%27Coral_Charm%27_5_2021_xPeony-_(51208163914).jpg"
     }
+  },
+  {
+    "id": "magnolia",
+    "commonName": "Magnolia",
+    "scientificName": "Magnolia grandiflora",
+    "colors": [
+      {
+        "name": "ivory",
+        "hex": "#F4EEDC"
+      },
+      {
+        "name": "blush",
+        "hex": "#EFC9CC"
+      }
+    ],
+    "form": "bell",
+    "scale": "focal",
+    "scent": "sweet",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "branch",
+      "sculptural",
+      "waxy",
+      "statement"
+    ],
+    "blurb": "Sold as a cut branch with leaves like polished leather. One stem is an entire arrangement.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Magnolia_grandiflora_-_flower_1.jpg/1280px-Magnolia_grandiflora_-_flower_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F4EEDC",
+    "imageAttribution": {
+      "title": "Magnolia grandiflora - flower 1.jpg",
+      "artist": "Ianaré Sévi",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Magnolia_grandiflora_-_flower_1.jpg"
+    }
+  },
+  {
+    "id": "hollyhock",
+    "commonName": "Hollyhock",
+    "scientificName": "Alcea rosea",
+    "colors": [
+      {
+        "name": "blush",
+        "hex": "#EFBFC9"
+      },
+      {
+        "name": "cream",
+        "hex": "#F3EAD6"
+      },
+      {
+        "name": "wine",
+        "hex": "#6E2137"
+      }
+    ],
+    "form": "bell",
+    "scale": "focal",
+    "scent": "none",
+    "seasons": [
+      "summer"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "cottage",
+      "tall",
+      "vertical",
+      "nostalgic"
+    ],
+    "blurb": "A two-metre spire of crepe-paper saucers opening bottom to top. Pure cottage garden.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Alcea_rosea_2025_G1.jpg/1280px-Alcea_rosea_2025_G1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#EFBFC9",
+    "imageAttribution": {
+      "title": "Alcea rosea 2025 G1.jpg",
+      "artist": "George Chernilevsky",
+      "license": "CC BY 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alcea_rosea_2025_G1.jpg"
+    }
+  },
+  {
+    "id": "lotus",
+    "commonName": "Lotus",
+    "scientificName": "Nelumbo nucifera",
+    "colors": [
+      {
+        "name": "blush",
+        "hex": "#F1C4CC"
+      },
+      {
+        "name": "cream",
+        "hex": "#F5EEDE"
+      }
+    ],
+    "form": "ruffled",
+    "scale": "focal",
+    "scent": "sweet",
+    "seasons": [
+      "summer"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "sculptural",
+      "serene",
+      "statement",
+      "unusual"
+    ],
+    "blurb": "Enormous cupped petals on a bare stem. The seed pods left behind are a florist staple in their own right.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Nelumbo_nucifera-IMG_3511-1.jpg/1280px-Nelumbo_nucifera-IMG_3511-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F1C4CC",
+    "imageAttribution": {
+      "title": "Nelumbo nucifera-IMG 3511-1.jpg",
+      "artist": "C T Johansson",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nelumbo_nucifera-IMG_3511-1.jpg"
+    }
+  },
+  {
+    "id": "wisteria",
+    "commonName": "Wisteria",
+    "scientificName": "Wisteria sinensis",
+    "colors": [
+      {
+        "name": "lilac",
+        "hex": "#B3A0D2"
+      },
+      {
+        "name": "white",
+        "hex": "#F4F1E8"
+      }
+    ],
+    "form": "cluster",
+    "scale": "focal",
+    "scent": "sweet",
+    "seasons": [
+      "spring"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "cascading",
+      "perfumed",
+      "dramatic",
+      "branch"
+    ],
+    "blurb": "Long scented racemes that hang straight down. Cut branches last only days, which is rather the point.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Wisteria_sinensis_01.jpg/1280px-Wisteria_sinensis_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#B3A0D2",
+    "imageAttribution": {
+      "title": "Wisteria sinensis 01.jpg",
+      "artist": "Krzysztof Golik",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wisteria_sinensis_01.jpg"
+    }
+  },
+  {
+    "id": "rhododendron",
+    "commonName": "Rhododendron",
+    "scientificName": "Rhododendron ponticum",
+    "colors": [
+      {
+        "name": "mauve",
+        "hex": "#C08BC0"
+      },
+      {
+        "name": "blush",
+        "hex": "#EFC3CB"
+      },
+      {
+        "name": "crimson",
+        "hex": "#A82238"
+      }
+    ],
+    "form": "cluster",
+    "scale": "focal",
+    "scent": "light",
+    "seasons": [
+      "spring"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "branch",
+      "abundant",
+      "glossy",
+      "bold"
+    ],
+    "blurb": "Great domed trusses on a woody branch, backed by dark evergreen leaves.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Rhododendron_Petticoat_lane._%2820342657866%29.jpg/1280px-Rhododendron_Petticoat_lane._%2820342657866%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#C08BC0",
+    "imageAttribution": {
+      "title": "Rhododendron Petticoat lane. (20342657866).jpg",
+      "artist": "Bernard Spragg. NZ from Christchurch, New Zealand",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rhododendron_Petticoat_lane._(20342657866).jpg"
+    }
+  },
+  {
+    "id": "bleeding-heart",
+    "commonName": "Bleeding Heart",
+    "scientificName": "Lamprocapnos spectabilis",
+    "colors": [
+      {
+        "name": "rose",
+        "hex": "#E38AA8"
+      },
+      {
+        "name": "white",
+        "hex": "#F5F2E9"
+      }
+    ],
+    "form": "bell",
+    "scale": "secondary",
+    "scent": "none",
+    "seasons": [
+      "spring"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "arching",
+      "whimsical",
+      "delicate",
+      "storybook"
+    ],
+    "blurb": "A row of little lockets strung along an arching stem. Nothing else in a spring bouquet looks like it.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Bleeding_heart_%28Lamprocapnos_spectabilis%29_04.JPG/1280px-Bleeding_heart_%28Lamprocapnos_spectabilis%29_04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#E38AA8",
+    "imageAttribution": {
+      "title": "Bleeding heart (Lamprocapnos spectabilis) 04.JPG",
+      "artist": "SterlingHerron",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bleeding_heart_(Lamprocapnos_spectabilis)_04.JPG"
+    }
+  },
+  {
+    "id": "columbine",
+    "commonName": "Columbine",
+    "scientificName": "Aquilegia vulgaris",
+    "colors": [
+      {
+        "name": "violet",
+        "hex": "#6B52A0"
+      },
+      {
+        "name": "blush",
+        "hex": "#EFC4CE"
+      },
+      {
+        "name": "cream",
+        "hex": "#F3EBD9"
+      }
+    ],
+    "form": "bell",
+    "scale": "secondary",
+    "scent": "none",
+    "seasons": [
+      "spring"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "spurred",
+      "nodding",
+      "woodland",
+      "delicate"
+    ],
+    "blurb": "Nodding bonnets with long backward spurs, on stems fine enough to tremble.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Columbine_Aquilegia_vulgaris_%27Black_Barlow%27_Flower_2000px.jpg/1280px-Columbine_Aquilegia_vulgaris_%27Black_Barlow%27_Flower_2000px.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#6B52A0",
+    "imageAttribution": {
+      "title": "Columbine Aquilegia vulgaris 'Black Barlow' Flower 2000px.jpg",
+      "artist": "Photo by and (c)2008 Derek Ramsey (Ram-Man). Co-attribution must be given to the Chanticleer Garden.",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Columbine_Aquilegia_vulgaris_%27Black_Barlow%27_Flower_2000px.jpg"
+    }
+  },
+  {
+    "id": "calendula",
+    "commonName": "Calendula",
+    "scientificName": "Calendula officinalis",
+    "colors": [
+      {
+        "name": "marigold gold",
+        "hex": "#EFA92A"
+      },
+      {
+        "name": "apricot",
+        "hex": "#F1B172"
+      }
+    ],
+    "form": "single",
+    "scale": "secondary",
+    "scent": "green",
+    "seasons": [
+      "spring",
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "cheerful",
+      "cottage",
+      "edible",
+      "warm"
+    ],
+    "blurb": "Flat gold discs on sticky, resinous stems that smell sharply green when you cut them.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Zaaddoos_van_een_goudsbloem_%28Calendula_officinalis%29_11-09-2020_%28d.j.b.%29.jpg/1280px-Zaaddoos_van_een_goudsbloem_%28Calendula_officinalis%29_11-09-2020_%28d.j.b.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#EFA92A",
+    "imageAttribution": {
+      "title": "Zaaddoos van een goudsbloem (Calendula officinalis) 11-09-2020 (d.j.b.).jpg",
+      "artist": "Dominicus Johannes Bergsma",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zaaddoos_van_een_goudsbloem_(Calendula_officinalis)_11-09-2020_(d.j.b.).jpg"
+    }
+  },
+  {
+    "id": "coreopsis",
+    "commonName": "Coreopsis",
+    "scientificName": "Coreopsis lanceolata",
+    "colors": [
+      {
+        "name": "gold",
+        "hex": "#EFC12C"
+      },
+      {
+        "name": "rust",
+        "hex": "#B4552A"
+      }
+    ],
+    "form": "single",
+    "scale": "secondary",
+    "scent": "none",
+    "seasons": [
+      "summer"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "prairie",
+      "cheerful",
+      "fine-stemmed",
+      "meadow"
+    ],
+    "blurb": "Small gold daisies with fringed tips, held high on wiry stems that move in any draught.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Coreopsis_lanceolata_Sterntaler.JPG/1280px-Coreopsis_lanceolata_Sterntaler.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#EFC12C",
+    "imageAttribution": {
+      "title": "Coreopsis lanceolata Sterntaler.JPG",
+      "artist": "User:Qwertzy2",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coreopsis_lanceolata_Sterntaler.JPG"
+    }
+  },
+  {
+    "id": "salvia",
+    "commonName": "Salvia",
+    "scientificName": "Salvia nemorosa",
+    "colors": [
+      {
+        "name": "violet",
+        "hex": "#5F4A96"
+      },
+      {
+        "name": "rose",
+        "hex": "#DA87A6"
+      }
+    ],
+    "form": "spiky",
+    "scale": "secondary",
+    "scent": "green",
+    "seasons": [
+      "summer"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "vertical",
+      "meadow",
+      "aromatic",
+      "fine"
+    ],
+    "blurb": "Dense violet spires on square stems that smell herbal when handled. Reliable vertical line.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Salvia_nemorosa_RF.jpg/1280px-Salvia_nemorosa_RF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#5F4A96",
+    "imageAttribution": {
+      "title": "Salvia nemorosa RF.jpg",
+      "artist": "Robert Flogaus-Faust",
+      "license": "CC BY 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Salvia_nemorosa_RF.jpg"
+    }
+  },
+  {
+    "id": "heliotrope",
+    "commonName": "Heliotrope",
+    "scientificName": "Heliotropium arborescens",
+    "colors": [
+      {
+        "name": "deep purple",
+        "hex": "#553A7E"
+      },
+      {
+        "name": "white",
+        "hex": "#F4F1E8"
+      }
+    ],
+    "form": "cluster",
+    "scale": "secondary",
+    "scent": "sweet",
+    "seasons": [
+      "summer"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "perfumed",
+      "velvety",
+      "antique",
+      "dense"
+    ],
+    "blurb": "Flat heads of tiny purple flowers that smell strongly of vanilla and cherry pie.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Close-up_of_heliotrope_flower_%28Heliotropium_arborescens%29%2C_Jardim_da_Funda%C3%A7%C3%A3o_Calouste_Gulbenkian%2C_Lisbon%2C_Portugal_julesvernex2.jpg/1280px-Close-up_of_heliotrope_flower_%28Heliotropium_arborescens%29%2C_Jardim_da_Funda%C3%A7%C3%A3o_Calouste_Gulbenkian%2C_Lisbon%2C_Portugal_julesvernex2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#553A7E",
+    "imageAttribution": {
+      "title": "Close-up of heliotrope flower (Heliotropium arborescens), Jardim da Fundação Calouste Gulbenkian, Lisbon, Portugal julesvernex2.jpg",
+      "artist": "Jules Verne Times Two",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Close-up_of_heliotrope_flower_(Heliotropium_arborescens),_Jardim_da_Funda%C3%A7%C3%A3o_Calouste_Gulbenkian,_Lisbon,_Portugal_julesvernex2.jpg"
+    }
+  },
+  {
+    "id": "strawflower",
+    "commonName": "Strawflower",
+    "scientificName": "Xerochrysum bracteatum",
+    "colors": [
+      {
+        "name": "gold",
+        "hex": "#EFB92B"
+      },
+      {
+        "name": "blush",
+        "hex": "#EFC2C8"
+      },
+      {
+        "name": "rust",
+        "hex": "#B4592C"
+      },
+      {
+        "name": "cream",
+        "hex": "#F2EAD7"
+      }
+    ],
+    "form": "globe",
+    "scale": "secondary",
+    "scent": "none",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "papery",
+      "dried",
+      "crisp",
+      "everlasting"
+    ],
+    "blurb": "The bracts are genuinely papery and rustle when touched. Dries without changing at all.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Strawflower%2C_Xerochrysum_bracteatum%2C_Pink_Flame.jpg/1280px-Strawflower%2C_Xerochrysum_bracteatum%2C_Pink_Flame.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#EFB92B",
+    "imageAttribution": {
+      "title": "Strawflower, Xerochrysum bracteatum, Pink Flame.jpg",
+      "artist": "Stu's Images",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Strawflower,_Xerochrysum_bracteatum,_Pink_Flame.jpg"
+    }
+  },
+  {
+    "id": "tithonia",
+    "commonName": "Mexican Sunflower",
+    "scientificName": "Tithonia rotundifolia",
+    "colors": [
+      {
+        "name": "tangerine",
+        "hex": "#EE6B22"
+      },
+      {
+        "name": "scarlet",
+        "hex": "#CE3822"
+      }
+    ],
+    "form": "single",
+    "scale": "secondary",
+    "scent": "none",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "saturated",
+      "warm",
+      "bold",
+      "late-summer"
+    ],
+    "blurb": "A velvety orange disc on a hollow stem that has to be handled carefully — it bends where you grip it.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Mexican_Sunflower_Tithonia_rotundifolia_Flower_2163px.jpg/1280px-Mexican_Sunflower_Tithonia_rotundifolia_Flower_2163px.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#EE6B22",
+    "imageAttribution": {
+      "title": "Mexican Sunflower Tithonia rotundifolia Flower 2163px.jpg",
+      "artist": "Photo by and (c)2008 Derek Ramsey (Ram-Man)",
+      "license": "GFDL 1.2",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mexican_Sunflower_Tithonia_rotundifolia_Flower_2163px.jpg"
+    }
+  },
+  {
+    "id": "wallflower",
+    "commonName": "Wallflower",
+    "scientificName": "Erysimum cheiri",
+    "colors": [
+      {
+        "name": "rust",
+        "hex": "#B4592B"
+      },
+      {
+        "name": "gold",
+        "hex": "#EBAF2A"
+      },
+      {
+        "name": "plum",
+        "hex": "#6C3C63"
+      }
+    ],
+    "form": "cluster",
+    "scale": "secondary",
+    "scent": "sweet",
+    "seasons": [
+      "spring"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "perfumed",
+      "velvety",
+      "antique",
+      "warm"
+    ],
+    "blurb": "Clusters in scorched oranges and browns, with a scent somewhere between violet and clove.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Erysimum_%C3%97_cheiri_5Dsr_5856.jpg/1280px-Erysimum_%C3%97_cheiri_5Dsr_5856.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#B4592B",
+    "imageAttribution": {
+      "title": "Erysimum × cheiri 5Dsr 5856.jpg",
+      "artist": "SAplants",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Erysimum_%C3%97_cheiri_5Dsr_5856.jpg"
+    }
+  },
+  {
+    "id": "snowdrop",
+    "commonName": "Snowdrop",
+    "scientificName": "Galanthus nivalis",
+    "colors": [
+      {
+        "name": "white",
+        "hex": "#F6F3EB"
+      }
+    ],
+    "form": "bell",
+    "scale": "secondary",
+    "scent": "light",
+    "seasons": [
+      "winter"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "tiny",
+      "first-of-the-year",
+      "delicate",
+      "nodding"
+    ],
+    "blurb": "The first thing to flower, often through frost. Sold in small tied posies rather than by the stem.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Galanthus_nivalis_close-up_aka.jpg/1280px-Galanthus_nivalis_close-up_aka.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F6F3EB",
+    "imageAttribution": {
+      "title": "Galanthus nivalis close-up aka.jpg",
+      "artist": "André Karwath aka Aka",
+      "license": "CC BY-SA 2.5",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Galanthus_nivalis_close-up_aka.jpg"
+    }
+  },
+  {
+    "id": "bluebell",
+    "commonName": "Bluebell",
+    "scientificName": "Hyacinthoides hispanica",
+    "colors": [
+      {
+        "name": "periwinkle",
+        "hex": "#8B9CD6"
+      },
+      {
+        "name": "white",
+        "hex": "#F4F1E8"
+      }
+    ],
+    "form": "bell",
+    "scale": "secondary",
+    "scent": "light",
+    "seasons": [
+      "spring"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "woodland",
+      "nodding",
+      "blue",
+      "wild"
+    ],
+    "blurb": "Nodding bells up one side of an arching stem. The cultivated Spanish kind, not the protected native.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Hyacinthoides_non-scripta%2C_bastaard_van_Hyacinthoides_hispanica._Boshyacint._d.j.b._05.jpg/1280px-Hyacinthoides_non-scripta%2C_bastaard_van_Hyacinthoides_hispanica._Boshyacint._d.j.b._05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#8B9CD6",
+    "imageAttribution": {
+      "title": "Hyacinthoides non-scripta, bastaard van Hyacinthoides hispanica. Boshyacint. d.j.b. 05.jpg",
+      "artist": "Dominicus Johannes Bergsma",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hyacinthoides_non-scripta,_bastaard_van_Hyacinthoides_hispanica._Boshyacint._d.j.b._05.jpg"
+    }
+  },
+  {
+    "id": "sweet-violet",
+    "commonName": "Sweet Violet",
+    "scientificName": "Viola odorata",
+    "colors": [
+      {
+        "name": "violet",
+        "hex": "#5F4593"
+      },
+      {
+        "name": "white",
+        "hex": "#F4F1E8"
+      }
+    ],
+    "form": "single",
+    "scale": "secondary",
+    "scent": "sweet",
+    "seasons": [
+      "winter",
+      "spring"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "tiny",
+      "perfumed",
+      "nostalgic",
+      "posy"
+    ],
+    "blurb": "Sold in tight nosegays with their own leaves as a collar. The scent famously switches itself off as you smell it.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Viola_odorata_flower_cross_section.jpg/1280px-Viola_odorata_flower_cross_section.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#5F4593",
+    "imageAttribution": {
+      "title": "Viola odorata flower cross section.jpg",
+      "artist": "Arthur Harry Church",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Viola_odorata_flower_cross_section.jpg"
+    }
   }
 ]
