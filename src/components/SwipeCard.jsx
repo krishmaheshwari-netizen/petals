@@ -5,7 +5,7 @@
 // carries past the threshold, and the tilt is proportional to horizontal offset
 // so it feels like a physical card being pushed off a pile.
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { motion, useMotionValue, useTransform, useMotionValueEvent } from 'framer-motion';
 import BouquetComposition, { PaletteBar } from './BouquetComposition.jsx';
 import { INDEX } from '../lib/deck.js';
@@ -46,6 +46,12 @@ const SCENT_LABEL = {
 
 export default function SwipeCard({ card, onDecide, isTop, offset }) {
   const [flipped, setFlipped] = useState(false);
+  // A drag that falls short of the threshold springs back -- but the browser
+  // still fires a click afterwards, which was flipping the card. So a swipe that
+  // didn't quite commit ALSO turned the card over, which reads as "it ignored my
+  // swipe and did something random". Any gesture that became a drag suppresses
+  // the tap.
+  const draggedRef = useRef(false);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -90,7 +96,10 @@ export default function SwipeCard({ card, onDecide, isTop, offset }) {
       style={{ x, y, rotate, scale: isTop ? lift : 1, zIndex: 100 - offset, touchAction: 'none' }}
       drag={isTop}
       dragElastic={0.95}
+      dragMomentum={false}
       dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+      onPointerDownCapture={() => { draggedRef.current = false; }}
+      onDragStart={() => { draggedRef.current = true; }}
       onDragEnd={handleDragEnd}
       initial={{ scale: 0.94, y: 14, opacity: 0 }}
       animate={{
@@ -111,7 +120,11 @@ export default function SwipeCard({ card, onDecide, isTop, offset }) {
       <div
         className="relative h-full w-full"
         style={{ perspective: 1400 }}
-        onClick={() => isTop && setFlipped((f) => !f)}
+        onClick={() => {
+          if (!isTop) return;
+          if (draggedRef.current) { draggedRef.current = false; return; }
+          setFlipped((f) => !f);
+        }}
       >
         <motion.div
           className="relative h-full w-full"

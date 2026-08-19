@@ -97,7 +97,7 @@ export default function App() {
   const swiped = Object.keys(state.swipes).length;
 
   return (
-    <div className="paper-grain relative flex min-h-full flex-col">
+    <div className="paper-grain relative flex min-h-full flex-col overflow-x-clip">
       <div className="relative z-10 flex min-h-full flex-1 flex-col">
         <TopBar tab={tab} setTab={setTab} shared={!!shared} progress={swiped / deck.length} />
 
@@ -240,7 +240,10 @@ function DeckView({ remaining, done, decide, undo, canUndo, onFinish, swiped, to
 
   return (
     <div className="mx-auto flex w-full max-w-lg flex-col px-5">
-      <div className="relative mx-auto mt-4 w-full" style={{ aspectRatio: '3 / 4.35', maxHeight: '62vh' }}>
+      <div
+        className="relative mx-auto mt-4 w-full"
+        style={{ aspectRatio: '3 / 4.35', maxHeight: '62vh', overflow: 'visible', touchAction: 'none' }}
+      >
         <AnimatePresence initial={false}>
           {visible
             .slice()

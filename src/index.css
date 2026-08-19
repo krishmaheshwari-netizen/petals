@@ -21,6 +21,19 @@ html, body, #root {
   height: 100%;
 }
 
+/* A card thrown to the RIGHT lands at x:700, which briefly widens the document
+   and hands the page a horizontal scroll axis -- so the browser panned the whole
+   interface sideways and swallowed the gesture. A card thrown LEFT goes past the
+   origin, which never extends scroll width, which is why only "love" felt broken
+   while "pass" was fine.
+   `clip` rather than `hidden` on purpose: `hidden` would turn these into scroll
+   containers and break the sticky header. */
+html, body {
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+  max-width: 100%;
+}
+
 body {
   background-color: var(--color-paper);
   color: var(--color-ink);
