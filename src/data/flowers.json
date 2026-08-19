@@ -1,0 +1,3216 @@
+[
+  {
+    "id": "garden-rose",
+    "commonName": "Garden Rose",
+    "scientificName": "Rosa × hybrida",
+    "colors": [
+      {
+        "name": "blush",
+        "hex": "#EFC3C6"
+      },
+      {
+        "name": "cream",
+        "hex": "#F5EAD6"
+      },
+      {
+        "name": "coral",
+        "hex": "#F08874"
+      },
+      {
+        "name": "crimson",
+        "hex": "#A3172B"
+      },
+      {
+        "name": "butter",
+        "hex": "#F4DE9C"
+      }
+    ],
+    "form": "ruffled",
+    "scale": "focal",
+    "scent": "sweet",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "romantic",
+      "classic",
+      "lush",
+      "english-garden"
+    ],
+    "blurb": "The one everyone pictures, but the garden varieties open into a hundred soft petals instead of the tight cone you get at a corner shop.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Rosa_hybrida%2C_Yellow%2C_Rosier_serie_Flower_Carpet%2C_Jardin_universitaire_Roger-Van_den_Hende_30.jpg/1280px-Rosa_hybrida%2C_Yellow%2C_Rosier_serie_Flower_Carpet%2C_Jardin_universitaire_Roger-Van_den_Hende_30.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#EFC3C6",
+    "imageAttribution": {
+      "title": "Rosa hybrida, Yellow, Rosier serie Flower Carpet, Jardin universitaire Roger-Van den Hende 30.jpg",
+      "artist": "Wilfredor",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rosa_hybrida,_Yellow,_Rosier_serie_Flower_Carpet,_Jardin_universitaire_Roger-Van_den_Hende_30.jpg"
+    }
+  },
+  {
+    "id": "peony",
+    "commonName": "Peony",
+    "scientificName": "Paeonia lactiflora",
+    "colors": [
+      {
+        "name": "blush",
+        "hex": "#F3C4CE"
+      },
+      {
+        "name": "white",
+        "hex": "#F7F2EA"
+      },
+      {
+        "name": "coral",
+        "hex": "#F2856E"
+      },
+      {
+        "name": "fuchsia",
+        "hex": "#C6407E"
+      }
+    ],
+    "form": "ruffled",
+    "scale": "focal",
+    "scent": "sweet",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "romantic",
+      "lush",
+      "soft",
+      "luxurious"
+    ],
+    "blurb": "Arrives as a hard ball and opens over three days into something absurd. Season is short and everyone wants them, which is most of the price.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Paeonia_lactiflora_%27Bowl_of_Beauty%27-2459.jpg/1280px-Paeonia_lactiflora_%27Bowl_of_Beauty%27-2459.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F3C4CE",
+    "imageAttribution": {
+      "title": "Paeonia lactiflora 'Bowl of Beauty'-2459.jpg",
+      "artist": "Julie Anne Workman",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paeonia_lactiflora_%27Bowl_of_Beauty%27-2459.jpg"
+    }
+  },
+  {
+    "id": "dahlia",
+    "commonName": "Dahlia",
+    "scientificName": "Dahlia pinnata",
+    "colors": [
+      {
+        "name": "burgundy",
+        "hex": "#6E1B2E"
+      },
+      {
+        "name": "peach",
+        "hex": "#F6B48D"
+      },
+      {
+        "name": "white",
+        "hex": "#F4F0E8"
+      },
+      {
+        "name": "plum",
+        "hex": "#7A3B6B"
+      },
+      {
+        "name": "sunset orange",
+        "hex": "#E8712C"
+      }
+    ],
+    "form": "globe",
+    "scale": "focal",
+    "scent": "none",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "geometric",
+      "dramatic",
+      "late-summer",
+      "painterly"
+    ],
+    "blurb": "Petals laid out in a spiral so precise it looks engineered. Comes in everything from a golf ball to a dinner plate.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Dahlia_pinnata%E2%80%93IMG_6396_02.jpg/1280px-Dahlia_pinnata%E2%80%93IMG_6396_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#6E1B2E",
+    "imageAttribution": {
+      "title": "Dahlia pinnata–IMG 6396 02.jpg",
+      "artist": "Kızıl",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dahlia_pinnata%E2%80%93IMG_6396_02.jpg"
+    }
+  },
+  {
+    "id": "ranunculus",
+    "commonName": "Ranunculus",
+    "scientificName": "Ranunculus asiaticus",
+    "colors": [
+      {
+        "name": "cream",
+        "hex": "#F6EDD8"
+      },
+      {
+        "name": "blush",
+        "hex": "#F2C7C0"
+      },
+      {
+        "name": "butter",
+        "hex": "#F7D97A"
+      },
+      {
+        "name": "raspberry",
+        "hex": "#C23B5E"
+      },
+      {
+        "name": "cafe au lait",
+        "hex": "#DBB89C"
+      }
+    ],
+    "form": "ruffled",
+    "scale": "focal",
+    "scent": "light",
+    "seasons": [
+      "spring"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "delicate",
+      "romantic",
+      "tissue-paper",
+      "soft"
+    ],
+    "blurb": "Layer after layer of petals as thin as tissue, on a stem that curves wherever it likes. The florist favourite that never photographs as well as it looks.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Persian_buttercup_-_Ranunculus_asiaticus_var._albus.jpg/1280px-Persian_buttercup_-_Ranunculus_asiaticus_var._albus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F6EDD8",
+    "imageAttribution": {
+      "title": "Persian buttercup - Ranunculus asiaticus var. albus.jpg",
+      "artist": "Bouke ten Cate",
+      "license": "CC BY 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Persian_buttercup_-_Ranunculus_asiaticus_var._albus.jpg"
+    }
+  },
+  {
+    "id": "tulip",
+    "commonName": "Tulip",
+    "scientificName": "Tulipa gesneriana",
+    "colors": [
+      {
+        "name": "white",
+        "hex": "#F6F1E7"
+      },
+      {
+        "name": "pink",
+        "hex": "#EC93B0"
+      },
+      {
+        "name": "red",
+        "hex": "#C1272D"
+      },
+      {
+        "name": "yellow",
+        "hex": "#F4C842"
+      },
+      {
+        "name": "purple",
+        "hex": "#6E4B8E"
+      }
+    ],
+    "form": "bell",
+    "scale": "focal",
+    "scent": "light",
+    "seasons": [
+      "spring",
+      "winter"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "clean",
+      "modern",
+      "simple",
+      "cheerful"
+    ],
+    "blurb": "Keeps growing after you cut it and leans toward the nearest window, so an arrangement rearranges itself overnight.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Tulipe_des_jardins_%28Tulipa_gesneriana%29.jpg/1280px-Tulipe_des_jardins_%28Tulipa_gesneriana%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F6F1E7",
+    "imageAttribution": {
+      "title": "Tulipe des jardins (Tulipa gesneriana).jpg",
+      "artist": "JackyM59",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tulipe_des_jardins_(Tulipa_gesneriana).jpg"
+    }
+  },
+  {
+    "id": "oriental-lily",
+    "commonName": "Oriental Lily",
+    "scientificName": "Lilium orientalis",
+    "colors": [
+      {
+        "name": "white",
+        "hex": "#F8F4EC"
+      },
+      {
+        "name": "pink",
+        "hex": "#E77FA0"
+      },
+      {
+        "name": "magenta",
+        "hex": "#B93A72"
+      }
+    ],
+    "form": "star",
+    "scale": "focal",
+    "scent": "sweet",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "dramatic",
+      "perfumed",
+      "formal",
+      "statement"
+    ],
+    "blurb": "The scent fills a room within an hour, which people either love or find is a bit much. Pollen stains, so florists pinch the anthers off.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Lilium_Oriental_hybrid_--_Lilium_orientalis_-_%27Stargazer%27.jpg/1280px-Lilium_Oriental_hybrid_--_Lilium_orientalis_-_%27Stargazer%27.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F8F4EC",
+    "imageAttribution": {
+      "title": "Lilium Oriental hybrid -- Lilium orientalis - 'Stargazer'.jpg",
+      "artist": "Jim Evans",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lilium_Oriental_hybrid_--_Lilium_orientalis_-_%27Stargazer%27.jpg"
+    }
+  },
+  {
+    "id": "sunflower",
+    "commonName": "Sunflower",
+    "scientificName": "Helianthus annuus",
+    "colors": [
+      {
+        "name": "gold",
+        "hex": "#EFB01F"
+      },
+      {
+        "name": "bronze",
+        "hex": "#9C5B23"
+      },
+      {
+        "name": "lemon",
+        "hex": "#F2D96A"
+      }
+    ],
+    "form": "single",
+    "scale": "focal",
+    "scent": "none",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "cheerful",
+      "rustic",
+      "bold",
+      "farmhouse"
+    ],
+    "blurb": "A single face big enough to carry a whole jar on its own. Reads as friendly rather than romantic, which is sometimes exactly right.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Sunflower_head_%28Helianthus_annuus%29_Hungary_Felsotold.jpg/1280px-Sunflower_head_%28Helianthus_annuus%29_Hungary_Felsotold.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#EFB01F",
+    "imageAttribution": {
+      "title": "Sunflower head (Helianthus annuus) Hungary Felsotold.jpg",
+      "artist": "Takkk",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sunflower_head_(Helianthus_annuus)_Hungary_Felsotold.jpg"
+    }
+  },
+  {
+    "id": "hydrangea",
+    "commonName": "Hydrangea",
+    "scientificName": "Hydrangea macrophylla",
+    "colors": [
+      {
+        "name": "antique blue",
+        "hex": "#8FA8C8"
+      },
+      {
+        "name": "white",
+        "hex": "#EFEDE2"
+      },
+      {
+        "name": "blush",
+        "hex": "#E7B8C2"
+      },
+      {
+        "name": "sage green",
+        "hex": "#AFBE94"
+      }
+    ],
+    "form": "cluster",
+    "scale": "focal",
+    "scent": "none",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "abundant",
+      "soft",
+      "coastal",
+      "vintage"
+    ],
+    "blurb": "One stem fills a third of a vase. The colour depends on soil pH, which is why the blue ones look faintly unreal.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/%28MHNT%29_Hydrangea_macrophylla_-_inflorescence.jpg/1280px-%28MHNT%29_Hydrangea_macrophylla_-_inflorescence.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#8FA8C8",
+    "imageAttribution": {
+      "title": "(MHNT) Hydrangea macrophylla - inflorescence.jpg",
+      "artist": "Didier Descouens",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:(MHNT)_Hydrangea_macrophylla_-_inflorescence.jpg"
+    }
+  },
+  {
+    "id": "king-protea",
+    "commonName": "King Protea",
+    "scientificName": "Protea cynaroides",
+    "colors": [
+      {
+        "name": "dusty pink",
+        "hex": "#D98C97"
+      },
+      {
+        "name": "cream",
+        "hex": "#EADFC6"
+      },
+      {
+        "name": "rust",
+        "hex": "#B05B34"
+      }
+    ],
+    "form": "spiky",
+    "scale": "focal",
+    "scent": "none",
+    "seasons": [
+      "fall",
+      "winter"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "architectural",
+      "sculptural",
+      "bold",
+      "modern"
+    ],
+    "blurb": "The size of a grapefruit and closer to an artichoke than a rose. Dries beautifully, so it outlasts everything else in the vase by months.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cb/King_Protea_%28Protea_cynaroides%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageHex": "#D98C97",
+    "imageAttribution": {
+      "title": "King Protea (Protea cynaroides).jpg",
+      "artist": "Lip Kee Yap",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:King_Protea_(Protea_cynaroides).jpg"
+    }
+  },
+  {
+    "id": "anemone",
+    "commonName": "Anemone",
+    "scientificName": "Anemone coronaria",
+    "colors": [
+      {
+        "name": "white",
+        "hex": "#F4F1E9"
+      },
+      {
+        "name": "deep purple",
+        "hex": "#4B3268"
+      },
+      {
+        "name": "red",
+        "hex": "#B01C2E"
+      },
+      {
+        "name": "blush",
+        "hex": "#F0C2CB"
+      }
+    ],
+    "form": "single",
+    "scale": "focal",
+    "scent": "none",
+    "seasons": [
+      "winter",
+      "spring"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "graphic",
+      "moody",
+      "high-contrast",
+      "modern"
+    ],
+    "blurb": "A jet-black centre against a pale petal — the highest-contrast thing you can put in a bouquet without it looking loud.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Anemone-coronaria-2016-Zachi-Evenor.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageHex": "#C70101",
+    "imageAttribution": {
+      "title": "Anemone-coronaria-2016-Zachi-Evenor.jpg",
+      "artist": "Zachi Evenor",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anemone-coronaria-2016-Zachi-Evenor.jpg"
+    }
+  },
+  {
+    "id": "gerbera",
+    "commonName": "Gerbera Daisy",
+    "scientificName": "Gerbera jamesonii",
+    "colors": [
+      {
+        "name": "hot pink",
+        "hex": "#E14C8A"
+      },
+      {
+        "name": "orange",
+        "hex": "#F0812B"
+      },
+      {
+        "name": "yellow",
+        "hex": "#F5C518"
+      },
+      {
+        "name": "white",
+        "hex": "#F5F2EA"
+      }
+    ],
+    "form": "single",
+    "scale": "focal",
+    "scent": "none",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "cheerful",
+      "graphic",
+      "playful",
+      "bold"
+    ],
+    "blurb": "A perfect flat circle of colour. Cheap, available year round, and slightly divisive — some people find it a bit cartoonish.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Gerbera_jamesonii_in_Kolkata.jpg/1280px-Gerbera_jamesonii_in_Kolkata.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#E14C8A",
+    "imageAttribution": {
+      "title": "Gerbera jamesonii in Kolkata.jpg",
+      "artist": "Sohom Datta",
+      "license": "CC BY 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gerbera_jamesonii_in_Kolkata.jpg"
+    }
+  },
+  {
+    "id": "chrysanthemum",
+    "commonName": "Chrysanthemum",
+    "scientificName": "Chrysanthemum morifolium",
+    "colors": [
+      {
+        "name": "bronze",
+        "hex": "#B4703A"
+      },
+      {
+        "name": "white",
+        "hex": "#F3F0E6"
+      },
+      {
+        "name": "butter",
+        "hex": "#F0D780"
+      },
+      {
+        "name": "plum",
+        "hex": "#78405F"
+      }
+    ],
+    "form": "globe",
+    "scale": "focal",
+    "scent": "green",
+    "seasons": [
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "autumnal",
+      "long-lasting",
+      "traditional",
+      "earthy"
+    ],
+    "blurb": "Unfashionable for a decade and quietly back, especially the big spidery ones. Lasts nearly three weeks in water.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Chrysanthemum_%C3%97_morifolium_Flowers_05.jpg/1280px-Chrysanthemum_%C3%97_morifolium_Flowers_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#B4703A",
+    "imageAttribution": {
+      "title": "Chrysanthemum × morifolium Flowers 05.jpg",
+      "artist": "AjayDas",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chrysanthemum_%C3%97_morifolium_Flowers_05.jpg"
+    }
+  },
+  {
+    "id": "amaryllis",
+    "commonName": "Amaryllis",
+    "scientificName": "Hippeastrum hybridum",
+    "colors": [
+      {
+        "name": "scarlet",
+        "hex": "#B71C24"
+      },
+      {
+        "name": "white",
+        "hex": "#F6F2E8"
+      },
+      {
+        "name": "salmon",
+        "hex": "#EE9377"
+      }
+    ],
+    "form": "bell",
+    "scale": "focal",
+    "scent": "light",
+    "seasons": [
+      "winter"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "dramatic",
+      "festive",
+      "statement",
+      "architectural"
+    ],
+    "blurb": "Four trumpets on one hollow stem, each the width of your hand. Florists stuff the stem with a bamboo cane so it can hold its own head up.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Amaryllis_%28Hippeastrum%29_18-01-2025._%28actm.%29_04.jpg/1280px-Amaryllis_%28Hippeastrum%29_18-01-2025._%28actm.%29_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#B71C24",
+    "imageAttribution": {
+      "title": "Amaryllis (Hippeastrum) 18-01-2025. (actm.) 04.jpg",
+      "artist": "Agnes Monkelbaan",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amaryllis_(Hippeastrum)_18-01-2025._(actm.)_04.jpg"
+    }
+  },
+  {
+    "id": "calla-lily",
+    "commonName": "Calla Lily",
+    "scientificName": "Zantedeschia aethiopica",
+    "colors": [
+      {
+        "name": "ivory",
+        "hex": "#F4EFE1"
+      },
+      {
+        "name": "deep plum",
+        "hex": "#4A2038"
+      },
+      {
+        "name": "mango",
+        "hex": "#EFA13C"
+      }
+    ],
+    "form": "bell",
+    "scale": "focal",
+    "scent": "light",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "minimal",
+      "sculptural",
+      "modern",
+      "elegant"
+    ],
+    "blurb": "One clean curve and nothing else. Three of them in a tall vase is a complete arrangement — anything more starts to fight it.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Calla_lily_%28Zantedeschia_aethiopica%29%2C_Parque_do_Monteiro-Mor%2C_Lisbon%2C_Portugal_julesvernex2.jpg/1280px-Calla_lily_%28Zantedeschia_aethiopica%29%2C_Parque_do_Monteiro-Mor%2C_Lisbon%2C_Portugal_julesvernex2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F4EFE1",
+    "imageAttribution": {
+      "title": "Calla lily (Zantedeschia aethiopica), Parque do Monteiro-Mor, Lisbon, Portugal julesvernex2.jpg",
+      "artist": "Jules Verne Times Two",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Calla_lily_(Zantedeschia_aethiopica),_Parque_do_Monteiro-Mor,_Lisbon,_Portugal_julesvernex2.jpg"
+    }
+  },
+  {
+    "id": "bearded-iris",
+    "commonName": "Bearded Iris",
+    "scientificName": "Iris germanica",
+    "colors": [
+      {
+        "name": "violet",
+        "hex": "#6A4A9C"
+      },
+      {
+        "name": "white",
+        "hex": "#F3F0E7"
+      },
+      {
+        "name": "bronze",
+        "hex": "#9C6B2F"
+      },
+      {
+        "name": "sky",
+        "hex": "#9FB4DA"
+      }
+    ],
+    "form": "star",
+    "scale": "focal",
+    "scent": "light",
+    "seasons": [
+      "spring"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "painterly",
+      "antique",
+      "velvety",
+      "dramatic"
+    ],
+    "blurb": "Falls like velvet with a fuzzy stripe down the middle. Lasts about three days, which is the price of looking like a Van Gogh.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Iris_%C3%97_germanica_%27Before_the_Storm%27_Flower.jpg/1280px-Iris_%C3%97_germanica_%27Before_the_Storm%27_Flower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#6A4A9C",
+    "imageAttribution": {
+      "title": "Iris × germanica 'Before the Storm' Flower.jpg",
+      "artist": "Photo by and (c)2014 Derek Ramsey (Ram-Man)",
+      "license": "GFDL 1.2",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iris_%C3%97_germanica_%27Before_the_Storm%27_Flower.jpg"
+    }
+  },
+  {
+    "id": "lisianthus",
+    "commonName": "Lisianthus",
+    "scientificName": "Eustoma grandiflorum",
+    "colors": [
+      {
+        "name": "white",
+        "hex": "#F5F1E6"
+      },
+      {
+        "name": "lavender",
+        "hex": "#B5A0CE"
+      },
+      {
+        "name": "blush",
+        "hex": "#EFC5CB"
+      },
+      {
+        "name": "deep purple",
+        "hex": "#583B7C"
+      }
+    ],
+    "form": "ruffled",
+    "scale": "focal",
+    "scent": "none",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "romantic",
+      "soft",
+      "rose-alternative",
+      "refined"
+    ],
+    "blurb": "Reads as a rose from across the room and costs a third as much. Each stem carries several blooms plus buds, so it keeps opening.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/18/Eustoma_grandiflorum_purple_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageHex": "#F5F1E6",
+    "imageAttribution": {
+      "title": "Eustoma grandiflorum purple 02.jpg",
+      "artist": "Unknown",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eustoma_grandiflorum_purple_02.jpg"
+    }
+  },
+  {
+    "id": "iceland-poppy",
+    "commonName": "Iceland Poppy",
+    "scientificName": "Papaver nudicaule",
+    "colors": [
+      {
+        "name": "apricot",
+        "hex": "#F4A96A"
+      },
+      {
+        "name": "white",
+        "hex": "#F7F3E9"
+      },
+      {
+        "name": "coral",
+        "hex": "#F27059"
+      },
+      {
+        "name": "lemon",
+        "hex": "#F6D65E"
+      }
+    ],
+    "form": "single",
+    "scale": "focal",
+    "scent": "none",
+    "seasons": [
+      "spring"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "delicate",
+      "airy",
+      "whimsical",
+      "crepe-paper"
+    ],
+    "blurb": "Crumpled like it was folded in a pocket, on a hairy stem that wanders. Florists sear the cut end so it doesn't bleed out.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Iceland_Poppy_Papaver_nudicaule_%27Champagne_Bubbles%27_Pink_Flower.jpg/1280px-Iceland_Poppy_Papaver_nudicaule_%27Champagne_Bubbles%27_Pink_Flower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F4A96A",
+    "imageAttribution": {
+      "title": "Iceland Poppy Papaver nudicaule 'Champagne Bubbles' Pink Flower.jpg",
+      "artist": "Photo by and (c)2008 Derek Ramsey (Ram-Man). Co-attribution must be given to the Chanticleer Garden.",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iceland_Poppy_Papaver_nudicaule_%27Champagne_Bubbles%27_Pink_Flower.jpg"
+    }
+  },
+  {
+    "id": "gladiolus",
+    "commonName": "Gladiolus",
+    "scientificName": "Gladiolus hortulanus",
+    "colors": [
+      {
+        "name": "white",
+        "hex": "#F5F1E8"
+      },
+      {
+        "name": "coral",
+        "hex": "#F0806D"
+      },
+      {
+        "name": "magenta",
+        "hex": "#C13C7C"
+      },
+      {
+        "name": "green",
+        "hex": "#B9C293"
+      }
+    ],
+    "form": "spiky",
+    "scale": "focal",
+    "scent": "none",
+    "seasons": [
+      "summer"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "tall",
+      "traditional",
+      "vertical",
+      "grand"
+    ],
+    "blurb": "A metre of flowers opening bottom to top over a week. Divisive — some read it as grand, some as funeral parlour.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Gladiolus_%2836412631742%29.jpg/1280px-Gladiolus_%2836412631742%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F5F1E8",
+    "imageAttribution": {
+      "title": "Gladiolus (36412631742).jpg",
+      "artist": "James Johnstone from Ecclefechan, Scotland",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gladiolus_(36412631742).jpg"
+    }
+  },
+  {
+    "id": "delphinium",
+    "commonName": "Delphinium",
+    "scientificName": "Delphinium elatum",
+    "colors": [
+      {
+        "name": "true blue",
+        "hex": "#3B62A8"
+      },
+      {
+        "name": "white",
+        "hex": "#F4F1E8"
+      },
+      {
+        "name": "lilac",
+        "hex": "#A695C6"
+      }
+    ],
+    "form": "spiky",
+    "scale": "focal",
+    "scent": "none",
+    "seasons": [
+      "summer"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "english-garden",
+      "vertical",
+      "cottage",
+      "airy"
+    ],
+    "blurb": "One of the very few genuinely blue flowers, which is why it costs what it does. Gives an arrangement height without weight.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Delphinium_elatum-20200616-RM-080831.jpg/1280px-Delphinium_elatum-20200616-RM-080831.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#3B62A8",
+    "imageAttribution": {
+      "title": "Delphinium elatum-20200616-RM-080831.jpg",
+      "artist": "Ermell",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Delphinium_elatum-20200616-RM-080831.jpg"
+    }
+  },
+  {
+    "id": "snapdragon",
+    "commonName": "Snapdragon",
+    "scientificName": "Antirrhinum majus",
+    "colors": [
+      {
+        "name": "butter",
+        "hex": "#F5D77E"
+      },
+      {
+        "name": "blush",
+        "hex": "#F0BFC4"
+      },
+      {
+        "name": "burgundy",
+        "hex": "#7C2438"
+      },
+      {
+        "name": "white",
+        "hex": "#F5F2E9"
+      }
+    ],
+    "form": "spiky",
+    "scale": "secondary",
+    "scent": "light",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "cottage",
+      "playful",
+      "vertical",
+      "nostalgic"
+    ],
+    "blurb": "Pinch the side of a bloom and it opens like a mouth. The tips curve upward in the vase no matter which way you set them.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Antirrhinum_majus_San_Antonio.jpg/1280px-Antirrhinum_majus_San_Antonio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F5D77E",
+    "imageAttribution": {
+      "title": "Antirrhinum majus San Antonio.jpg",
+      "artist": "Ianaré Sévi",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Antirrhinum_majus_San_Antonio.jpg"
+    }
+  },
+  {
+    "id": "stock",
+    "commonName": "Stock",
+    "scientificName": "Matthiola incana",
+    "colors": [
+      {
+        "name": "cream",
+        "hex": "#F3EBD8"
+      },
+      {
+        "name": "lavender",
+        "hex": "#B3A2CC"
+      },
+      {
+        "name": "blush",
+        "hex": "#EEC0C7"
+      },
+      {
+        "name": "plum",
+        "hex": "#6E3E70"
+      }
+    ],
+    "form": "spiky",
+    "scale": "secondary",
+    "scent": "spicy",
+    "seasons": [
+      "spring",
+      "winter"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "perfumed",
+      "cottage",
+      "old-fashioned",
+      "soft"
+    ],
+    "blurb": "Smells like cloves and cinnamon from across the room. Cheap, generous, and does most of the scent work in a spring bouquet.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Matthiola_incana_RF.jpg/1280px-Matthiola_incana_RF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F3EBD8",
+    "imageAttribution": {
+      "title": "Matthiola incana RF.jpg",
+      "artist": "Robert Flogaus-Faust",
+      "license": "CC BY 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Matthiola_incana_RF.jpg"
+    }
+  },
+  {
+    "id": "larkspur",
+    "commonName": "Larkspur",
+    "scientificName": "Consolida ajacis",
+    "colors": [
+      {
+        "name": "periwinkle",
+        "hex": "#8C9BD6"
+      },
+      {
+        "name": "white",
+        "hex": "#F4F1E7"
+      },
+      {
+        "name": "rose",
+        "hex": "#DE93AE"
+      }
+    ],
+    "form": "spiky",
+    "scale": "secondary",
+    "scent": "none",
+    "seasons": [
+      "summer"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "cottage",
+      "airy",
+      "wildflower",
+      "vertical"
+    ],
+    "blurb": "Delphinium's looser cousin — the same blue spires but thinner, so it scatters through a bouquet instead of anchoring it.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Consolida_ajacis_bourdon.jpg/1280px-Consolida_ajacis_bourdon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#8C9BD6",
+    "imageAttribution": {
+      "title": "Consolida ajacis bourdon.jpg",
+      "artist": "Pancrat",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Consolida_ajacis_bourdon.jpg"
+    }
+  },
+  {
+    "id": "foxglove",
+    "commonName": "Foxglove",
+    "scientificName": "Digitalis purpurea",
+    "colors": [
+      {
+        "name": "mauve",
+        "hex": "#C08BB4"
+      },
+      {
+        "name": "white",
+        "hex": "#F4F0E6"
+      },
+      {
+        "name": "apricot",
+        "hex": "#EBB183"
+      }
+    ],
+    "form": "bell",
+    "scale": "focal",
+    "scent": "none",
+    "seasons": [
+      "summer"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "english-garden",
+      "wild",
+      "vertical",
+      "storybook"
+    ],
+    "blurb": "A one-sided tower of speckled thimbles. Genuinely poisonous, so it belongs in a vase and nowhere near a kitchen counter.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Bloemen_en_knoppen_van_Vingerhoedskruid_%28Digitalis_purpurea%29._Locatie%2C_Tuinreservaat_Jonkervallei_01.jpg/1280px-Bloemen_en_knoppen_van_Vingerhoedskruid_%28Digitalis_purpurea%29._Locatie%2C_Tuinreservaat_Jonkervallei_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#C08BB4",
+    "imageAttribution": {
+      "title": "Bloemen en knoppen van Vingerhoedskruid (Digitalis purpurea). Locatie, Tuinreservaat Jonkervallei 01.jpg",
+      "artist": "Dominicus Johannes Bergsma",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bloemen_en_knoppen_van_Vingerhoedskruid_(Digitalis_purpurea)._Locatie,_Tuinreservaat_Jonkervallei_01.jpg"
+    }
+  },
+  {
+    "id": "lupine",
+    "commonName": "Lupine",
+    "scientificName": "Lupinus polyphyllus",
+    "colors": [
+      {
+        "name": "violet",
+        "hex": "#6C55A4"
+      },
+      {
+        "name": "rose",
+        "hex": "#DD87A6"
+      },
+      {
+        "name": "butter",
+        "hex": "#EFD98A"
+      }
+    ],
+    "form": "spiky",
+    "scale": "focal",
+    "scent": "light",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "wildflower",
+      "vertical",
+      "meadow",
+      "bold"
+    ],
+    "blurb": "A dense cone of pea-shaped flowers stacked in tiers. Reads as meadow rather than florist, even in a formal vase.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Lupinus_polyphyllus_in_Canterbury_Region_07.jpg/1280px-Lupinus_polyphyllus_in_Canterbury_Region_07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#6C55A4",
+    "imageAttribution": {
+      "title": "Lupinus polyphyllus in Canterbury Region 07.jpg",
+      "artist": "Krzysztof Golik",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lupinus_polyphyllus_in_Canterbury_Region_07.jpg"
+    }
+  },
+  {
+    "id": "sweet-pea",
+    "commonName": "Sweet Pea",
+    "scientificName": "Lathyrus odoratus",
+    "colors": [
+      {
+        "name": "blush",
+        "hex": "#F2C6CE"
+      },
+      {
+        "name": "cream",
+        "hex": "#F6EFDE"
+      },
+      {
+        "name": "lilac",
+        "hex": "#B6A3D2"
+      },
+      {
+        "name": "raspberry",
+        "hex": "#C64B76"
+      }
+    ],
+    "form": "ruffled",
+    "scale": "secondary",
+    "scent": "sweet",
+    "seasons": [
+      "spring"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "nostalgic",
+      "perfumed",
+      "delicate",
+      "ruffled"
+    ],
+    "blurb": "The best-smelling thing in the flower market and the shortest-lived — four days if you are lucky. Worth it anyway.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Edelwicke_%28Lathyrus_odoratus%29_Bl%C3%BCte_focus_stack-20200628-RM-175552.jpg/1280px-Edelwicke_%28Lathyrus_odoratus%29_Bl%C3%BCte_focus_stack-20200628-RM-175552.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F2C6CE",
+    "imageAttribution": {
+      "title": "Edelwicke (Lathyrus odoratus) Blüte focus stack-20200628-RM-175552.jpg",
+      "artist": "Ermell",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edelwicke_(Lathyrus_odoratus)_Bl%C3%BCte_focus_stack-20200628-RM-175552.jpg"
+    }
+  },
+  {
+    "id": "freesia",
+    "commonName": "Freesia",
+    "scientificName": "Freesia refracta",
+    "colors": [
+      {
+        "name": "white",
+        "hex": "#F6F2E7"
+      },
+      {
+        "name": "butter",
+        "hex": "#F4D982"
+      },
+      {
+        "name": "coral",
+        "hex": "#EE8B72"
+      },
+      {
+        "name": "lilac",
+        "hex": "#AC9BCB"
+      }
+    ],
+    "form": "bell",
+    "scale": "secondary",
+    "scent": "sweet",
+    "seasons": [
+      "winter",
+      "spring"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "perfumed",
+      "clean",
+      "fresh",
+      "delicate"
+    ],
+    "blurb": "Blooms march along one side of an arched stem and open in sequence. The scent is the citrus-and-honey one used in half of all soap.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/%E9%A6%99%E9%9B%AA%E8%98%AD%28%E5%B0%8F%E8%92%BC%E8%98%AD%29_Freesia_refracta_-%E9%A6%99%E6%B8%AF%E8%8A%B1%E5%B1%95_Hong_Kong_Flower_Show-_%289255262036%29.jpg/1280px-%E9%A6%99%E9%9B%AA%E8%98%AD%28%E5%B0%8F%E8%92%BC%E8%98%AD%29_Freesia_refracta_-%E9%A6%99%E6%B8%AF%E8%8A%B1%E5%B1%95_Hong_Kong_Flower_Show-_%289255262036%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F6F2E7",
+    "imageAttribution": {
+      "title": "香雪蘭(小蒼蘭) Freesia refracta -香港花展 Hong Kong Flower Show- (9255262036).jpg",
+      "artist": "阿橋 HQ",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%A6%99%E9%9B%AA%E8%98%AD(%E5%B0%8F%E8%92%BC%E8%98%AD)_Freesia_refracta_-%E9%A6%99%E6%B8%AF%E8%8A%B1%E5%B1%95_Hong_Kong_Flower_Show-_(9255262036).jpg"
+    }
+  },
+  {
+    "id": "carnation",
+    "commonName": "Carnation",
+    "scientificName": "Dianthus caryophyllus",
+    "colors": [
+      {
+        "name": "antique mauve",
+        "hex": "#C39BAA"
+      },
+      {
+        "name": "cream",
+        "hex": "#F4ECDA"
+      },
+      {
+        "name": "burgundy",
+        "hex": "#6F1F32"
+      },
+      {
+        "name": "peach",
+        "hex": "#F3B48E"
+      }
+    ],
+    "form": "ruffled",
+    "scale": "secondary",
+    "scent": "spicy",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "retro",
+      "textural",
+      "long-lasting",
+      "underrated"
+    ],
+    "blurb": "Written off for thirty years and now everywhere again, mostly in the odd antique shades. Lasts two weeks and smells faintly of cloves.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/42/Dianthus_caryophyllus_L_%28Clove_pink%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageHex": "#C39BAA",
+    "imageAttribution": {
+      "title": "Dianthus caryophyllus L (Clove pink).JPG",
+      "artist": "Zeynel Cebeci",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dianthus_caryophyllus_L_(Clove_pink).JPG"
+    }
+  },
+  {
+    "id": "alstroemeria",
+    "commonName": "Alstroemeria",
+    "scientificName": "Alstroemeria aurea",
+    "colors": [
+      {
+        "name": "peach",
+        "hex": "#F3B084"
+      },
+      {
+        "name": "white",
+        "hex": "#F4F1E7"
+      },
+      {
+        "name": "raspberry",
+        "hex": "#C24C74"
+      },
+      {
+        "name": "butter",
+        "hex": "#F1D97F"
+      }
+    ],
+    "form": "star",
+    "scale": "secondary",
+    "scent": "none",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "long-lasting",
+      "speckled",
+      "workhorse",
+      "cheerful"
+    ],
+    "blurb": "Freckled throat, six blooms per stem, and it will outlast every other flower in the vase. The reliable middle of most mixed bunches.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Zaaddozen_van_een_Alstroemeria_aurea_26-07-2020_%28d.j.b.%29_01.jpg/1280px-Zaaddozen_van_een_Alstroemeria_aurea_26-07-2020_%28d.j.b.%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F3B084",
+    "imageAttribution": {
+      "title": "Zaaddozen van een Alstroemeria aurea 26-07-2020 (d.j.b.) 01.jpg",
+      "artist": "Dominicus Johannes Bergsma",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zaaddozen_van_een_Alstroemeria_aurea_26-07-2020_(d.j.b.)_01.jpg"
+    }
+  },
+  {
+    "id": "daffodil",
+    "commonName": "Daffodil",
+    "scientificName": "Narcissus pseudonarcissus",
+    "colors": [
+      {
+        "name": "yellow",
+        "hex": "#F3C723"
+      },
+      {
+        "name": "white",
+        "hex": "#F6F2E6"
+      },
+      {
+        "name": "apricot",
+        "hex": "#F0A868"
+      }
+    ],
+    "form": "star",
+    "scale": "secondary",
+    "scent": "sweet",
+    "seasons": [
+      "spring"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "cheerful",
+      "first-of-spring",
+      "simple",
+      "nostalgic"
+    ],
+    "blurb": "The sap poisons other flowers, so it needs to sit in its own water overnight before joining a mixed arrangement.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Narcissus_pseudonarcissus_flower_%E2%80%93_front.jpg/1280px-Narcissus_pseudonarcissus_flower_%E2%80%93_front.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F3C723",
+    "imageAttribution": {
+      "title": "Narcissus pseudonarcissus flower – front.jpg",
+      "artist": "Agadez",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Narcissus_pseudonarcissus_flower_%E2%80%93_front.jpg"
+    }
+  },
+  {
+    "id": "hyacinth",
+    "commonName": "Hyacinth",
+    "scientificName": "Hyacinthus orientalis",
+    "colors": [
+      {
+        "name": "white",
+        "hex": "#F5F2E8"
+      },
+      {
+        "name": "periwinkle",
+        "hex": "#8E9BD3"
+      },
+      {
+        "name": "blush",
+        "hex": "#EFBFCB"
+      },
+      {
+        "name": "grape",
+        "hex": "#5D3C86"
+      }
+    ],
+    "form": "cluster",
+    "scale": "secondary",
+    "scent": "sweet",
+    "seasons": [
+      "winter",
+      "spring"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "perfumed",
+      "dense",
+      "waxy",
+      "spring"
+    ],
+    "blurb": "A fat column of waxy stars on a stem that is basically all water. The scent is enormous for the size of the flower.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Garden_Hyacinth_Hyacinthus_orientalis_%27Blue_Jacket%27_Flower_2000px.jpg/1280px-Garden_Hyacinth_Hyacinthus_orientalis_%27Blue_Jacket%27_Flower_2000px.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F5F2E8",
+    "imageAttribution": {
+      "title": "Garden Hyacinth Hyacinthus orientalis 'Blue Jacket' Flower 2000px.jpg",
+      "artist": "Photo by and (c)2008 Derek Ramsey (Ram-Man)",
+      "license": "GFDL 1.2",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Garden_Hyacinth_Hyacinthus_orientalis_%27Blue_Jacket%27_Flower_2000px.jpg"
+    }
+  },
+  {
+    "id": "grape-hyacinth",
+    "commonName": "Grape Hyacinth",
+    "scientificName": "Muscari armeniacum",
+    "colors": [
+      {
+        "name": "cobalt",
+        "hex": "#3C4E9E"
+      },
+      {
+        "name": "white",
+        "hex": "#F2EFE6"
+      },
+      {
+        "name": "pale blue",
+        "hex": "#A7BADD"
+      }
+    ],
+    "form": "cluster",
+    "scale": "secondary",
+    "scent": "light",
+    "seasons": [
+      "spring"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "tiny",
+      "jewel-like",
+      "wild",
+      "blue"
+    ],
+    "blurb": "Barely fifteen centimetres tall and the most saturated blue in the market. Used in tight clusters where the eye needs somewhere to land.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Grape_Hyacinth_-_Muscari_armeniacum_-_Traubenhyazinthe_-_01.jpg/1280px-Grape_Hyacinth_-_Muscari_armeniacum_-_Traubenhyazinthe_-_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#3C4E9E",
+    "imageAttribution": {
+      "title": "Grape Hyacinth - Muscari armeniacum - Traubenhyazinthe - 01.jpg",
+      "artist": "Norbert Nagel",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grape_Hyacinth_-_Muscari_armeniacum_-_Traubenhyazinthe_-_01.jpg"
+    }
+  },
+  {
+    "id": "lily-of-the-valley",
+    "commonName": "Lily of the Valley",
+    "scientificName": "Convallaria majalis",
+    "colors": [
+      {
+        "name": "white",
+        "hex": "#F6F3EA"
+      }
+    ],
+    "form": "bell",
+    "scale": "secondary",
+    "scent": "sweet",
+    "seasons": [
+      "spring"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "bridal",
+      "delicate",
+      "perfumed",
+      "heirloom"
+    ],
+    "blurb": "Tiny nodding bells with a scent completely out of proportion to their size. Priced like a luxury because the season is three weeks long.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Lelietje-van-dalen_of_meiklokje_%28Convallaria_majalis%29._14-05-2021_%28actm.%29_01.jpg/1280px-Lelietje-van-dalen_of_meiklokje_%28Convallaria_majalis%29._14-05-2021_%28actm.%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F6F3EA",
+    "imageAttribution": {
+      "title": "Lelietje-van-dalen of meiklokje (Convallaria majalis). 14-05-2021 (actm.) 01.jpg",
+      "artist": "Agnes Monkelbaan",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lelietje-van-dalen_of_meiklokje_(Convallaria_majalis)._14-05-2021_(actm.)_01.jpg"
+    }
+  },
+  {
+    "id": "cosmos",
+    "commonName": "Cosmos",
+    "scientificName": "Cosmos bipinnatus",
+    "colors": [
+      {
+        "name": "white",
+        "hex": "#F5F2E9"
+      },
+      {
+        "name": "blush",
+        "hex": "#F0BFCD"
+      },
+      {
+        "name": "magenta",
+        "hex": "#C6407F"
+      }
+    ],
+    "form": "single",
+    "scale": "secondary",
+    "scent": "none",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "airy",
+      "wildflower",
+      "movement",
+      "delicate"
+    ],
+    "blurb": "A flat disc of petals on a wire-thin stem, so it floats above everything else and moves when you walk past.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Cosmos_bipinnatus_in_Jardin_universitaire_Roger-Van_den_Hende%2C_Quebec_city%2C_Quebec%2C_Canada.jpg/1280px-Cosmos_bipinnatus_in_Jardin_universitaire_Roger-Van_den_Hende%2C_Quebec_city%2C_Quebec%2C_Canada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F5F2E9",
+    "imageAttribution": {
+      "title": "Cosmos bipinnatus in Jardin universitaire Roger-Van den Hende, Quebec city, Quebec, Canada.jpg",
+      "artist": "Wilfredor",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cosmos_bipinnatus_in_Jardin_universitaire_Roger-Van_den_Hende,_Quebec_city,_Quebec,_Canada.jpg"
+    }
+  },
+  {
+    "id": "zinnia",
+    "commonName": "Zinnia",
+    "scientificName": "Zinnia elegans",
+    "colors": [
+      {
+        "name": "coral",
+        "hex": "#F0705C"
+      },
+      {
+        "name": "lime",
+        "hex": "#C3CE72"
+      },
+      {
+        "name": "magenta",
+        "hex": "#CE3A78"
+      },
+      {
+        "name": "butter",
+        "hex": "#F3D368"
+      }
+    ],
+    "form": "globe",
+    "scale": "secondary",
+    "scent": "none",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "punchy",
+      "summer",
+      "saturated",
+      "cutting-garden"
+    ],
+    "blurb": "The colours are frankly unsubtle, which is the point. Straight from a cutting garden rather than a wholesaler.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Zinnienbl%C3%BCte_Zinnia_elegans_stack15_20190722-RM-7222254.jpg/1280px-Zinnienbl%C3%BCte_Zinnia_elegans_stack15_20190722-RM-7222254.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F0705C",
+    "imageAttribution": {
+      "title": "Zinnienblüte Zinnia elegans stack15 20190722-RM-7222254.jpg",
+      "artist": "Ermell",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zinnienbl%C3%BCte_Zinnia_elegans_stack15_20190722-RM-7222254.jpg"
+    }
+  },
+  {
+    "id": "marigold",
+    "commonName": "Marigold",
+    "scientificName": "Tagetes erecta",
+    "colors": [
+      {
+        "name": "saffron",
+        "hex": "#EE9C1C"
+      },
+      {
+        "name": "marigold gold",
+        "hex": "#F2B627"
+      },
+      {
+        "name": "rust",
+        "hex": "#B5551F"
+      }
+    ],
+    "form": "globe",
+    "scale": "secondary",
+    "scent": "spicy",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "warm",
+      "festival",
+      "dense",
+      "earthy"
+    ],
+    "blurb": "A tight ball of ruffles in a gold that borders on radioactive. The foliage smells sharp and green when you handle it.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Tagetes_erecta_Marigold_flower_at_Madhurawada_01.JPG/1280px-Tagetes_erecta_Marigold_flower_at_Madhurawada_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#EE9C1C",
+    "imageAttribution": {
+      "title": "Tagetes erecta Marigold flower at Madhurawada 01.JPG",
+      "artist": "Adityamadhav83",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tagetes_erecta_Marigold_flower_at_Madhurawada_01.JPG"
+    }
+  },
+  {
+    "id": "scabiosa",
+    "commonName": "Scabiosa",
+    "scientificName": "Scabiosa caucasica",
+    "colors": [
+      {
+        "name": "lavender",
+        "hex": "#AFA0CF"
+      },
+      {
+        "name": "cream",
+        "hex": "#F2EBD9"
+      },
+      {
+        "name": "burgundy",
+        "hex": "#5E2033"
+      }
+    ],
+    "form": "globe",
+    "scale": "secondary",
+    "scent": "light",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "airy",
+      "pincushion",
+      "movement",
+      "meadow"
+    ],
+    "blurb": "A domed pincushion on a stem thin enough to nod. The seed heads left behind are arguably better than the flower.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Scabiosa_caucasica-IMG_6167.jpg/1280px-Scabiosa_caucasica-IMG_6167.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#AFA0CF",
+    "imageAttribution": {
+      "title": "Scabiosa caucasica-IMG 6167.jpg",
+      "artist": "C T Johansson",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Scabiosa_caucasica-IMG_6167.jpg"
+    }
+  },
+  {
+    "id": "nigella",
+    "commonName": "Love-in-a-Mist",
+    "scientificName": "Nigella damascena",
+    "colors": [
+      {
+        "name": "sky blue",
+        "hex": "#8FAAD8"
+      },
+      {
+        "name": "white",
+        "hex": "#F3F0E7"
+      },
+      {
+        "name": "plum",
+        "hex": "#7A5288"
+      }
+    ],
+    "form": "star",
+    "scale": "secondary",
+    "scent": "green",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "whimsical",
+      "airy",
+      "feathery",
+      "cottage"
+    ],
+    "blurb": "Sits inside a haze of thread-fine foliage, which is where the name comes from. Adds fog to a bouquet rather than colour.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Nigella_damascena_BW_2014-06-08_16-38-13.jpg/1280px-Nigella_damascena_BW_2014-06-08_16-38-13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#8FAAD8",
+    "imageAttribution": {
+      "title": "Nigella damascena BW 2014-06-08 16-38-13.jpg",
+      "artist": "Berthold Werner",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nigella_damascena_BW_2014-06-08_16-38-13.jpg"
+    }
+  },
+  {
+    "id": "cornflower",
+    "commonName": "Cornflower",
+    "scientificName": "Centaurea cyanus",
+    "colors": [
+      {
+        "name": "cornflower blue",
+        "hex": "#4A6BC0"
+      },
+      {
+        "name": "white",
+        "hex": "#F3F0E6"
+      },
+      {
+        "name": "mauve",
+        "hex": "#B08CBD"
+      }
+    ],
+    "form": "globe",
+    "scale": "secondary",
+    "scent": "light",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "wildflower",
+      "blue",
+      "meadow",
+      "simple"
+    ],
+    "blurb": "A fringed blue button on a grey-green stem. One of the few blues that costs almost nothing.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Centaurea_cyanus_or_Cornflower_in_the_gardens_of_Darjeeling_Tourist_Lodge.jpg/1280px-Centaurea_cyanus_or_Cornflower_in_the_gardens_of_Darjeeling_Tourist_Lodge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#4A6BC0",
+    "imageAttribution": {
+      "title": "Centaurea cyanus or Cornflower in the gardens of Darjeeling Tourist Lodge.jpg",
+      "artist": "Subhrajyoti07",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Centaurea_cyanus_or_Cornflower_in_the_gardens_of_Darjeeling_Tourist_Lodge.jpg"
+    }
+  },
+  {
+    "id": "sweet-william",
+    "commonName": "Sweet William",
+    "scientificName": "Dianthus barbatus",
+    "colors": [
+      {
+        "name": "crimson",
+        "hex": "#A62139"
+      },
+      {
+        "name": "blush",
+        "hex": "#EFB9C4"
+      },
+      {
+        "name": "white",
+        "hex": "#F4F1E8"
+      }
+    ],
+    "form": "cluster",
+    "scale": "secondary",
+    "scent": "spicy",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "cottage",
+      "dense",
+      "nostalgic",
+      "textural"
+    ],
+    "blurb": "Flat-topped clusters of small fringed flowers, often two-toned with a pale eye. Reads as texture from a distance.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Sweet_William_-_Dianthus_barbatus%2C_Finzel_Swamp%2C_Finzel%2C_Maryland%2C_June_29%2C_2020.jpg/1280px-Sweet_William_-_Dianthus_barbatus%2C_Finzel_Swamp%2C_Finzel%2C_Maryland%2C_June_29%2C_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#A62139",
+    "imageAttribution": {
+      "title": "Sweet William - Dianthus barbatus, Finzel Swamp, Finzel, Maryland, June 29, 2020.jpg",
+      "artist": "Judy Gallagher",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sweet_William_-_Dianthus_barbatus,_Finzel_Swamp,_Finzel,_Maryland,_June_29,_2020.jpg"
+    }
+  },
+  {
+    "id": "yarrow",
+    "commonName": "Yarrow",
+    "scientificName": "Achillea millefolium",
+    "colors": [
+      {
+        "name": "mustard",
+        "hex": "#D9A72C"
+      },
+      {
+        "name": "cream",
+        "hex": "#F0E7CF"
+      },
+      {
+        "name": "dusty rose",
+        "hex": "#CE8E92"
+      }
+    ],
+    "form": "cluster",
+    "scale": "secondary",
+    "scent": "green",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "meadow",
+      "flat-topped",
+      "dried",
+      "earthy"
+    ],
+    "blurb": "Flat plates of hundreds of tiny flowers on a ferny stem. Dries in place without dropping, so it just quietly stays.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Yarrow_%28Achillea_millefolium%29.jpg/1280px-Yarrow_%28Achillea_millefolium%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#D9A72C",
+    "imageAttribution": {
+      "title": "Yarrow (Achillea millefolium).jpg",
+      "artist": "Petar Milošević",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yarrow_(Achillea_millefolium).jpg"
+    }
+  },
+  {
+    "id": "echinacea",
+    "commonName": "Coneflower",
+    "scientificName": "Echinacea purpurea",
+    "colors": [
+      {
+        "name": "dusty pink",
+        "hex": "#D083A4"
+      },
+      {
+        "name": "white",
+        "hex": "#F2EFE5"
+      },
+      {
+        "name": "burnt orange",
+        "hex": "#D96A2C"
+      }
+    ],
+    "form": "single",
+    "scale": "secondary",
+    "scent": "none",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "prairie",
+      "structural",
+      "meadow",
+      "copper-centre"
+    ],
+    "blurb": "Petals sweep back off a bristly copper cone, so it reads as a shuttlecock more than a daisy.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Echinacea_purpurea%2C_Jard%C3%ADn_Bot%C3%A1nico%2C_M%C3%BAnich%2C_Alemania%2C_2013-09-08%2C_DD_01.jpg/1280px-Echinacea_purpurea%2C_Jard%C3%ADn_Bot%C3%A1nico%2C_M%C3%BAnich%2C_Alemania%2C_2013-09-08%2C_DD_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#D083A4",
+    "imageAttribution": {
+      "title": "Echinacea purpurea, Jardín Botánico, Múnich, Alemania, 2013-09-08, DD 01.jpg",
+      "artist": "Diego Delso",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Echinacea_purpurea,_Jard%C3%ADn_Bot%C3%A1nico,_M%C3%BAnich,_Alemania,_2013-09-08,_DD_01.jpg"
+    }
+  },
+  {
+    "id": "rudbeckia",
+    "commonName": "Black-Eyed Susan",
+    "scientificName": "Rudbeckia hirta",
+    "colors": [
+      {
+        "name": "gold",
+        "hex": "#EDB020"
+      },
+      {
+        "name": "mahogany",
+        "hex": "#8C3A1E"
+      }
+    ],
+    "form": "single",
+    "scale": "secondary",
+    "scent": "none",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "prairie",
+      "warm",
+      "rustic",
+      "high-contrast"
+    ],
+    "blurb": "Gold petals around a near-black dome. The cheapest way to get real contrast into a warm arrangement.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/%22Rudbeckia_hirta%22_Black-eyed_Susan_Gibberd_Garden_Essex_England_%28cropped%29.JPG/1280px-%22Rudbeckia_hirta%22_Black-eyed_Susan_Gibberd_Garden_Essex_England_%28cropped%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#EDB020",
+    "imageAttribution": {
+      "title": "\"Rudbeckia hirta\" Black-eyed Susan Gibberd Garden Essex England (cropped).JPG",
+      "artist": "Acabashi",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%22Rudbeckia_hirta%22_Black-eyed_Susan_Gibberd_Garden_Essex_England_(cropped).JPG"
+    }
+  },
+  {
+    "id": "aster",
+    "commonName": "Aster",
+    "scientificName": "Symphyotrichum novi-belgii",
+    "colors": [
+      {
+        "name": "violet",
+        "hex": "#7B63B4"
+      },
+      {
+        "name": "white",
+        "hex": "#F3F0E7"
+      },
+      {
+        "name": "rose",
+        "hex": "#DB8AA9"
+      }
+    ],
+    "form": "single",
+    "scale": "secondary",
+    "scent": "none",
+    "seasons": [
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "autumnal",
+      "sprayed",
+      "meadow",
+      "small"
+    ],
+    "blurb": "Dozens of small daisies on one branching stem, arriving right as everything else in the garden gives up.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Symphyotrichum_novi-belgii_flower_tas.jpg/1280px-Symphyotrichum_novi-belgii_flower_tas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#7B63B4",
+    "imageAttribution": {
+      "title": "Symphyotrichum novi-belgii flower tas.jpg",
+      "artist": "Gmihail at Serbian Wikipedia",
+      "license": "CC BY-SA 3.0 rs",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Symphyotrichum_novi-belgii_flower_tas.jpg"
+    }
+  },
+  {
+    "id": "astrantia",
+    "commonName": "Astrantia",
+    "scientificName": "Astrantia major",
+    "colors": [
+      {
+        "name": "silver-green",
+        "hex": "#D2D5BE"
+      },
+      {
+        "name": "dusty rose",
+        "hex": "#C98E9C"
+      },
+      {
+        "name": "wine",
+        "hex": "#7A2B3C"
+      }
+    ],
+    "form": "star",
+    "scale": "secondary",
+    "scent": "green",
+    "seasons": [
+      "summer"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "papery",
+      "antique",
+      "textural",
+      "subtle"
+    ],
+    "blurb": "A pincushion sitting inside a papery collar of pointed bracts. Looks like something pressed in a book a century ago.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Astrantia_major_Mitterbach_01.JPG/1280px-Astrantia_major_Mitterbach_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#D2D5BE",
+    "imageAttribution": {
+      "title": "Astrantia major Mitterbach 01.JPG",
+      "artist": "Uoaei1",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Astrantia_major_Mitterbach_01.JPG"
+    }
+  },
+  {
+    "id": "allium",
+    "commonName": "Allium",
+    "scientificName": "Allium giganteum",
+    "colors": [
+      {
+        "name": "violet",
+        "hex": "#7A5AA8"
+      },
+      {
+        "name": "white",
+        "hex": "#F2EFE6"
+      }
+    ],
+    "form": "globe",
+    "scale": "focal",
+    "scent": "spicy",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "geometric",
+      "architectural",
+      "modern",
+      "sculptural"
+    ],
+    "blurb": "A perfect sphere of hundreds of tiny stars on a bare stem. Faintly oniony up close, because it is one.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Flower%2C_Allium_giganteum_-_Flickr_-_nekonomania_%281%29.jpg/1280px-Flower%2C_Allium_giganteum_-_Flickr_-_nekonomania_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#7A5AA8",
+    "imageAttribution": {
+      "title": "Flower, Allium giganteum - Flickr - nekonomania (1).jpg",
+      "artist": "Yoko Nekonomania",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flower,_Allium_giganteum_-_Flickr_-_nekonomania_(1).jpg"
+    }
+  },
+  {
+    "id": "craspedia",
+    "commonName": "Billy Buttons",
+    "scientificName": "Pycnosorus globosus",
+    "colors": [
+      {
+        "name": "gold",
+        "hex": "#EFC02A"
+      }
+    ],
+    "form": "globe",
+    "scale": "secondary",
+    "scent": "none",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "graphic",
+      "playful",
+      "modern",
+      "dried"
+    ],
+    "blurb": "A yellow drumstick on a leafless stem. Completely dries out and stays exactly the same, indefinitely.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Pycnosorus_globosus_plant1_%2817361585844%29.jpg/1280px-Pycnosorus_globosus_plant1_%2817361585844%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#EFC02A",
+    "imageAttribution": {
+      "title": "Pycnosorus globosus plant1 (17361585844).jpg",
+      "artist": "Harry Rose from South West Rocks, Australia",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pycnosorus_globosus_plant1_(17361585844).jpg"
+    }
+  },
+  {
+    "id": "veronica",
+    "commonName": "Veronica",
+    "scientificName": "Veronica spicata",
+    "colors": [
+      {
+        "name": "violet",
+        "hex": "#7059A6"
+      },
+      {
+        "name": "white",
+        "hex": "#F3F0E7"
+      },
+      {
+        "name": "pink",
+        "hex": "#DE8FAF"
+      }
+    ],
+    "form": "spiky",
+    "scale": "secondary",
+    "scent": "none",
+    "seasons": [
+      "summer"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "slender",
+      "vertical",
+      "meadow",
+      "fine"
+    ],
+    "blurb": "Thin tapering spires that curve at the tip. Gives a bouquet vertical lines without the weight of a delphinium.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Veronica_spicata_1005.jpg/1280px-Veronica_spicata_1005.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#7059A6",
+    "imageAttribution": {
+      "title": "Veronica spicata 1005.jpg",
+      "artist": "masaki ikeda (talk)",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Veronica_spicata_1005.jpg"
+    }
+  },
+  {
+    "id": "celosia",
+    "commonName": "Celosia",
+    "scientificName": "Celosia argentea",
+    "colors": [
+      {
+        "name": "magenta",
+        "hex": "#C0357B"
+      },
+      {
+        "name": "coral",
+        "hex": "#EE6F4C"
+      },
+      {
+        "name": "chartreuse",
+        "hex": "#C0CB5B"
+      },
+      {
+        "name": "burgundy",
+        "hex": "#75203A"
+      }
+    ],
+    "form": "spiky",
+    "scale": "focal",
+    "scent": "none",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "textural",
+      "velvet",
+      "strange",
+      "saturated"
+    ],
+    "blurb": "Either a velvet brain or a flame, depending on the type. The texture is genuinely unlike anything else available.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Celosia_argentea_in_Philippines.jpg/1280px-Celosia_argentea_in_Philippines.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#C0357B",
+    "imageAttribution": {
+      "title": "Celosia argentea in Philippines.jpg",
+      "artist": "TheNuggeteer",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Celosia_argentea_in_Philippines.jpg"
+    }
+  },
+  {
+    "id": "gomphrena",
+    "commonName": "Globe Amaranth",
+    "scientificName": "Gomphrena globosa",
+    "colors": [
+      {
+        "name": "magenta",
+        "hex": "#C0468C"
+      },
+      {
+        "name": "white",
+        "hex": "#F2EFE6"
+      },
+      {
+        "name": "lilac",
+        "hex": "#B79AC9"
+      }
+    ],
+    "form": "globe",
+    "scale": "secondary",
+    "scent": "none",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "clover-like",
+      "papery",
+      "small",
+      "dried"
+    ],
+    "blurb": "A papery clover-shaped button that feels dry to the touch even when fresh. Scatters small points of colour through a mix.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Gomphrena_globosa_plant.jpg/1280px-Gomphrena_globosa_plant.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#C0468C",
+    "imageAttribution": {
+      "title": "Gomphrena globosa plant.jpg",
+      "artist": "Sabina Bajracharya",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gomphrena_globosa_plant.jpg"
+    }
+  },
+  {
+    "id": "anthurium",
+    "commonName": "Anthurium",
+    "scientificName": "Anthurium andraeanum",
+    "colors": [
+      {
+        "name": "lacquer red",
+        "hex": "#B81F2C"
+      },
+      {
+        "name": "white",
+        "hex": "#F3F0E6"
+      },
+      {
+        "name": "chocolate",
+        "hex": "#5A3126"
+      },
+      {
+        "name": "blush",
+        "hex": "#EDB6BE"
+      }
+    ],
+    "form": "single",
+    "scale": "focal",
+    "scent": "none",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "tropical",
+      "lacquered",
+      "modern",
+      "graphic"
+    ],
+    "blurb": "A single flat heart that looks wet and plastic even when it is not. Lasts three weeks and reads entirely as design object.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Anthurium_andraeanum_Flamingo_flower_Barbados_0987.jpg/1280px-Anthurium_andraeanum_Flamingo_flower_Barbados_0987.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#B81F2C",
+    "imageAttribution": {
+      "title": "Anthurium andraeanum Flamingo flower Barbados 0987.jpg",
+      "artist": "ImagePerson",
+      "license": "CC BY 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anthurium_andraeanum_Flamingo_flower_Barbados_0987.jpg"
+    }
+  },
+  {
+    "id": "bird-of-paradise",
+    "commonName": "Bird of Paradise",
+    "scientificName": "Strelitzia reginae",
+    "colors": [
+      {
+        "name": "orange",
+        "hex": "#EE7B18"
+      },
+      {
+        "name": "royal blue",
+        "hex": "#2A50A0"
+      }
+    ],
+    "form": "spiky",
+    "scale": "focal",
+    "scent": "none",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "tropical",
+      "sculptural",
+      "bold",
+      "exotic"
+    ],
+    "blurb": "An orange crest and a blue tongue emerging sideways from a beak-shaped bract. Impossible to make look soft.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Strelitzia_reginae_Porto_Covo_November_2025-1.jpg/1280px-Strelitzia_reginae_Porto_Covo_November_2025-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#EE7B18",
+    "imageAttribution": {
+      "title": "Strelitzia reginae Porto Covo November 2025-1.jpg",
+      "artist": "Alvesgaspar",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Strelitzia_reginae_Porto_Covo_November_2025-1.jpg"
+    }
+  },
+  {
+    "id": "banksia",
+    "commonName": "Banksia",
+    "scientificName": "Banksia coccinea",
+    "colors": [
+      {
+        "name": "scarlet",
+        "hex": "#C33A26"
+      },
+      {
+        "name": "ochre",
+        "hex": "#C98D2C"
+      },
+      {
+        "name": "rust",
+        "hex": "#9E5330"
+      }
+    ],
+    "form": "spiky",
+    "scale": "focal",
+    "scent": "none",
+    "seasons": [
+      "fall",
+      "winter"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "architectural",
+      "native",
+      "dried",
+      "strange"
+    ],
+    "blurb": "A cylinder of thousands of hooked filaments in tight rows. Australian, alien-looking, and effectively permanent once dried.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Banksia_coccinea_AD_MB.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageHex": "#A11629",
+    "imageAttribution": {
+      "title": "Banksia coccinea AD MB.jpg",
+      "artist": "Andy Dolphin (AndyD_MB on en.wikipedia)",
+      "license": "CC BY 2.5",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Banksia_coccinea_AD_MB.jpg"
+    }
+  },
+  {
+    "id": "hellebore",
+    "commonName": "Hellebore",
+    "scientificName": "Helleborus orientalis",
+    "colors": [
+      {
+        "name": "sage green",
+        "hex": "#B3BE96"
+      },
+      {
+        "name": "plum",
+        "hex": "#6E4260"
+      },
+      {
+        "name": "dusty rose",
+        "hex": "#CE95A0"
+      },
+      {
+        "name": "cream",
+        "hex": "#F0E9D6"
+      }
+    ],
+    "form": "single",
+    "scale": "secondary",
+    "scent": "none",
+    "seasons": [
+      "winter",
+      "spring"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "moody",
+      "muted",
+      "nodding",
+      "sophisticated"
+    ],
+    "blurb": "Faces downward and flowers in the cold, in colours that all look slightly dusty. The most grown-up flower on this list.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Helleborus_orientalis%2C_Zaaddozen_zwellen%2C_Locatie%2C_Tuinreservaat_Jonkervallei_01.jpg/1280px-Helleborus_orientalis%2C_Zaaddozen_zwellen%2C_Locatie%2C_Tuinreservaat_Jonkervallei_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#B3BE96",
+    "imageAttribution": {
+      "title": "Helleborus orientalis, Zaaddozen zwellen, Locatie, Tuinreservaat Jonkervallei 01.jpg",
+      "artist": "Dominicus Johannes Bergsma",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Helleborus_orientalis,_Zaaddozen_zwellen,_Locatie,_Tuinreservaat_Jonkervallei_01.jpg"
+    }
+  },
+  {
+    "id": "camellia",
+    "commonName": "Camellia",
+    "scientificName": "Camellia japonica",
+    "colors": [
+      {
+        "name": "white",
+        "hex": "#F6F2E9"
+      },
+      {
+        "name": "blush",
+        "hex": "#F0BFC7"
+      },
+      {
+        "name": "crimson",
+        "hex": "#A81E33"
+      }
+    ],
+    "form": "ruffled",
+    "scale": "focal",
+    "scent": "light",
+    "seasons": [
+      "winter",
+      "spring"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "formal",
+      "glossy",
+      "symmetrical",
+      "heirloom"
+    ],
+    "blurb": "Petals arranged in near-perfect concentric rings against very dark glossy leaves. Drops the whole flower at once when done.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/20260317_Camellia_japonica_02.jpg/1280px-20260317_Camellia_japonica_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F6F2E9",
+    "imageAttribution": {
+      "title": "20260317 Camellia japonica 02.jpg",
+      "artist": "Flocci Nivis",
+      "license": "CC BY 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:20260317_Camellia_japonica_02.jpg"
+    }
+  },
+  {
+    "id": "cherry-blossom",
+    "commonName": "Cherry Blossom",
+    "scientificName": "Prunus serrulata",
+    "colors": [
+      {
+        "name": "pale pink",
+        "hex": "#F4D2DA"
+      },
+      {
+        "name": "white",
+        "hex": "#F7F3EB"
+      }
+    ],
+    "form": "cluster",
+    "scale": "focal",
+    "scent": "light",
+    "seasons": [
+      "spring"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "branch",
+      "airy",
+      "sculptural",
+      "fleeting"
+    ],
+    "blurb": "Sold as a bare branch that opens indoors over a week. Gives an arrangement height and negative space at the same time.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Prunus_serrulata_Kanzan_blossom_Jardin_des_Plantes_2013-04-21.jpg/1280px-Prunus_serrulata_Kanzan_blossom_Jardin_des_Plantes_2013-04-21.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F4D2DA",
+    "imageAttribution": {
+      "title": "Prunus serrulata Kanzan blossom Jardin des Plantes 2013-04-21.jpg",
+      "artist": "Marie-Lan Nguyen",
+      "license": "CC BY 2.5",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Prunus_serrulata_Kanzan_blossom_Jardin_des_Plantes_2013-04-21.jpg"
+    }
+  },
+  {
+    "id": "lilac",
+    "commonName": "Lilac",
+    "scientificName": "Syringa vulgaris",
+    "colors": [
+      {
+        "name": "lilac",
+        "hex": "#B49AD0"
+      },
+      {
+        "name": "white",
+        "hex": "#F5F1E8"
+      },
+      {
+        "name": "deep purple",
+        "hex": "#5A3E84"
+      }
+    ],
+    "form": "cluster",
+    "scale": "focal",
+    "scent": "sweet",
+    "seasons": [
+      "spring"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "perfumed",
+      "nostalgic",
+      "abundant",
+      "branch"
+    ],
+    "blurb": "Enormous scented cones on a woody stem. Wilts fast unless the stem end is split, and is worth the trouble for about five days.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Syringa_vulgaris_flowers.jpg/1280px-Syringa_vulgaris_flowers.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#B49AD0",
+    "imageAttribution": {
+      "title": "Syringa vulgaris flowers.jpg",
+      "artist": "Krzysztof Golik",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Syringa_vulgaris_flowers.jpg"
+    }
+  },
+  {
+    "id": "gardenia",
+    "commonName": "Gardenia",
+    "scientificName": "Gardenia jasminoides",
+    "colors": [
+      {
+        "name": "ivory",
+        "hex": "#F5EFDF"
+      }
+    ],
+    "form": "ruffled",
+    "scale": "focal",
+    "scent": "sweet",
+    "seasons": [
+      "summer"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "perfumed",
+      "bridal",
+      "waxy",
+      "luxurious"
+    ],
+    "blurb": "Thick waxy white petals that bruise brown if you touch them. The scent is enormous and unmistakable.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/IMG20240910164546%28Gardenia_jasminoides_pinwheel%29.jpg/1280px-IMG20240910164546%28Gardenia_jasminoides_pinwheel%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F5EFDF",
+    "imageAttribution": {
+      "title": "IMG20240910164546(Gardenia jasminoides pinwheel).jpg",
+      "artist": "Achaamma",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:IMG20240910164546(Gardenia_jasminoides_pinwheel).jpg"
+    }
+  },
+  {
+    "id": "clematis",
+    "commonName": "Clematis",
+    "scientificName": "Clematis hybrida",
+    "colors": [
+      {
+        "name": "violet",
+        "hex": "#6D51A2"
+      },
+      {
+        "name": "white",
+        "hex": "#F4F1E8"
+      },
+      {
+        "name": "mauve",
+        "hex": "#B389B8"
+      }
+    ],
+    "form": "star",
+    "scale": "secondary",
+    "scent": "light",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "vining",
+      "flat-faced",
+      "movement",
+      "romantic"
+    ],
+    "blurb": "Comes on a trailing vine, so it drapes over the edge of a vase instead of standing up in it.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/%28MHNT%29_Clematis_armandii_-_flower.jpg/1280px-%28MHNT%29_Clematis_armandii_-_flower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#6D51A2",
+    "imageAttribution": {
+      "title": "(MHNT) Clematis armandii - flower.jpg",
+      "artist": "Didier Descouens",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:(MHNT)_Clematis_armandii_-_flower.jpg"
+    }
+  },
+  {
+    "id": "sea-holly",
+    "commonName": "Sea Holly",
+    "scientificName": "Eryngium planum",
+    "colors": [
+      {
+        "name": "steel blue",
+        "hex": "#6E85A8"
+      },
+      {
+        "name": "silver",
+        "hex": "#B9BFB8"
+      }
+    ],
+    "form": "spiky",
+    "scale": "secondary",
+    "scent": "none",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "metallic",
+      "thistle",
+      "architectural",
+      "cool"
+    ],
+    "blurb": "Cone and collar both stiff, spined, and a metallic blue that looks almost painted on. Sharp — literally.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Eryngium_planum_kz25.jpg/1280px-Eryngium_planum_kz25.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#6E85A8",
+    "imageAttribution": {
+      "title": "Eryngium planum kz25.jpg",
+      "artist": "Krzysztof Ziarnek, Kenraiz",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eryngium_planum_kz25.jpg"
+    }
+  },
+  {
+    "id": "globe-thistle",
+    "commonName": "Globe Thistle",
+    "scientificName": "Echinops ritro",
+    "colors": [
+      {
+        "name": "steel blue",
+        "hex": "#7488AE"
+      },
+      {
+        "name": "silver",
+        "hex": "#BCC1BA"
+      }
+    ],
+    "form": "globe",
+    "scale": "secondary",
+    "scent": "none",
+    "seasons": [
+      "summer"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "geometric",
+      "spiky",
+      "cool",
+      "dried"
+    ],
+    "blurb": "A perfect steel-blue sphere bristling all over. Half geometry lesson, half weapon.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Azurite_-_Echinops_ritro_-_2_-_par_Mickael_Schauli.jpg/1280px-Azurite_-_Echinops_ritro_-_2_-_par_Mickael_Schauli.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#7488AE",
+    "imageAttribution": {
+      "title": "Azurite - Echinops ritro - 2 - par Mickael Schauli.jpg",
+      "artist": "Mickaël Schauli",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Azurite_-_Echinops_ritro_-_2_-_par_Mickael_Schauli.jpg"
+    }
+  },
+  {
+    "id": "tuberose",
+    "commonName": "Tuberose",
+    "scientificName": "Agave amica",
+    "colors": [
+      {
+        "name": "ivory",
+        "hex": "#F5F0E1"
+      }
+    ],
+    "form": "cluster",
+    "scale": "secondary",
+    "scent": "sweet",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "perfumed",
+      "narcotic",
+      "bridal",
+      "luxurious"
+    ],
+    "blurb": "Waxy white flowers up a tall spike with a scent so heavy it is used as a perfume base note on its own.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Polianthes_tuberosa%2C_Burdwan%2C_West_Bengal%2C_India_10_01_2013.jpg/1280px-Polianthes_tuberosa%2C_Burdwan%2C_West_Bengal%2C_India_10_01_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F5F0E1",
+    "imageAttribution": {
+      "title": "Polianthes tuberosa, Burdwan, West Bengal, India 10 01 2013.jpg",
+      "artist": "Joydeep",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Polianthes_tuberosa,_Burdwan,_West_Bengal,_India_10_01_2013.jpg"
+    }
+  },
+  {
+    "id": "dendrobium-orchid",
+    "commonName": "Dendrobium Orchid",
+    "scientificName": "Dendrobium phalaenopsis",
+    "colors": [
+      {
+        "name": "white",
+        "hex": "#F5F2E9"
+      },
+      {
+        "name": "magenta",
+        "hex": "#B93C7E"
+      },
+      {
+        "name": "lime",
+        "hex": "#BFCC70"
+      }
+    ],
+    "form": "star",
+    "scale": "focal",
+    "scent": "none",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "tropical",
+      "exotic",
+      "arching",
+      "modern"
+    ],
+    "blurb": "A dozen flat faces marching up an arching stem. Lasts two to three weeks, which is unusual for something this delicate-looking.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Dendrobium_Orchid_vijayanrajapuram_05.jpg/1280px-Dendrobium_Orchid_vijayanrajapuram_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F5F2E9",
+    "imageAttribution": {
+      "title": "Dendrobium Orchid vijayanrajapuram 05.jpg",
+      "artist": "Vijayanrajapuram",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dendrobium_Orchid_vijayanrajapuram_05.jpg"
+    }
+  },
+  {
+    "id": "cymbidium-orchid",
+    "commonName": "Cymbidium Orchid",
+    "scientificName": "Cymbidium hybridum",
+    "colors": [
+      {
+        "name": "chartreuse",
+        "hex": "#C3CD79"
+      },
+      {
+        "name": "cream",
+        "hex": "#F2EAD6"
+      },
+      {
+        "name": "burgundy",
+        "hex": "#7B2438"
+      },
+      {
+        "name": "blush",
+        "hex": "#EEC4C8"
+      }
+    ],
+    "form": "star",
+    "scale": "focal",
+    "scent": "light",
+    "seasons": [
+      "winter",
+      "spring"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "luxurious",
+      "waxy",
+      "exotic",
+      "formal"
+    ],
+    "blurb": "Thick waxy blooms the size of a palm, often in greens and browns you would not expect from an orchid.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Cymbidium_Clarisse_Austin_%27Best_Pink%27_Flowers_2000px.JPG/1280px-Cymbidium_Clarisse_Austin_%27Best_Pink%27_Flowers_2000px.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#C3CD79",
+    "imageAttribution": {
+      "title": "Cymbidium Clarisse Austin 'Best Pink' Flowers 2000px.JPG",
+      "artist": "Photo by and (c)2008 Derek Ramsey (Ram-Man)",
+      "license": "GFDL 1.2",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cymbidium_Clarisse_Austin_%27Best_Pink%27_Flowers_2000px.JPG"
+    }
+  },
+  {
+    "id": "bouvardia",
+    "commonName": "Bouvardia",
+    "scientificName": "Bouvardia longiflora",
+    "colors": [
+      {
+        "name": "white",
+        "hex": "#F5F2E9"
+      },
+      {
+        "name": "blush",
+        "hex": "#F0C4C9"
+      },
+      {
+        "name": "coral",
+        "hex": "#EE8877"
+      }
+    ],
+    "form": "cluster",
+    "scale": "secondary",
+    "scent": "sweet",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "starry",
+      "clustered",
+      "perfumed",
+      "refined"
+    ],
+    "blurb": "Clusters of narrow four-pointed tubes. Fine-textured enough to soften the edge between a big focal flower and greenery.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Bouvardia_ternifolia.jpg/1280px-Bouvardia_ternifolia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F5F2E9",
+    "imageAttribution": {
+      "title": "Bouvardia ternifolia.jpg",
+      "artist": "Stickpen",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bouvardia_ternifolia.jpg"
+    }
+  },
+  {
+    "id": "shasta-daisy",
+    "commonName": "Shasta Daisy",
+    "scientificName": "Leucanthemum superbum",
+    "colors": [
+      {
+        "name": "white",
+        "hex": "#F6F3EB"
+      },
+      {
+        "name": "gold centre",
+        "hex": "#EFC02A"
+      }
+    ],
+    "form": "single",
+    "scale": "secondary",
+    "scent": "light",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "simple",
+      "fresh",
+      "classic",
+      "cheerful"
+    ],
+    "blurb": "The flower a child draws. White ray petals, gold centre, no complications whatsoever.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Leucanthemum_%C3%97_superbum.001_-_Burela.jpg/1280px-Leucanthemum_%C3%97_superbum.001_-_Burela.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F6F3EB",
+    "imageAttribution": {
+      "title": "Leucanthemum × superbum.001 - Burela.jpg",
+      "artist": "Fernando Losada Rodríguez",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leucanthemum_%C3%97_superbum.001_-_Burela.jpg"
+    }
+  },
+  {
+    "id": "gloriosa-lily",
+    "commonName": "Gloriosa Lily",
+    "scientificName": "Gloriosa superba",
+    "colors": [
+      {
+        "name": "flame red",
+        "hex": "#C6302B"
+      },
+      {
+        "name": "gold",
+        "hex": "#EEB528"
+      }
+    ],
+    "form": "star",
+    "scale": "focal",
+    "scent": "none",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "flame",
+      "exotic",
+      "dramatic",
+      "movement"
+    ],
+    "blurb": "Petals swept fully backward with wavy edges, red fading to gold. Looks mid-motion even sitting still.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Gloriosa_superba_%C3%A0_la_Pendjari.jpg/1280px-Gloriosa_superba_%C3%A0_la_Pendjari.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#C6302B",
+    "imageAttribution": {
+      "title": "Gloriosa superba à la Pendjari.jpg",
+      "artist": "Farid AMADOU BAHLEMAN",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gloriosa_superba_%C3%A0_la_Pendjari.jpg"
+    }
+  },
+  {
+    "id": "nerine",
+    "commonName": "Nerine",
+    "scientificName": "Nerine bowdenii",
+    "colors": [
+      {
+        "name": "hot pink",
+        "hex": "#E2559A"
+      },
+      {
+        "name": "white",
+        "hex": "#F4F1E8"
+      }
+    ],
+    "form": "star",
+    "scale": "secondary",
+    "scent": "none",
+    "seasons": [
+      "fall"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "sparkling",
+      "late-season",
+      "fine",
+      "jewel-like"
+    ],
+    "blurb": "Narrow curling petals that catch light like they have glitter in them, which is an actual property of the cell structure.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Nerine_bowdenii_%28Amaryllidaceae%29_flower.JPG/1280px-Nerine_bowdenii_%28Amaryllidaceae%29_flower.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#E2559A",
+    "imageAttribution": {
+      "title": "Nerine bowdenii (Amaryllidaceae) flower.JPG",
+      "artist": "Magnus Manske",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nerine_bowdenii_(Amaryllidaceae)_flower.JPG"
+    }
+  },
+  {
+    "id": "agapanthus",
+    "commonName": "Agapanthus",
+    "scientificName": "Agapanthus africanus",
+    "colors": [
+      {
+        "name": "periwinkle",
+        "hex": "#8296CE"
+      },
+      {
+        "name": "white",
+        "hex": "#F4F1E8"
+      },
+      {
+        "name": "deep blue",
+        "hex": "#3F55A0"
+      }
+    ],
+    "form": "globe",
+    "scale": "focal",
+    "scent": "none",
+    "seasons": [
+      "summer"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "architectural",
+      "airy",
+      "blue",
+      "tall"
+    ],
+    "blurb": "An exploding sphere of trumpets on a bare stem — the airy, open version of what an allium does densely.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/2026_Agapanthus_africanus._Santiago_de_Compostela._Galiza.jpg/1280px-2026_Agapanthus_africanus._Santiago_de_Compostela._Galiza.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#8296CE",
+    "imageAttribution": {
+      "title": "2026 Agapanthus africanus. Santiago de Compostela. Galiza.jpg",
+      "artist": "Luis Miguel Bugallo Sánchez",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026_Agapanthus_africanus._Santiago_de_Compostela._Galiza.jpg"
+    }
+  },
+  {
+    "id": "phlox",
+    "commonName": "Garden Phlox",
+    "scientificName": "Phlox paniculata",
+    "colors": [
+      {
+        "name": "white",
+        "hex": "#F5F2E9"
+      },
+      {
+        "name": "blush",
+        "hex": "#EFBFCC"
+      },
+      {
+        "name": "magenta",
+        "hex": "#C2447F"
+      }
+    ],
+    "form": "cluster",
+    "scale": "secondary",
+    "scent": "sweet",
+    "seasons": [
+      "summer"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "cottage",
+      "perfumed",
+      "domed",
+      "nostalgic"
+    ],
+    "blurb": "Domed heads of flat five-petalled flowers, often with a contrasting eye. Smells like the middle of July.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Phlox_paniculata_%27Fujiyama%27_Locatie_De_Kruidhof.JPG/1280px-Phlox_paniculata_%27Fujiyama%27_Locatie_De_Kruidhof.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F5F2E9",
+    "imageAttribution": {
+      "title": "Phlox paniculata 'Fujiyama' Locatie De Kruidhof.JPG",
+      "artist": "Dominicus Johannes Bergsma",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Phlox_paniculata_%27Fujiyama%27_Locatie_De_Kruidhof.JPG"
+    }
+  },
+  {
+    "id": "pincushion-protea",
+    "commonName": "Pincushion Protea",
+    "scientificName": "Leucospermum cordifolium",
+    "colors": [
+      {
+        "name": "tangerine",
+        "hex": "#EE8226"
+      },
+      {
+        "name": "coral",
+        "hex": "#EF6D4E"
+      },
+      {
+        "name": "gold",
+        "hex": "#EDB92C"
+      }
+    ],
+    "form": "spiky",
+    "scale": "focal",
+    "scent": "none",
+    "seasons": [
+      "winter",
+      "spring"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "fireworks",
+      "sculptural",
+      "tropical",
+      "bold"
+    ],
+    "blurb": "A dome of curved styles shooting outward like a frozen firework. Structural enough to carry an arrangement alone.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Leucospermum_lineare_%C3%97_cordifolium_-_Wilhelma.jpg/1280px-Leucospermum_lineare_%C3%97_cordifolium_-_Wilhelma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#EE8226",
+    "imageAttribution": {
+      "title": "Leucospermum lineare × cordifolium - Wilhelma.jpg",
+      "artist": "H. Zell",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leucospermum_lineare_%C3%97_cordifolium_-_Wilhelma.jpg"
+    }
+  },
+  {
+    "id": "stephanotis",
+    "commonName": "Stephanotis",
+    "scientificName": "Stephanotis floribunda",
+    "colors": [
+      {
+        "name": "white",
+        "hex": "#F6F3EB"
+      }
+    ],
+    "form": "star",
+    "scale": "secondary",
+    "scent": "sweet",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "bridal",
+      "waxy",
+      "perfumed",
+      "traditional"
+    ],
+    "blurb": "Small waxy white trumpets, traditionally wired individually into bridal work. Heavy jasmine scent.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Stephanotis_floribunda_Flower_Closeup_TorreLaMata.jpg/1280px-Stephanotis_floribunda_Flower_Closeup_TorreLaMata.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F6F3EB",
+    "imageAttribution": {
+      "title": "Stephanotis floribunda Flower Closeup TorreLaMata.jpg",
+      "artist": "Javier martin",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stephanotis_floribunda_Flower_Closeup_TorreLaMata.jpg"
+    }
+  },
+  {
+    "id": "ornamental-allium-drumstick",
+    "commonName": "Drumstick Allium",
+    "scientificName": "Allium sphaerocephalon",
+    "colors": [
+      {
+        "name": "wine",
+        "hex": "#7C2F4E"
+      },
+      {
+        "name": "green",
+        "hex": "#9FAF7A"
+      }
+    ],
+    "form": "globe",
+    "scale": "secondary",
+    "scent": "spicy",
+    "seasons": [
+      "summer"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "egg-shaped",
+      "modern",
+      "wine",
+      "movement"
+    ],
+    "blurb": "A small egg-shaped head that ripens from green to wine, on a stem that bends wherever it likes.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Gebarsten_bloemknop_van_een_Kogellook_%28Allium_sphaerocephalon%29_15-05-2022._%28d.j.b%29_02.jpg/1280px-Gebarsten_bloemknop_van_een_Kogellook_%28Allium_sphaerocephalon%29_15-05-2022._%28d.j.b%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#7C2F4E",
+    "imageAttribution": {
+      "title": "Gebarsten bloemknop van een Kogellook (Allium sphaerocephalon) 15-05-2022. (d.j.b) 02.jpg",
+      "artist": "Dominicus Johannes Bergsma",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gebarsten_bloemknop_van_een_Kogellook_(Allium_sphaerocephalon)_15-05-2022._(d.j.b)_02.jpg"
+    }
+  },
+  {
+    "id": "ammi-visnaga",
+    "commonName": "Green Mist Ammi",
+    "scientificName": "Ammi visnaga",
+    "colors": [
+      {
+        "name": "chartreuse",
+        "hex": "#C4CE84"
+      },
+      {
+        "name": "cream",
+        "hex": "#F0E9D5"
+      }
+    ],
+    "form": "cluster",
+    "scale": "secondary",
+    "scent": "green",
+    "seasons": [
+      "summer"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "airy",
+      "lacy",
+      "green",
+      "meadow"
+    ],
+    "blurb": "Domed lace-caps in a green so pale it goes cream at the edges. Softens hard-edged flowers better than any greenery.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Ammi_Visnaga_%28161677805%29.jpeg/1280px-Ammi_Visnaga_%28161677805%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#C4CE84",
+    "imageAttribution": {
+      "title": "Ammi Visnaga (161677805).jpeg",
+      "artist": "Yılmaz Kilim",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ammi_Visnaga_(161677805).jpeg"
+    }
+  },
+  {
+    "id": "garden-rose-spray",
+    "commonName": "Spray Rose",
+    "scientificName": "Rosa hybrida spray",
+    "colors": [
+      {
+        "name": "blush",
+        "hex": "#EEC0C6"
+      },
+      {
+        "name": "cream",
+        "hex": "#F4EBD9"
+      },
+      {
+        "name": "peach",
+        "hex": "#F3B48F"
+      },
+      {
+        "name": "wine",
+        "hex": "#7C2438"
+      }
+    ],
+    "form": "ruffled",
+    "scale": "secondary",
+    "scent": "light",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "clustered",
+      "romantic",
+      "small-scale",
+      "versatile"
+    ],
+    "blurb": "Five or six small roses per stem instead of one large one. Fills the gap between a focal rose and a filler.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Conard_star_roses_-_autumn_1923_%281923%29_%2820490747589%29.jpg/1280px-Conard_star_roses_-_autumn_1923_%281923%29_%2820490747589%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#EEC0C6",
+    "imageAttribution": {
+      "title": "Conard star roses - autumn 1923 (1923) (20490747589).jpg",
+      "artist": "Conard &amp; Jones Co. (West Grove, Pa.); Conard &amp; Jones Co. (West Grove, Pa.); Henry G. Gilbert Nursery and Seed Trade Catalog Collection",
+      "license": "No restrictions",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Conard_star_roses_-_autumn_1923_(1923)_(20490747589).jpg"
+    }
+  },
+  {
+    "id": "japanese-anemone",
+    "commonName": "Japanese Anemone",
+    "scientificName": "Eriocapitella hupehensis",
+    "colors": [
+      {
+        "name": "pale pink",
+        "hex": "#EFC8D0"
+      },
+      {
+        "name": "white",
+        "hex": "#F6F3EA"
+      }
+    ],
+    "form": "single",
+    "scale": "secondary",
+    "scent": "none",
+    "seasons": [
+      "fall"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "airy",
+      "nodding",
+      "late-season",
+      "delicate"
+    ],
+    "blurb": "Simple open faces on tall wiry stems that never stop moving. Nothing like the bold coronaria anemone despite the name.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anemone_hupehensis_var._japonica_1.jpg/1280px-Anemone_hupehensis_var._japonica_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#EFC8D0",
+    "imageAttribution": {
+      "title": "Anemone hupehensis var. japonica 1.jpg",
+      "artist": "JJ Harrison (https://www.jjharrison.com.au/)",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anemone_hupehensis_var._japonica_1.jpg"
+    }
+  },
+  {
+    "id": "coral-charm-peony",
+    "commonName": "Coral Charm Peony",
+    "scientificName": "Paeonia Coral Charm",
+    "colors": [
+      {
+        "name": "coral",
+        "hex": "#F28B6B"
+      },
+      {
+        "name": "peach",
+        "hex": "#F5BC93"
+      }
+    ],
+    "form": "ruffled",
+    "scale": "focal",
+    "scent": "sweet",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "priceTier": 3,
+    "vibeTags": [
+      "coral",
+      "fading",
+      "luxurious",
+      "painterly"
+    ],
+    "blurb": "Opens deep coral and fades to peach then near-cream over four days, so the same stem is three colours across its life.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Paeonia_%27Coral_Charm%27_5_2021_xPeony-_%2851208163914%29.jpg/1280px-Paeonia_%27Coral_Charm%27_5_2021_xPeony-_%2851208163914%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F28B6B",
+    "imageAttribution": {
+      "title": "Paeonia 'Coral Charm' 5 2021 xPeony- (51208163914).jpg",
+      "artist": "F. D. Richards from Clinton, MI",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paeonia_%27Coral_Charm%27_5_2021_xPeony-_(51208163914).jpg"
+    }
+  }
+]

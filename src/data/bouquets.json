@@ -1,0 +1,914 @@
+[
+  {
+    "id": "bq-white-on-white",
+    "name": "White on White",
+    "focalIds": [
+      "peony"
+    ],
+    "secondaryIds": [
+      "bouvardia"
+    ],
+    "fillerIds": [
+      "babys-breath"
+    ],
+    "paletteHexes": [
+      "#F7F2EA",
+      "#F5F2E9",
+      "#F4F1E8"
+    ],
+    "paletteType": "monochrome",
+    "style": "structured-round",
+    "wrap": "ribbon-tied",
+    "priceTier": 3,
+    "blurb": "Every stem the same ivory, so the whole thing reads as texture rather than colour.",
+    "seasons": [
+      "spring",
+      "summer"
+    ]
+  },
+  {
+    "id": "bq-blush-hour",
+    "name": "Blush Hour",
+    "focalIds": [
+      "garden-rose"
+    ],
+    "secondaryIds": [
+      "astrantia",
+      "phlox"
+    ],
+    "fillerIds": [
+      "astilbe"
+    ],
+    "paletteHexes": [
+      "#EFC3C6",
+      "#C98E9C",
+      "#EFC2CB"
+    ],
+    "paletteType": "monochrome",
+    "style": "loose-garden",
+    "wrap": "kraft",
+    "priceTier": 3,
+    "blurb": "Four different flowers pretending to be one colour. The astilbe blurs the edges.",
+    "seasons": [
+      "summer"
+    ]
+  },
+  {
+    "id": "bq-butter-yellow",
+    "name": "Butter",
+    "focalIds": [
+      "tulip"
+    ],
+    "secondaryIds": [
+      "snapdragon",
+      "craspedia"
+    ],
+    "fillerIds": [
+      "bupleurum"
+    ],
+    "paletteHexes": [
+      "#F4C842",
+      "#F5D77E",
+      "#EFC02A"
+    ],
+    "paletteType": "monochrome",
+    "style": "structured-round",
+    "wrap": "clear",
+    "priceTier": 1,
+    "blurb": "One yellow held across four textures — waxy, papery, bell, plume.",
+    "seasons": [
+      "spring"
+    ]
+  },
+  {
+    "id": "bq-deep-burgundy",
+    "name": "Bordeaux",
+    "focalIds": [
+      "dahlia"
+    ],
+    "secondaryIds": [
+      "carnation"
+    ],
+    "fillerIds": [
+      "amaranthus"
+    ],
+    "paletteHexes": [
+      "#6E1B2E",
+      "#6F1F32",
+      "#77243A"
+    ],
+    "paletteType": "monochrome",
+    "style": "cascading",
+    "wrap": "vase",
+    "priceTier": 2,
+    "blurb": "Almost black until light hits it. The amaranthus pulls the whole thing downward.",
+    "seasons": [
+      "summer",
+      "fall"
+    ]
+  },
+  {
+    "id": "bq-blue-note",
+    "name": "Blue Note",
+    "focalIds": [
+      "delphinium"
+    ],
+    "secondaryIds": [
+      "cornflower",
+      "nigella"
+    ],
+    "fillerIds": [
+      "eucalyptus-silver-dollar"
+    ],
+    "paletteHexes": [
+      "#3B62A8",
+      "#4A6BC0",
+      "#3C4E9E"
+    ],
+    "paletteType": "monochrome",
+    "style": "asymmetric",
+    "wrap": "vase",
+    "priceTier": 2,
+    "blurb": "Three true blues, which is most of the blue that actually exists in flowers.",
+    "seasons": [
+      "summer"
+    ]
+  },
+  {
+    "id": "bq-peach-to-coral",
+    "name": "Peach to Coral",
+    "focalIds": [
+      "coral-charm-peony"
+    ],
+    "secondaryIds": [
+      "iceland-poppy",
+      "alstroemeria"
+    ],
+    "fillerIds": [
+      "bupleurum"
+    ],
+    "paletteHexes": [
+      "#F28B6B",
+      "#F3B181",
+      "#F3B084"
+    ],
+    "paletteType": "analogous",
+    "style": "loose-garden",
+    "wrap": "kraft",
+    "priceTier": 3,
+    "blurb": "A slow gradient from coral through apricot to cream, lifted by acid-green bracts.",
+    "seasons": [
+      "spring"
+    ]
+  },
+  {
+    "id": "bq-sunset",
+    "name": "Sunset Field",
+    "focalIds": [
+      "sunflower"
+    ],
+    "secondaryIds": [
+      "marigold",
+      "yarrow"
+    ],
+    "fillerIds": [
+      "panicum-grass"
+    ],
+    "paletteHexes": [
+      "#EFB01F",
+      "#EE9C1C",
+      "#B5551F"
+    ],
+    "paletteType": "analogous",
+    "style": "wildflower",
+    "wrap": "kraft",
+    "priceTier": 1,
+    "blurb": "Gold into rust, with grass threaded through so it moves like a field.",
+    "seasons": [
+      "summer",
+      "fall"
+    ]
+  },
+  {
+    "id": "bq-lavender-fields",
+    "name": "Lavender Field",
+    "focalIds": [
+      "lisianthus"
+    ],
+    "secondaryIds": [
+      "scabiosa",
+      "aster"
+    ],
+    "fillerIds": [
+      "statice"
+    ],
+    "paletteHexes": [
+      "#B5A0CE",
+      "#AFA0CF",
+      "#7B63B4"
+    ],
+    "paletteType": "analogous",
+    "style": "loose-garden",
+    "wrap": "ribbon-tied",
+    "priceTier": 2,
+    "blurb": "Lilac drifting into violet. Nothing in it fights anything else.",
+    "seasons": [
+      "fall"
+    ]
+  },
+  {
+    "id": "bq-plum-wine",
+    "name": "Plum & Wine",
+    "focalIds": [
+      "celosia"
+    ],
+    "secondaryIds": [
+      "scabiosa"
+    ],
+    "fillerIds": [
+      "statice"
+    ],
+    "paletteHexes": [
+      "#75203A",
+      "#5E2033",
+      "#6E5AA4"
+    ],
+    "paletteType": "analogous",
+    "style": "asymmetric",
+    "wrap": "vase",
+    "priceTier": 2,
+    "blurb": "Violet walked around the wheel into wine and stopped just short of red.",
+    "seasons": [
+      "summer",
+      "fall"
+    ]
+  },
+  {
+    "id": "bq-citrus",
+    "name": "Citrus",
+    "focalIds": [
+      "gerbera"
+    ],
+    "secondaryIds": [
+      "craspedia",
+      "alstroemeria"
+    ],
+    "fillerIds": [
+      "bupleurum"
+    ],
+    "paletteHexes": [
+      "#F0812B",
+      "#EFC02A",
+      "#C3CE72"
+    ],
+    "paletteType": "analogous",
+    "style": "structured-round",
+    "wrap": "clear",
+    "priceTier": 1,
+    "blurb": "Orange to yellow to lime, all of it graphic and flat-faced.",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall"
+    ]
+  },
+  {
+    "id": "bq-mauve-dusk",
+    "name": "Mauve Dusk",
+    "focalIds": [
+      "hydrangea"
+    ],
+    "secondaryIds": [
+      "clematis",
+      "scabiosa"
+    ],
+    "fillerIds": [
+      "dusty-miller"
+    ],
+    "paletteHexes": [
+      "#E7B8C2",
+      "#B389B8",
+      "#C98E9C"
+    ],
+    "paletteType": "analogous",
+    "style": "structured-round",
+    "wrap": "vase",
+    "priceTier": 2,
+    "blurb": "Pink drifting into mauve, muted down by silver foliage.",
+    "seasons": [
+      "summer"
+    ]
+  },
+  {
+    "id": "bq-flame-and-sea",
+    "name": "Flame & Sea",
+    "focalIds": [
+      "pincushion-protea"
+    ],
+    "secondaryIds": [
+      "craspedia"
+    ],
+    "fillerIds": [
+      "eucalyptus-silver-dollar"
+    ],
+    "paletteHexes": [
+      "#EE8226",
+      "#EDB92C",
+      "#6E85A8"
+    ],
+    "paletteType": "complementary",
+    "style": "asymmetric",
+    "wrap": "vase",
+    "priceTier": 3,
+    "blurb": "Hot orange against cool blue-grey — the two ends of the wheel, held apart by silver.",
+    "seasons": [
+      "spring",
+      "winter"
+    ]
+  },
+  {
+    "id": "bq-cobalt-and-gold",
+    "name": "Cobalt & Gold",
+    "focalIds": [
+      "agapanthus"
+    ],
+    "secondaryIds": [
+      "rudbeckia"
+    ],
+    "fillerIds": [
+      "solidago"
+    ],
+    "paletteHexes": [
+      "#3F55A0",
+      "#EDB020",
+      "#E8B92C"
+    ],
+    "paletteType": "complementary",
+    "style": "asymmetric",
+    "wrap": "vase",
+    "priceTier": 2,
+    "blurb": "Blue and gold directly opposite each other. Loud on purpose.",
+    "seasons": [
+      "summer"
+    ]
+  },
+  {
+    "id": "bq-violet-and-butter",
+    "name": "Violet & Butter",
+    "focalIds": [
+      "bearded-iris"
+    ],
+    "secondaryIds": [
+      "snapdragon",
+      "freesia"
+    ],
+    "fillerIds": [
+      "myrtle"
+    ],
+    "paletteHexes": [
+      "#6A4A9C",
+      "#F5D77E",
+      "#F4D982"
+    ],
+    "paletteType": "complementary",
+    "style": "loose-garden",
+    "wrap": "kraft",
+    "priceTier": 2,
+    "blurb": "Purple and yellow, softened by keeping the yellow pale rather than saturated.",
+    "seasons": [
+      "spring"
+    ]
+  },
+  {
+    "id": "bq-coral-and-teal",
+    "name": "Coral & Thistle",
+    "focalIds": [
+      "dahlia"
+    ],
+    "secondaryIds": [
+      "sea-holly",
+      "alstroemeria"
+    ],
+    "fillerIds": [
+      "olive-branch"
+    ],
+    "paletteHexes": [
+      "#F6B48D",
+      "#6E85A8",
+      "#F0705C"
+    ],
+    "paletteType": "complementary",
+    "style": "asymmetric",
+    "wrap": "kraft",
+    "priceTier": 2,
+    "blurb": "Warm coral cut by metallic blue thistle. The olive keeps it from going nautical.",
+    "seasons": [
+      "summer",
+      "fall"
+    ]
+  },
+  {
+    "id": "bq-red-and-green",
+    "name": "Scarlet & Green",
+    "focalIds": [
+      "amaryllis"
+    ],
+    "secondaryIds": [
+      "cymbidium-orchid"
+    ],
+    "fillerIds": [
+      "italian-ruscus"
+    ],
+    "paletteHexes": [
+      "#B71C24",
+      "#C3CD79",
+      "#3E6B45"
+    ],
+    "paletteType": "complementary",
+    "style": "structured-round",
+    "wrap": "vase",
+    "priceTier": 3,
+    "blurb": "Red against green without tipping into Christmas, because the green is chartreuse.",
+    "seasons": [
+      "winter"
+    ]
+  },
+  {
+    "id": "bq-cream-with-one-red",
+    "name": "Cream, One Red",
+    "focalIds": [
+      "garden-rose"
+    ],
+    "secondaryIds": [
+      "anemone"
+    ],
+    "fillerIds": [
+      "queen-annes-lace"
+    ],
+    "paletteHexes": [
+      "#F5EAD6",
+      "#F4F1E8",
+      "#B01C2E"
+    ],
+    "paletteType": "neutral-plus-accent",
+    "style": "loose-garden",
+    "wrap": "ribbon-tied",
+    "priceTier": 3,
+    "blurb": "All cream except one red anemone, which is the only thing you actually look at.",
+    "seasons": [
+      "spring"
+    ]
+  },
+  {
+    "id": "bq-oat-and-ink",
+    "name": "Oat & Ink",
+    "focalIds": [
+      "anemone"
+    ],
+    "secondaryIds": [],
+    "fillerIds": [
+      "dusty-miller"
+    ],
+    "paletteHexes": [
+      "#F4F1E9",
+      "#C3C6BA",
+      "#4B3268"
+    ],
+    "paletteType": "neutral-plus-accent",
+    "style": "minimal-single-variety",
+    "wrap": "clear",
+    "priceTier": 2,
+    "blurb": "Soft oatmeal tones with the near-black anemone centres doing all the work.",
+    "seasons": [
+      "spring",
+      "winter"
+    ]
+  },
+  {
+    "id": "bq-sage-and-blush",
+    "name": "Sage & Blush",
+    "focalIds": [
+      "hellebore"
+    ],
+    "secondaryIds": [
+      "ranunculus"
+    ],
+    "fillerIds": [
+      "eucalyptus-silver-dollar"
+    ],
+    "paletteHexes": [
+      "#B3BE96",
+      "#A9B8A4",
+      "#F2C7C0"
+    ],
+    "paletteType": "neutral-plus-accent",
+    "style": "asymmetric",
+    "wrap": "kraft",
+    "priceTier": 3,
+    "blurb": "Mostly greens and greys with just enough blush to keep it from reading as foliage.",
+    "seasons": [
+      "spring"
+    ]
+  },
+  {
+    "id": "bq-linen-and-gold",
+    "name": "Linen & Gold",
+    "focalIds": [
+      "chrysanthemum"
+    ],
+    "secondaryIds": [
+      "yarrow"
+    ],
+    "fillerIds": [
+      "panicum-grass"
+    ],
+    "paletteHexes": [
+      "#F3F0E6",
+      "#C9AE7C",
+      "#EFC02A"
+    ],
+    "paletteType": "neutral-plus-accent",
+    "style": "structured-round",
+    "wrap": "kraft",
+    "priceTier": 1,
+    "blurb": "Bone and tawny throughout with gold buttons punched through it.",
+    "seasons": [
+      "fall"
+    ]
+  },
+  {
+    "id": "bq-silver-and-wine",
+    "name": "Silver & Wine",
+    "focalIds": [
+      "king-protea"
+    ],
+    "secondaryIds": [
+      "hellebore"
+    ],
+    "fillerIds": [
+      "dusty-miller"
+    ],
+    "paletteHexes": [
+      "#C3C6BA",
+      "#D98C97",
+      "#7A2B3C"
+    ],
+    "paletteType": "neutral-plus-accent",
+    "style": "asymmetric",
+    "wrap": "vase",
+    "priceTier": 3,
+    "blurb": "Felted silver leaves against one enormous dusty-pink protea. Very little else.",
+    "seasons": [
+      "winter"
+    ]
+  },
+  {
+    "id": "bq-black-and-white",
+    "name": "Ink & Paper",
+    "focalIds": [
+      "anemone"
+    ],
+    "secondaryIds": [
+      "bouvardia"
+    ],
+    "fillerIds": [
+      "italian-ruscus"
+    ],
+    "paletteHexes": [
+      "#F4F1E9",
+      "#4B3268",
+      "#3E6B45"
+    ],
+    "paletteType": "high-contrast",
+    "style": "structured-round",
+    "wrap": "clear",
+    "priceTier": 2,
+    "blurb": "White petals, black centres, dark glossy green. Graphic and completely unromantic.",
+    "seasons": [
+      "spring",
+      "winter"
+    ]
+  },
+  {
+    "id": "bq-tropical-punch",
+    "name": "Tropical Punch",
+    "focalIds": [
+      "bird-of-paradise",
+      "anthurium"
+    ],
+    "secondaryIds": [
+      "dendrobium-orchid"
+    ],
+    "fillerIds": [
+      "leatherleaf-fern"
+    ],
+    "paletteHexes": [
+      "#EE7B18",
+      "#B81F2C",
+      "#2A50A0"
+    ],
+    "paletteType": "high-contrast",
+    "style": "asymmetric",
+    "wrap": "vase",
+    "priceTier": 3,
+    "blurb": "Nothing here is soft. Every stem is a hard edge and a saturated colour.",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ]
+  },
+  {
+    "id": "bq-fire-and-ash",
+    "name": "Fire & Ash",
+    "focalIds": [
+      "gloriosa-lily"
+    ],
+    "secondaryIds": [
+      "celosia"
+    ],
+    "fillerIds": [
+      "dusty-miller"
+    ],
+    "paletteHexes": [
+      "#C6302B",
+      "#EEB528",
+      "#C3C6BA"
+    ],
+    "paletteType": "high-contrast",
+    "style": "cascading",
+    "wrap": "vase",
+    "priceTier": 3,
+    "blurb": "Flame-coloured petals swept backward over grey felted leaves.",
+    "seasons": [
+      "summer",
+      "fall"
+    ]
+  },
+  {
+    "id": "bq-magenta-lime",
+    "name": "Magenta & Lime",
+    "focalIds": [
+      "celosia"
+    ],
+    "secondaryIds": [
+      "gomphrena",
+      "cosmos"
+    ],
+    "fillerIds": [
+      "bupleurum"
+    ],
+    "paletteHexes": [
+      "#C0357B",
+      "#C0CB5B",
+      "#B7C56B"
+    ],
+    "paletteType": "high-contrast",
+    "style": "wildflower",
+    "wrap": "kraft",
+    "priceTier": 2,
+    "blurb": "Shocking pink against acid green. Reads as a party rather than a gesture.",
+    "seasons": [
+      "summer",
+      "fall"
+    ]
+  },
+  {
+    "id": "bq-single-tulip",
+    "name": "Nine Tulips",
+    "focalIds": [
+      "tulip"
+    ],
+    "secondaryIds": [],
+    "fillerIds": [],
+    "paletteHexes": [
+      "#EC93B0",
+      "#F6F1E7"
+    ],
+    "paletteType": "monochrome",
+    "style": "minimal-single-variety",
+    "wrap": "clear",
+    "priceTier": 1,
+    "blurb": "One variety, one colour, nothing else. They rearrange themselves overnight.",
+    "seasons": [
+      "spring",
+      "winter"
+    ]
+  },
+  {
+    "id": "bq-single-calla",
+    "name": "Three Callas",
+    "focalIds": [
+      "calla-lily"
+    ],
+    "secondaryIds": [],
+    "fillerIds": [],
+    "paletteHexes": [
+      "#F4EFE1",
+      "#4A2038"
+    ],
+    "paletteType": "monochrome",
+    "style": "minimal-single-variety",
+    "wrap": "vase",
+    "priceTier": 3,
+    "blurb": "Three curves in a tall vase. Adding anything at all would ruin it.",
+    "seasons": [
+      "spring",
+      "summer"
+    ]
+  },
+  {
+    "id": "bq-meadow-jar",
+    "name": "Meadow Jar",
+    "focalIds": [
+      "cosmos"
+    ],
+    "secondaryIds": [
+      "cornflower",
+      "yarrow"
+    ],
+    "fillerIds": [
+      "queen-annes-lace",
+      "panicum-grass"
+    ],
+    "paletteHexes": [
+      "#F0BFCD",
+      "#4A6BC0",
+      "#F0E7CF"
+    ],
+    "paletteType": "analogous",
+    "style": "wildflower",
+    "wrap": "vase",
+    "priceTier": 1,
+    "blurb": "Looks picked rather than bought. Every stem a different height on purpose.",
+    "seasons": [
+      "summer"
+    ]
+  },
+  {
+    "id": "bq-english-border",
+    "name": "English Border",
+    "focalIds": [
+      "foxglove",
+      "garden-rose"
+    ],
+    "secondaryIds": [
+      "larkspur",
+      "astrantia"
+    ],
+    "fillerIds": [
+      "queen-annes-lace"
+    ],
+    "paletteHexes": [
+      "#C08BB4",
+      "#EFC3C6",
+      "#8C9BD6"
+    ],
+    "paletteType": "analogous",
+    "style": "loose-garden",
+    "wrap": "kraft",
+    "priceTier": 3,
+    "blurb": "Tall spires through round roses, the way an actual border grows.",
+    "seasons": [
+      "summer"
+    ]
+  },
+  {
+    "id": "bq-cascade-orchid",
+    "name": "Cascade",
+    "focalIds": [
+      "dendrobium-orchid"
+    ],
+    "secondaryIds": [
+      "lisianthus"
+    ],
+    "fillerIds": [
+      "amaranthus",
+      "olive-branch"
+    ],
+    "paletteHexes": [
+      "#F5F2E9",
+      "#6D51A2",
+      "#77243A"
+    ],
+    "paletteType": "neutral-plus-accent",
+    "style": "cascading",
+    "wrap": "vase",
+    "priceTier": 3,
+    "blurb": "Built to spill over the front edge and hang. Barely anything above the rim.",
+    "seasons": [
+      "summer",
+      "fall"
+    ]
+  },
+  {
+    "id": "bq-spring-branch",
+    "name": "First Branch",
+    "focalIds": [
+      "cherry-blossom"
+    ],
+    "secondaryIds": [
+      "ranunculus"
+    ],
+    "fillerIds": [
+      "waxflower"
+    ],
+    "paletteHexes": [
+      "#F4D2DA",
+      "#F3B181",
+      "#EFBFC8"
+    ],
+    "paletteType": "analogous",
+    "style": "asymmetric",
+    "wrap": "vase",
+    "priceTier": 2,
+    "blurb": "Mostly empty space with a branch through it. The flowers are almost incidental.",
+    "seasons": [
+      "spring"
+    ]
+  },
+  {
+    "id": "bq-scent-first",
+    "name": "Scent First",
+    "focalIds": [
+      "lilac"
+    ],
+    "secondaryIds": [
+      "stock",
+      "sweet-pea"
+    ],
+    "fillerIds": [
+      "myrtle"
+    ],
+    "paletteHexes": [
+      "#B49AD0",
+      "#F3EBD8",
+      "#8E9BD3"
+    ],
+    "paletteType": "analogous",
+    "style": "structured-round",
+    "wrap": "ribbon-tied",
+    "priceTier": 2,
+    "blurb": "Chosen entirely by smell. You notice this one from the next room.",
+    "seasons": [
+      "spring"
+    ]
+  },
+  {
+    "id": "bq-winter-white",
+    "name": "Winter White",
+    "focalIds": [
+      "amaryllis"
+    ],
+    "secondaryIds": [
+      "hellebore"
+    ],
+    "fillerIds": [
+      "eucalyptus-seeded"
+    ],
+    "paletteHexes": [
+      "#F6F2E8",
+      "#B3BE96",
+      "#96A48F"
+    ],
+    "paletteType": "neutral-plus-accent",
+    "style": "structured-round",
+    "wrap": "vase",
+    "priceTier": 3,
+    "blurb": "Cold-weather flowers only. Green-white rather than warm-white throughout.",
+    "seasons": [
+      "winter"
+    ]
+  },
+  {
+    "id": "bq-market-bunch",
+    "name": "Market Bunch",
+    "focalIds": [
+      "gerbera"
+    ],
+    "secondaryIds": [
+      "alstroemeria",
+      "carnation"
+    ],
+    "fillerIds": [
+      "leatherleaf-fern"
+    ],
+    "paletteHexes": [
+      "#E14C8A",
+      "#F3B084",
+      "#C39BAA"
+    ],
+    "paletteType": "analogous",
+    "style": "structured-round",
+    "wrap": "clear",
+    "priceTier": 1,
+    "blurb": "The honest supermarket bunch, done well. Cheap, cheerful, lasts two weeks.",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ]
+  }
+]

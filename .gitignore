@@ -1,0 +1,8 @@
+node_modules
+dist
+.DS_Store
+*.local
+
+# Cached Wikimedia API responses and verified image URLs. Safe to delete;
+# regenerating just means re-hitting the API.
+scripts/.cache/

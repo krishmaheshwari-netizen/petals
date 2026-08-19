@@ -1,0 +1,753 @@
+[
+  {
+    "id": "eucalyptus-silver-dollar",
+    "commonName": "Silver Dollar Eucalyptus",
+    "scientificName": "Eucalyptus cinerea",
+    "colors": [
+      {
+        "name": "silver green",
+        "hex": "#A9B8A4"
+      }
+    ],
+    "form": "cluster",
+    "scale": "filler",
+    "scent": "green",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "silvery",
+      "draping",
+      "modern",
+      "aromatic",
+      "airy"
+    ],
+    "blurb": "Round coin-shaped leaves in a dusty blue-green, on stems that drape. The default greenery of the last decade for good reason.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Starr-110609-6076-Eucalyptus_cinerea-leaves-Shibuya_Farm_Kula-Maui_%2824469807063%29.jpg/1280px-Starr-110609-6076-Eucalyptus_cinerea-leaves-Shibuya_Farm_Kula-Maui_%2824469807063%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#A9B8A4",
+    "imageAttribution": {
+      "title": "Starr-110609-6076-Eucalyptus cinerea-leaves-Shibuya Farm Kula-Maui (24469807063).jpg",
+      "artist": "Forest and Kim Starr",
+      "license": "CC BY 3.0 us",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Starr-110609-6076-Eucalyptus_cinerea-leaves-Shibuya_Farm_Kula-Maui_(24469807063).jpg"
+    }
+  },
+  {
+    "id": "eucalyptus-seeded",
+    "commonName": "Seeded Eucalyptus",
+    "scientificName": "Eucalyptus polyanthemos",
+    "colors": [
+      {
+        "name": "grey green",
+        "hex": "#96A48F"
+      }
+    ],
+    "form": "cluster",
+    "scale": "filler",
+    "scent": "green",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "textural",
+      "draping",
+      "rustic",
+      "aromatic",
+      "dense"
+    ],
+    "blurb": "Narrower leaves plus clusters of small hard seed pods, which is most of the texture. Heavier and wilder than silver dollar.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Eucalyptus_polyanthemos_vestita_juvenile_foliage.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageHex": "#819574",
+    "imageAttribution": {
+      "title": "Eucalyptus polyanthemos vestita juvenile foliage.jpg",
+      "artist": "Melburnian",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eucalyptus_polyanthemos_vestita_juvenile_foliage.jpg"
+    }
+  },
+  {
+    "id": "italian-ruscus",
+    "commonName": "Italian Ruscus",
+    "scientificName": "Ruscus aculeatus",
+    "colors": [
+      {
+        "name": "deep green",
+        "hex": "#3E6B45"
+      }
+    ],
+    "form": "spiky",
+    "scale": "filler",
+    "scent": "none",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "glossy",
+      "structured",
+      "classic",
+      "dense"
+    ],
+    "blurb": "Stiff arching stems of small pointed glossy leaves. The workhorse green that holds a shape without drawing attention.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Ruscus_aculeatus%2C_Ladispoli%2C_Italia_%2816315456018%29.jpg/1280px-Ruscus_aculeatus%2C_Ladispoli%2C_Italia_%2816315456018%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#3E6B45",
+    "imageAttribution": {
+      "title": "Ruscus aculeatus, Ladispoli, Italia (16315456018).jpg",
+      "artist": "fotokoci",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ruscus_aculeatus,_Ladispoli,_Italia_(16315456018).jpg"
+    }
+  },
+  {
+    "id": "babys-breath",
+    "commonName": "Baby's Breath",
+    "scientificName": "Gypsophila paniculata",
+    "colors": [
+      {
+        "name": "white",
+        "hex": "#F4F1E8"
+      }
+    ],
+    "form": "cluster",
+    "scale": "filler",
+    "scent": "light",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "cloud",
+      "airy",
+      "nostalgic",
+      "white"
+    ],
+    "blurb": "A cloud of pinhead flowers. Out of fashion as a filler and back in fashion by the armful on its own.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Close-up_of_2_baby%27s_breath_%28Gypsophila_paniculata%29_flowers.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageHex": "#F4F1E8",
+    "imageAttribution": {
+      "title": "Close-up of 2 baby's breath (Gypsophila paniculata) flowers.jpg",
+      "artist": "Close-up_of_baby's_breath_(Gypsophila_paniculata)_flowers.jpg: Avenue derivative work: Avenue (talk)",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Close-up_of_2_baby%27s_breath_(Gypsophila_paniculata)_flowers.jpg"
+    }
+  },
+  {
+    "id": "bupleurum",
+    "commonName": "Bupleurum",
+    "scientificName": "Bupleurum rotundifolium",
+    "colors": [
+      {
+        "name": "chartreuse",
+        "hex": "#B7C56B"
+      }
+    ],
+    "form": "cluster",
+    "scale": "filler",
+    "scent": "green",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "acid-green",
+      "airy",
+      "modern",
+      "light"
+    ],
+    "blurb": "Acid-green bracts on branching stems. The only filler that adds brightness rather than just filling gaps.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Bupleurum_rotundifolium_plant_%2810%29.jpg/1280px-Bupleurum_rotundifolium_plant_%2810%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#B7C56B",
+    "imageAttribution": {
+      "title": "Bupleurum rotundifolium plant (10).jpg",
+      "artist": "Sam Kieschnick",
+      "license": "CC BY 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bupleurum_rotundifolium_plant_(10).jpg"
+    }
+  },
+  {
+    "id": "dusty-miller",
+    "commonName": "Dusty Miller",
+    "scientificName": "Jacobaea maritima",
+    "colors": [
+      {
+        "name": "silver",
+        "hex": "#C3C6BA"
+      }
+    ],
+    "form": "cluster",
+    "scale": "filler",
+    "scent": "green",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "velvet",
+      "silver",
+      "muted",
+      "soft",
+      "dense"
+    ],
+    "blurb": "Felted silver leaves cut like lace. Turns down the volume on anything saturated sitting next to it.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Jacobaea_maritima20130507_56.jpg/1280px-Jacobaea_maritima20130507_56.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#C3C6BA",
+    "imageAttribution": {
+      "title": "Jacobaea maritima20130507 56.jpg",
+      "artist": "Bff",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jacobaea_maritima20130507_56.jpg"
+    }
+  },
+  {
+    "id": "astilbe",
+    "commonName": "Astilbe",
+    "scientificName": "Astilbe arendsii",
+    "colors": [
+      {
+        "name": "blush",
+        "hex": "#EFC2CB"
+      },
+      {
+        "name": "cream",
+        "hex": "#F2EAD8"
+      },
+      {
+        "name": "raspberry",
+        "hex": "#B94667"
+      }
+    ],
+    "form": "spiky",
+    "scale": "filler",
+    "scent": "light",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "feathery",
+      "plume",
+      "soft",
+      "romantic",
+      "airy"
+    ],
+    "blurb": "Feathered plumes that read as smoke rather than flower. Adds softness and height at the same time, which is rare.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Astilbe_x_arendsii_Fanal_1zz.jpg/1280px-Astilbe_x_arendsii_Fanal_1zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#EFC2CB",
+    "imageAttribution": {
+      "title": "Astilbe x arendsii Fanal 1zz.jpg",
+      "artist": "Photo by David J. Stang",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Astilbe_x_arendsii_Fanal_1zz.jpg"
+    }
+  },
+  {
+    "id": "leatherleaf-fern",
+    "commonName": "Leatherleaf Fern",
+    "scientificName": "Rumohra adiantiformis",
+    "colors": [
+      {
+        "name": "forest green",
+        "hex": "#37613C"
+      }
+    ],
+    "form": "spiky",
+    "scale": "filler",
+    "scent": "none",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "classic",
+      "dense",
+      "traditional",
+      "flat"
+    ],
+    "blurb": "The dark triangular frond behind every supermarket bunch. Cheap, sturdy, and slightly old-fashioned in a way that can work.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Starr-110307-2276-Rumohra_adiantiformis-frond-Kula_Botanical_Garden-Maui_%2825051571166%29.jpg/1280px-Starr-110307-2276-Rumohra_adiantiformis-frond-Kula_Botanical_Garden-Maui_%2825051571166%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#37613C",
+    "imageAttribution": {
+      "title": "Starr-110307-2276-Rumohra adiantiformis-frond-Kula Botanical Garden-Maui (25051571166).jpg",
+      "artist": "Forest and Kim Starr",
+      "license": "CC BY 3.0 us",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Starr-110307-2276-Rumohra_adiantiformis-frond-Kula_Botanical_Garden-Maui_(25051571166).jpg"
+    }
+  },
+  {
+    "id": "olive-branch",
+    "commonName": "Olive Branch",
+    "scientificName": "Olea europaea",
+    "colors": [
+      {
+        "name": "grey green",
+        "hex": "#8E9C7C"
+      }
+    ],
+    "form": "spiky",
+    "scale": "filler",
+    "scent": "green",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "mediterranean",
+      "silvery",
+      "linear",
+      "airy"
+    ],
+    "blurb": "Narrow leaves, silver underneath and green on top, so the whole branch shimmers when it moves.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Olea_europaea_1_-_Putney_Heath_Common_2011.08.02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageHex": "#8E9C7C",
+    "imageAttribution": {
+      "title": "Olea europaea 1 - Putney Heath Common 2011.08.02.jpg",
+      "artist": "Emőke Dénes",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Olea_europaea_1_-_Putney_Heath_Common_2011.08.02.jpg"
+    }
+  },
+  {
+    "id": "pittosporum",
+    "commonName": "Pittosporum",
+    "scientificName": "Pittosporum tenuifolium",
+    "colors": [
+      {
+        "name": "variegated green",
+        "hex": "#8FA283"
+      }
+    ],
+    "form": "cluster",
+    "scale": "filler",
+    "scent": "green",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "wavy",
+      "dense",
+      "variegated",
+      "compact"
+    ],
+    "blurb": "Wavy-edged leaves on near-black stems, whorled tightly enough to fill a hole on their own.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Starr_980528-4113_Pittosporum_tenuifolium.jpg/1280px-Starr_980528-4113_Pittosporum_tenuifolium.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#8FA283",
+    "imageAttribution": {
+      "title": "Starr 980528-4113 Pittosporum tenuifolium.jpg",
+      "artist": "Forest &amp; Kim Starr",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Starr_980528-4113_Pittosporum_tenuifolium.jpg"
+    }
+  },
+  {
+    "id": "salal",
+    "commonName": "Salal",
+    "scientificName": "Gaultheria shallon",
+    "colors": [
+      {
+        "name": "deep green",
+        "hex": "#3F6640"
+      }
+    ],
+    "form": "cluster",
+    "scale": "filler",
+    "scent": "none",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "broad",
+      "glossy",
+      "dense",
+      "collar"
+    ],
+    "blurb": "Broad leathery leaves used as a collar around the outside of a hand-tied bunch. Structural rather than decorative.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/84/H20120812-5316--Gaultheria_shallon--RPBG_%289564406099%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageHex": "#3F6640",
+    "imageAttribution": {
+      "title": "H20120812-5316--Gaultheria shallon--RPBG (9564406099).jpg",
+      "artist": "John Rusk from Berkeley, CA, United States of America",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:H20120812-5316--Gaultheria_shallon--RPBG_(9564406099).jpg"
+    }
+  },
+  {
+    "id": "myrtle",
+    "commonName": "Myrtle",
+    "scientificName": "Myrtus communis",
+    "colors": [
+      {
+        "name": "deep green",
+        "hex": "#39623F"
+      }
+    ],
+    "form": "cluster",
+    "scale": "filler",
+    "scent": "green",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "aromatic",
+      "fine",
+      "traditional",
+      "bridal"
+    ],
+    "blurb": "Small dark aromatic leaves, traditionally included in royal wedding bouquets. Fine enough to disappear into a mix.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Starr-110331-4586-Myrtus_communis-leaves-Shibuya_Farm_Kula-Maui_%2824714273109%29.jpg/1280px-Starr-110331-4586-Myrtus_communis-leaves-Shibuya_Farm_Kula-Maui_%2824714273109%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#39623F",
+    "imageAttribution": {
+      "title": "Starr-110331-4586-Myrtus communis-leaves-Shibuya Farm Kula-Maui (24714273109).jpg",
+      "artist": "Forest and Kim Starr",
+      "license": "CC BY 3.0 us",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Starr-110331-4586-Myrtus_communis-leaves-Shibuya_Farm_Kula-Maui_(24714273109).jpg"
+    }
+  },
+  {
+    "id": "hypericum",
+    "commonName": "Hypericum Berry",
+    "scientificName": "Hypericum androsaemum",
+    "colors": [
+      {
+        "name": "coral",
+        "hex": "#E9705C"
+      },
+      {
+        "name": "cream",
+        "hex": "#F0E6D0"
+      },
+      {
+        "name": "chocolate",
+        "hex": "#6B4230"
+      }
+    ],
+    "form": "cluster",
+    "scale": "filler",
+    "scent": "none",
+    "seasons": [
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "berry",
+      "glossy",
+      "textural",
+      "dense",
+      "autumnal"
+    ],
+    "blurb": "Clusters of glossy pointed berries. Adds a solid dot of colour where a flower would be too soft.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Tutsan_berries_%28Hypericum_androsaemum%29_-_Flickr_-_S._Rae.jpg/1280px-Tutsan_berries_%28Hypericum_androsaemum%29_-_Flickr_-_S._Rae.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#E9705C",
+    "imageAttribution": {
+      "title": "Tutsan berries (Hypericum androsaemum) - Flickr - S. Rae.jpg",
+      "artist": "S. Rae from Scotland, UK",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tutsan_berries_(Hypericum_androsaemum)_-_Flickr_-_S._Rae.jpg"
+    }
+  },
+  {
+    "id": "solidago",
+    "commonName": "Goldenrod",
+    "scientificName": "Solidago canadensis",
+    "colors": [
+      {
+        "name": "gold",
+        "hex": "#E8B92C"
+      }
+    ],
+    "form": "spiky",
+    "scale": "filler",
+    "scent": "light",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "plume",
+      "gold",
+      "meadow",
+      "airy"
+    ],
+    "blurb": "Arching gold plumes of tiny flowers. Unfairly blamed for hay fever — that is ragweed, flowering at the same time.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Solidago_canadensis_20050815_248.jpg/1280px-Solidago_canadensis_20050815_248.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#E8B92C",
+    "imageAttribution": {
+      "title": "Solidago canadensis 20050815 248.jpg",
+      "artist": "Georg Slickers",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Solidago_canadensis_20050815_248.jpg"
+    }
+  },
+  {
+    "id": "statice",
+    "commonName": "Statice",
+    "scientificName": "Limonium sinuatum",
+    "colors": [
+      {
+        "name": "violet",
+        "hex": "#6E5AA4"
+      },
+      {
+        "name": "white",
+        "hex": "#F2EFE6"
+      },
+      {
+        "name": "apricot",
+        "hex": "#EFB07E"
+      }
+    ],
+    "form": "cluster",
+    "scale": "filler",
+    "scent": "none",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "papery",
+      "dried",
+      "crisp",
+      "dense"
+    ],
+    "blurb": "Papery and already half-dry on the stem, so it holds colour for months after everything else is gone.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Limonium_sinuatum_kz01.jpg/1280px-Limonium_sinuatum_kz01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#6E5AA4",
+    "imageAttribution": {
+      "title": "Limonium sinuatum kz01.jpg",
+      "artist": "Krzysztof Ziarnek, Kenraiz",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Limonium_sinuatum_kz01.jpg"
+    }
+  },
+  {
+    "id": "queen-annes-lace",
+    "commonName": "Queen Anne's Lace",
+    "scientificName": "Ammi majus",
+    "colors": [
+      {
+        "name": "white",
+        "hex": "#F4F1E8"
+      }
+    ],
+    "form": "cluster",
+    "scale": "filler",
+    "scent": "green",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "lace",
+      "airy",
+      "meadow",
+      "flat-topped",
+      "wild"
+    ],
+    "blurb": "Flat white lace-caps on hollow stems. Makes a tight arrangement look like it was picked from a roadside.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Ammi_majus_002.JPG/1280px-Ammi_majus_002.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#F4F1E8",
+    "imageAttribution": {
+      "title": "Ammi majus 002.JPG",
+      "artist": "H. Zell",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ammi_majus_002.JPG"
+    }
+  },
+  {
+    "id": "waxflower",
+    "commonName": "Waxflower",
+    "scientificName": "Chamelaucium uncinatum",
+    "colors": [
+      {
+        "name": "blush",
+        "hex": "#EFBFC8"
+      },
+      {
+        "name": "white",
+        "hex": "#F4F1E8"
+      },
+      {
+        "name": "magenta",
+        "hex": "#C24A83"
+      }
+    ],
+    "form": "star",
+    "scale": "filler",
+    "scent": "green",
+    "seasons": [
+      "winter",
+      "spring"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "needle-leaved",
+      "tiny",
+      "aromatic",
+      "airy",
+      "starry"
+    ],
+    "blurb": "Needle-like leaves that smell of lemon when crushed, covered in small five-petalled stars.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Starr_081014-0291_Chamelaucium_uncinatum.jpg/1280px-Starr_081014-0291_Chamelaucium_uncinatum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#EFBFC8",
+    "imageAttribution": {
+      "title": "Starr 081014-0291 Chamelaucium uncinatum.jpg",
+      "artist": "Forest &amp; Kim Starr",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Starr_081014-0291_Chamelaucium_uncinatum.jpg"
+    }
+  },
+  {
+    "id": "amaranthus",
+    "commonName": "Hanging Amaranthus",
+    "scientificName": "Amaranthus caudatus",
+    "colors": [
+      {
+        "name": "burgundy",
+        "hex": "#77243A"
+      },
+      {
+        "name": "chartreuse",
+        "hex": "#B9C46B"
+      }
+    ],
+    "form": "spiky",
+    "scale": "filler",
+    "scent": "none",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 2,
+    "vibeTags": [
+      "cascading",
+      "dramatic",
+      "rope-like",
+      "textural"
+    ],
+    "blurb": "Long velvety ropes that hang straight down. The only reliable way to make an arrangement spill over the edge.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Love-Lies-Bleeding%2C_Tassel_Flower_%28Amaranthus_caudatus%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageHex": "#813251",
+    "imageAttribution": {
+      "title": "Love-Lies-Bleeding, Tassel Flower (Amaranthus caudatus).jpg",
+      "artist": "This photo was taken by Dave Whitinger",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Love-Lies-Bleeding,_Tassel_Flower_(Amaranthus_caudatus).jpg"
+    }
+  },
+  {
+    "id": "panicum-grass",
+    "commonName": "Panicum Grass",
+    "scientificName": "Panicum virgatum",
+    "colors": [
+      {
+        "name": "tawny",
+        "hex": "#C9AE7C"
+      },
+      {
+        "name": "green",
+        "hex": "#9BAA7A"
+      }
+    ],
+    "form": "spiky",
+    "scale": "filler",
+    "scent": "none",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "grass",
+      "airy",
+      "movement",
+      "meadow",
+      "fine"
+    ],
+    "blurb": "A haze of seed heads on hair-fine stems. Adds motion and almost no visual weight.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Common_plants_of_longleaf_pine-bluestem_range_%281966%29_%2820480560800%29.jpg/1280px-Common_plants_of_longleaf_pine-bluestem_range_%281966%29_%2820480560800%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#C9AE7C",
+    "imageAttribution": {
+      "title": "Common plants of longleaf pine-bluestem range (1966) (20480560800).jpg",
+      "artist": "Grelen, Harold Eugene, 1929-; Duvall, Vinson Lamar, 1918-",
+      "license": "No restrictions",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Common_plants_of_longleaf_pine-bluestem_range_(1966)_(20480560800).jpg"
+    }
+  },
+  {
+    "id": "bunny-tail-grass",
+    "commonName": "Bunny Tail Grass",
+    "scientificName": "Lagurus ovatus",
+    "colors": [
+      {
+        "name": "cream",
+        "hex": "#EFE6CE"
+      }
+    ],
+    "form": "globe",
+    "scale": "filler",
+    "scent": "none",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "priceTier": 1,
+    "vibeTags": [
+      "soft",
+      "playful",
+      "dried",
+      "tactile",
+      "airy"
+    ],
+    "blurb": "Small fuzzy oval heads that are genuinely nice to touch. Dries perfectly and stays soft.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Lagurus_ovatus.jpg/1280px-Lagurus_ovatus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageHex": "#EFE6CE",
+    "imageAttribution": {
+      "title": "Lagurus ovatus.jpg",
+      "artist": "User:Tigerente",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lagurus_ovatus.jpg"
+    }
+  }
+]
