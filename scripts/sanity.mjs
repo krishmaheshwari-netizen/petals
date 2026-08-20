@@ -153,10 +153,11 @@ for (const [profileName, predicate] of Object.entries(PROFILES)) {
         check(`[${tag}] within budget`, b.price.low <= Number(prefs.maxBudget), `$${b.price.low}`);
       }
 
-      // 7. genuinely new
-      const sig = [...b.focalIds].sort().join('+');
+      // 7. genuinely new -- same definition the generator uses: an arrangement
+      // counts as seen only when its headline flowers match one from the deck.
+      const sig = [...b.focalIds, ...b.secondaryIds].sort().join('+');
       check(`[${tag}] not one she already saw`,
-        !bouquets.some((old) => [...old.focalIds].sort().join('+') === sig));
+        !bouquets.some((old) => [...old.focalIds, ...old.secondaryIds].sort().join('+') === sig));
 
       // 8. order card is complete
       check(`[${tag}] every stem has a count and colour`,

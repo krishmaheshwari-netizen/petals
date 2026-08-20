@@ -112,7 +112,12 @@ const combinations = (arr, k) => {
   return out;
 };
 
-function stemScore(flower, scores) {
+function stemScore(flower, scores, strengths = null) {
+  // A finals placing is a direct measurement of preference; tag arithmetic is an
+  // inference from one. When both exist the measurement leads.
+  if (strengths && strengths[flower.id] !== undefined) {
+    return strengths[flower.id] * 6 + scoreOf(scores, `form:${flower.form}`) * 0.5;
+  }
   let s = scoreOf(scores, `stem:${flower.id}`) * 3;
   s += scoreOf(scores, `form:${flower.form}`);
   s += scoreOf(scores, `scent:${flower.scent}`) * 0.6;
@@ -167,8 +172,30 @@ function applyManualExclusions(pool, prefs) {
 // ---------------------------------------------------------------------------
 // Main entry point
 // ---------------------------------------------------------------------------
+/**
+ * Splits the ranked flowers into the tiers the brief calls for: focals come from
+ * the top decile, secondaries from the top half, and anything below the median
+ * is available but never preferred.
+ *
+ * The tiers widen when they have to. A top decile of three flowers will often
+ * fail the season/palette constraints outright, and returning nothing would be
+ * worse than reaching one tier down -- so each pool is grown until it has enough
+ * candidates to actually build from.
+ */
+function tieredPools(pool, strengths, minSize) {
+  if (!strengths || !Object.keys(strengths).length) return { top: pool, half: pool, rest: [] };
+  const rank = [...pool].sort((a, b) => (strengths[b.id] ?? 0) - (strengths[a.id] ?? 0));
+  const grow = (n) => rank.slice(0, Math.max(minSize, n));
+  return {
+    top: grow(Math.ceil(rank.length * 0.1)),
+    half: grow(Math.ceil(rank.length * 0.5)),
+    rest: rank,
+  };
+}
+
 export function generateBouquets({
   flowers, fillers, deck, swipes, scores, prefs = {}, seenBouquets = [], count = 4,
+  strengths = null,
 }) {
   const notes = [];
 
@@ -185,14 +212,16 @@ export function generateBouquets({
   const fillerPool = applyManualExclusions(fillers, prefs);
   const manualExclusions = [...flowerPool.excluded, ...fillerPool.excluded];
 
-  const focalPool = flowerPool.kept
-    .filter((f) => f.scale === 'focal')
-    .sort((a, b) => stemScore(b, scores) - stemScore(a, scores))
-    .slice(0, 10);
-  const secondaryPool = flowerPool.kept
-    .filter((f) => f.scale === 'secondary')
-    .sort((a, b) => stemScore(b, scores) - stemScore(a, scores))
-    .slice(0, 14);
+  const rankedFocals = tieredPools(
+    flowerPool.kept.filter((f) => f.scale === 'focal'), strengths, 8,
+  );
+  const rankedSeconds = tieredPools(
+    flowerPool.kept.filter((f) => f.scale === 'secondary'), strengths, 8,
+  );
+
+  const byScore = (a, b) => stemScore(b, scores, strengths) - stemScore(a, scores, strengths);
+  const focalPool = [...rankedFocals.top].sort(byScore).slice(0, 10);
+  const secondaryPool = [...rankedSeconds.half].sort(byScore).slice(0, 14);
   const greenPool = fillerPool.kept
     .sort((a, b) => fillerScore(b, scores, density) - fillerScore(a, scores, density))
     .slice(0, 10);
@@ -202,6 +231,13 @@ export function generateBouquets({
     ...focalPool.slice(0, 4).map((f) => f.id),
     ...secondaryPool.slice(0, 4).map((f) => f.id),
   ]);
+  // Expose the tiering so the results screen can say "must include" vs "filler".
+  const tierOf = (id) =>
+    rankedFocals.top.some((f) => f.id === id) || rankedSeconds.top.some((f) => f.id === id)
+      ? 'must'
+      : rankedSeconds.half.some((f) => f.id === id) || rankedFocals.half.some((f) => f.id === id)
+        ? 'preferred'
+        : 'optional';
   const used = new Set();
   const rejectionReasons = new Map();
   const noteRejection = (ids, reason) => {
@@ -287,8 +323,8 @@ export function generateBouquets({
         candidates.push({
           focals, secondaries, greens, assignment, hexes, seasons, stems, price,
           score:
-            focals.reduce((s, f) => s + stemScore(f, scores), 0) * 1.4 +
-            secondaries.reduce((s, f) => s + stemScore(f, scores), 0) +
+            focals.reduce((s, f) => s + stemScore(f, scores, strengths), 0) * 1.4 +
+            secondaries.reduce((s, f) => s + stemScore(f, scores, strengths), 0) +
             greens.reduce((s, f) => s + fillerScore(f, scores, density), 0) * 0.8 +
             scoreOf(scores, `paletteType:${paletteType}`) +
             scoreOf(scores, `style:${style}`),
@@ -301,10 +337,17 @@ export function generateBouquets({
   candidates.sort((a, b) => b.score - a.score);
   // Anything she has already swiped on in the deck is not a recommendation, and
   // that stays true in BOTH passes -- this set is never added to.
+  //
+  // Matched on the HEADLINE (focal + secondary), not the focal alone. Focal-only
+  // matching sounds stricter and therefore safer, but it blocks any arrangement
+  // that merely shares a flower with a curated one: "Nine Tulips" would rule out
+  // tulips with snapdragon and eucalyptus in a loose garden shape, which is a
+  // different bouquet by any reasonable reading. In practice it collapsed five
+  // recommendations down to one.
   const deckSignatures = new Set(
-    seenBouquets.map((b) => [...b.focalIds].sort().join('+')),
+    seenBouquets.map((b) => [...b.focalIds, ...b.secondaryIds].sort().join('+')),
   );
-  const focalSig = (c) => c.focals.map((f) => f.id).sort().join('+');
+  const focalSig = (c) => [...c.focals, ...c.secondaries].map((f) => f.id).sort().join('+');
   // The headline is what someone actually sees: the focal and secondary flowers.
   // Two arrangements that differ only in their greenery are the same bouquet as
   // far as she is concerned, and offering both wastes a recommendation slot.
@@ -435,13 +478,13 @@ export function generateBouquets({
 
   const manualByKind = new Map();
   for (const e of manualExclusions) {
-    if (stemScore(e.flower, scores) <= 0) continue;
+    if (stemScore(e.flower, scores, strengths) <= 0) continue;
     if (!manualByKind.has(e.kind)) manualByKind.set(e.kind, []);
     manualByKind.get(e.kind).push(e.flower);
   }
   const notableManual = [...manualByKind.entries()].map(([kind, group]) => {
     const shown = group
-      .sort((a, b) => stemScore(b, scores) - stemScore(a, scores))
+      .sort((a, b) => stemScore(b, scores, strengths) - stemScore(a, scores, strengths))
       .slice(0, 5);
     return {
       flowers: shown,
@@ -451,9 +494,14 @@ export function generateBouquets({
     };
   });
 
+  for (const b of bouquets) {
+    for (const row of b.stems) row.tier = tierOf(row.id);
+  }
+
   return {
     bouquets,
     targets: { paletteType, style, density, avgTier },
+    rankedByFinals: !!(strengths && Object.keys(strengths).length),
     exclusions: {
       manual: notableManual,
       manualCount: manualExclusions.length,

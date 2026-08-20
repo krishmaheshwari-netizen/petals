@@ -45,7 +45,7 @@ const VESSEL_TEXT = {
  * survive being pasted into a florist's contact form, which is the entire point
  * of the order cards.
  */
-export function buildReport({ profile, stems, bouquets, prefs, shareUrl, swipeCount }) {
+export function buildReport({ profile, stems, bouquets, prefs, shareUrl, swipeCount, ranked = false }) {
   const L = [];
 
   L.push('PETALS — what she picked');
@@ -66,9 +66,9 @@ export function buildReport({ profile, stems, bouquets, prefs, shareUrl, swipeCo
 
   if (stems.length) {
     L.push('─────────────────────────────');
-    L.push('TOP FIVE STEMS');
+    L.push(ranked ? 'RANKED — head to head' : 'TOP FIVE STEMS');
     L.push('─────────────────────────────');
-    stems.forEach((s, i) => L.push(`${i + 1}. ${s.commonName} (${s.scientificName})`));
+    stems.forEach((s, i) => L.push(`${String(i + 1).padStart(2, '0')}. ${s.commonName} (${s.scientificName})`));
     L.push('');
   }
 
@@ -102,7 +102,9 @@ export function buildReport({ profile, stems, bouquets, prefs, shareUrl, swipeCo
   bouquets.forEach((b, i) => {
     L.push(`${i + 1}. ${b.name.toUpperCase()}   ($${b.price.low}–$${b.price.high})`);
     L.push('');
-    for (const r of b.stems) L.push(`   ${r.count} × ${r.name.toLowerCase()} — ${r.color}`);
+    for (const r of b.stems) {
+      L.push(`   ${r.count} × ${r.name.toLowerCase()} — ${r.color}${r.tier === 'must' ? '   [must include]' : ''}`);
+    }
     L.push('');
     L.push(`   ${WRAP_TEXT[b.wrap] ?? b.wrap}. In season ${b.seasons.join(', ')}.`);
     L.push('');

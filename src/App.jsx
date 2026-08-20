@@ -3,8 +3,10 @@ import { AnimatePresence, motion } from 'framer-motion';
 import SwipeCard from './components/SwipeCard.jsx';
 import Preferences from './components/Preferences.jsx';
 import Results from './components/Results.jsx';
+import Finals from './components/Finals.jsx';
 import { buildDeck, makeSeed, INDEX } from './lib/deck.js';
 import { buildScores } from './lib/scoring.js';
+import { createFinals, recordResult, strengths as eloStrengths, hasSignal } from './lib/elo.js';
 import { buildShareUrl, readShareFromUrl } from './lib/share.js';
 import { Sprig } from './components/Ornament.jsx';
 
@@ -26,6 +28,7 @@ function loadState() {
       prefs: { ...EMPTY_PREFS, ...(parsed.prefs ?? {}) },
       history: parsed.history ?? [],
       showBouquets: parsed.showBouquets !== false,
+      finals: parsed.finals ?? null,
     };
   } catch {
     return null;
@@ -41,10 +44,12 @@ export default function App() {
       return {
         seed: shared.seed, swipes: shared.swipes, prefs: { ...EMPTY_PREFS, ...shared.prefs },
         history: [], showBouquets: shared.showBouquets !== false,
+        finals: shared.finals ?? null,
       };
     }
     return loadState() ?? {
-      seed: makeSeed(), swipes: {}, prefs: { ...EMPTY_PREFS }, history: [], showBouquets: true,
+      seed: makeSeed(), swipes: {}, prefs: { ...EMPTY_PREFS }, history: [],
+      showBouquets: true, finals: null,
     };
   });
 
@@ -62,7 +67,7 @@ export default function App() {
     try {
       localStorage.setItem(STORE_KEY, JSON.stringify({
         seed: state.seed, swipes: state.swipes, prefs: state.prefs,
-        history: state.history, showBouquets: state.showBouquets,
+        history: state.history, showBouquets: state.showBouquets, finals: state.finals,
       }));
     } catch { /* storage full or blocked; the session still works in memory */ }
   }, [state, shared]);
@@ -87,10 +92,33 @@ export default function App() {
     });
   }, []);
 
+  // Only trust finals once it has actually measured something.
+  const strengths = useMemo(
+    () => (hasSignal(state.finals) ? eloStrengths(state.finals) : null),
+    [state.finals],
+  );
+
   const scores = useMemo(
-    () => buildScores(deck, state.swipes, INDEX),
+    () => buildScores(deck, state.swipes, INDEX, { strengths }),
+    [deck, state.swipes, strengths],
+  );
+
+  // Flowers she liked, which is who competes in the finals.
+  const likedFlowerIds = useMemo(
+    () => deck
+      .filter((c) => c.type === 'flower' && ['love', 'obsessed'].includes(state.swipes[c.id]))
+      .map((c) => c.data.id),
     [deck, state.swipes],
   );
+
+  const startFinals = useCallback(() => {
+    setState((s) => ({ ...s, finals: createFinals(likedFlowerIds, s.swipes) }));
+    setTab('finals');
+  }, [likedFlowerIds]);
+
+  const chooseFinal = useCallback((a, b, outcome) => {
+    setState((s) => (s.finals ? { ...s, finals: recordResult(s.finals, a, b, outcome) } : s));
+  }, []);
 
   const setPrefs = useCallback((prefs) => setState((s) => ({ ...s, prefs })), []);
 
@@ -103,13 +131,13 @@ export default function App() {
     if (typeof window === 'undefined') return '';
     return buildShareUrl({
       swipes: state.swipes, prefs: state.prefs, seed: state.seed,
-      showBouquets: state.showBouquets,
+      showBouquets: state.showBouquets, finals: state.finals,
     });
   }, [state]);
 
   function startOver() {
     if (!confirm('Clear every swipe and start the deck again? Your written preferences are kept.')) return;
-    setState((s) => ({ ...s, seed: makeSeed(), swipes: {}, history: [] }));
+    setState((s) => ({ ...s, seed: makeSeed(), swipes: {}, history: [], finals: null }));
     setTab('deck');
   }
 
@@ -118,7 +146,13 @@ export default function App() {
   return (
     <div className="paper-grain relative flex min-h-full flex-col overflow-x-clip">
       <div className="relative z-10 flex min-h-full flex-1 flex-col">
-        <TopBar tab={tab} setTab={setTab} shared={!!shared} progress={swiped / deck.length} />
+        <TopBar
+          tab={tab}
+          setTab={setTab}
+          shared={!!shared}
+          progress={swiped / deck.length}
+          hasFinals={!!state.finals}
+        />
 
         <main className="flex-1">
           {tab === 'deck' && !shared && (
@@ -133,6 +167,16 @@ export default function App() {
               total={deck.length}
               showBouquets={state.showBouquets}
               toggleBouquets={toggleBouquets}
+              likedCount={likedFlowerIds.length}
+              onNarrow={startFinals}
+            />
+          )}
+          {tab === 'finals' && !shared && (
+            <Finals
+              state={state.finals}
+              onChoose={chooseFinal}
+              onFinish={() => setTab('results')}
+              onRestart={startFinals}
             />
           )}
           {tab === 'prefs' && <Preferences prefs={state.prefs} setPrefs={setPrefs} />}
@@ -142,6 +186,9 @@ export default function App() {
               swipes={state.swipes}
               scores={scores}
               prefs={state.prefs}
+              strengths={strengths}
+              finals={state.finals}
+              onRunFinals={startFinals}
               shareUrl={shareUrl}
               isSharedView={!!shared}
             />
@@ -163,12 +210,13 @@ export default function App() {
   );
 }
 
-function TopBar({ tab, setTab, shared, progress }) {
+function TopBar({ tab, setTab, shared, progress, hasFinals }) {
   const tabs = shared
     ? [{ id: 'results', label: 'Results' }]
     : [
         { id: 'deck', label: 'Deck' },
-        { id: 'prefs', label: 'Preferences' },
+        ...(hasFinals ? [{ id: 'finals', label: 'Finals' }] : []),
+        { id: 'prefs', label: 'Prefs' },
         { id: 'results', label: 'Results' },
       ];
 
@@ -212,7 +260,7 @@ function TopBar({ tab, setTab, shared, progress }) {
   );
 }
 
-function DeckView({ remaining, done, decide, undo, canUndo, onFinish, swiped, total, showBouquets, toggleBouquets }) {
+function DeckView({ remaining, done, decide, undo, canUndo, onFinish, swiped, total, showBouquets, toggleBouquets, likedCount, onNarrow }) {
   const visible = remaining.slice(0, 3);
 
   // Instagram-style confirmation: a big mark punches in over the deck for a
@@ -260,12 +308,33 @@ function DeckView({ remaining, done, decide, undo, canUndo, onFinish, swiped, to
         <p className="mt-3 max-w-xs text-[15px] leading-relaxed text-ink-soft">
           {swiped} cards. Enough to know what you like and, more usefully, what you like together.
         </p>
-        <button
-          onClick={onFinish}
-          className="mt-7 rounded-full bg-rose px-8 py-3 text-[13px] uppercase tracking-[0.14em] text-paper transition active:scale-[0.99]"
-        >
-          See what it worked out
-        </button>
+        {likedCount >= 2 ? (
+          <>
+            <button
+              onClick={onNarrow}
+              className="mt-7 rounded-full bg-rose px-8 py-3 text-[13px] uppercase tracking-[0.14em] text-paper transition active:scale-[0.99]"
+            >
+              Narrow it down
+            </button>
+            <p className="prose-serif mt-3 max-w-[17rem] text-[13.5px] italic leading-snug text-ink-faint">
+              {likedCount} flowers made the cut — too many to rank by liking alone.
+              A few head-to-heads will sort them.
+            </p>
+            <button
+              onClick={onFinish}
+              className="mt-5 text-[11px] uppercase tracking-[0.13em] text-ink-faint underline underline-offset-4"
+            >
+              Skip to results
+            </button>
+          </>
+        ) : (
+          <button
+            onClick={onFinish}
+            className="mt-7 rounded-full bg-rose px-8 py-3 text-[13px] uppercase tracking-[0.14em] text-paper transition active:scale-[0.99]"
+          >
+            See what it worked out
+          </button>
+        )}
       </div>
     );
   }
@@ -354,6 +423,15 @@ function DeckView({ remaining, done, decide, undo, canUndo, onFinish, swiped, to
           />
           Arrangements {showBouquets ? 'on' : 'off'}
         </button>
+        {likedCount > 20 && (
+          <button
+            type="button"
+            onClick={onNarrow}
+            className="mb-1 rounded-full border border-rose/50 px-4 py-1.5 text-[10px] uppercase tracking-[0.14em] text-rose transition hover:bg-rose/5"
+          >
+            Narrow it down ({likedCount} liked)
+          </button>
+        )}
         <span className="max-w-[15rem] text-center text-[10.5px] italic leading-snug text-ink-faint">
           {showBouquets
             ? 'Mixed in with the flowers — they teach it your palette and shape'

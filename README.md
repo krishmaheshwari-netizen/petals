@@ -94,6 +94,49 @@ Two things worth knowing if you re-run the build:
 
 ---
 
+## Finals round
+
+Binary swiping leaves ~50 likes out of 156 cards, which is far too flat to rank
+stems or to sharpen the generator. The finals round fixes that with forced-choice
+comparisons: two flowers, "which would you rather get?", no skip button. There is
+a quiet "can't decide" that records a draw, because a draw is information and a
+skip is not.
+
+It starts when the deck finishes, or from the deck once more than 20 flowers are
+liked. State persists to `localStorage`, so she can leave and resume, and it
+travels in the share link.
+
+**Ratings** (`src/lib/elo.js`) seed at 1500, or 1600 for an up-swipe. Standard
+Elo, K=32 for the first ten rounds and K=16 after, so early comparisons move a
+long way and later ones refine. Stops when the top ten has been unchanged for
+five rounds, or at 35 rounds.
+
+**Pairing runs in two phases, and this is a deliberate departure from the obvious
+design.** Pairing purely by closest rating sounds right — the closest matchup
+carries the most information — but simulation showed it ranks badly in practice:
+with ~50 liked flowers and ~25 rounds, adjacent-rating pairs cluster in one part
+of the table and most flowers are never shown at all, leaving them on their seed
+rating and giving a mean rank error around 11 places out of 50. So:
+
+1. **Coverage** — while any flower is unseen, pair from the least-compared ones.
+   Every flower earns a real rating.
+2. **Refine** — then closest-rated unplayed pairs, preferring the top of the
+   table, since that is the part the output uses.
+
+The stopping rule also cannot fire until coverage is complete: a table where
+nothing has moved is trivially "stable".
+
+```bash
+node scripts/finals-sim.mjs   # simulated preferences, 20 runs per case
+```
+
+Worth knowing what this can and cannot do. Fully sorting 50 items needs roughly
+280 comparisons; the cap is 35. So finals reliably sharpens **the top of the
+ranking** — around 8 of the true top 10 — while the tail stays approximate. That
+is the right trade, because the top is what the recommendations are built from.
+
+---
+
 ## Scoring
 
 Four **independent** signals, deliberately never collapsed into one number
@@ -109,6 +152,15 @@ Four **independent** signals, deliberately never collapsed into one number
 ```
 score(tag) = (weighted likes with tag − passes with tag) / normalise(deck frequency)
 ```
+
+Once finals has run, a like is no longer worth a flat 1: each liked flower
+contributes `strengthBase + strength * strengthSpan`, so her #1 flower moves the
+profile about six times as much as the weakest thing she liked. Passes stay at a
+flat negative — "no" carries no gradient.
+
+This sharpens the **stem** and **palette** signals, which come from flower cards.
+**Style** and **filler** still come from arrangement swipes and stay binary,
+since finals ranks individual stems rather than whole bouquets.
 
 Everything tunable lives in one `TUNING` object at the top of the file: swipe
 weights, the normalisation mode (`sqrt` by default, `linear` and `none`
@@ -133,6 +185,16 @@ reacting to the arrangement, not its parts).
    - no two varieties share a form (a ruffled focal wants a spiky or airy partner)
    - total price tier stays within one step of her average liked tier
 3. **rank** — only survivors get scored
+
+With finals run, focals are drawn from the top decile of the ranking and
+secondaries from the top half, with anything below the median available but never
+preferred. Each tier widens if it is too small to build from — returning nothing
+would be worse than reaching one tier down.
+
+An arrangement counts as "already seen" when its **headline** (focal + secondary)
+matches one from the deck. Matching on the focal alone sounds safer but blocks any
+arrangement merely sharing a flower with a curated one, which in practice
+collapsed five recommendations to one.
 
 Colours are assigned greedily in score order from each flower's *orderable*
 range, so two flowers she likes can appear together in shades that work rather

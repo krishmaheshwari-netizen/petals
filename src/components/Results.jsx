@@ -16,6 +16,7 @@ import { FLOWERS, FILLERS, BOUQUETS, INDEX } from '../lib/deck.js';
 import { colorLabel, colorHex } from '../lib/preference-options.js';
 import { buildReport, sendReport, mailtoUrl } from '../lib/sendResults.js';
 import { Sprig, Leaf, SprigRule } from './Ornament.jsx';
+import { tierFor } from '../lib/elo.js';
 
 const PALETTE_PROSE = {
   monochrome: 'one colour, held all the way through',
@@ -83,7 +84,7 @@ function profileLines(scores, targets, deck, swipes) {
   return lines;
 }
 
-export default function Results({ deck, swipes, scores, prefs, shareUrl, isSharedView }) {
+export default function Results({ deck, swipes, scores, prefs, shareUrl, isSharedView, strengths, finals, onRunFinals }) {
   const result = useMemo(
     () =>
       generateBouquets({
@@ -95,24 +96,27 @@ export default function Results({ deck, swipes, scores, prefs, shareUrl, isShare
         prefs,
         seenBouquets: BOUQUETS,
         count: 5,
+        strengths,
       }),
-    [deck, swipes, scores, prefs],
+    [deck, swipes, scores, prefs, strengths],
   );
 
-  const stems = topStems(scores, INDEX, 5);
+  // With finals run this is the full ranked list; without it, the old top five.
+  const ranked = topStems(scores, INDEX, strengths ? 200 : 5, strengths);
   const swipeCount = Object.keys(swipes).length;
 
   const report = useMemo(
     () =>
       buildReport({
         profile: profileLines(scores, result.targets, deck, swipes),
-        stems: stems.map((s2) => s2.flower),
+        stems: ranked.slice(0, 12).map((s2) => s2.flower),
         bouquets: result.bouquets,
         prefs,
         shareUrl,
         swipeCount,
+        ranked: !!strengths,
       }),
-    [scores, result, deck, swipes, stems, prefs, shareUrl, swipeCount],
+    [scores, result, deck, swipes, ranked, prefs, shareUrl, swipeCount, strengths],
   );
 
   return (
@@ -131,29 +135,14 @@ export default function Results({ deck, swipes, scores, prefs, shareUrl, isShare
       <TasteProfile scores={scores} targets={result.targets} deck={deck} swipes={swipes} />
 
       {/* ---- top stems ---- */}
-      {stems.length > 0 && (
-        <section className="mb-10">
-          <SectionTitle>Top five stems</SectionTitle>
-          <ol className="mt-4 divide-y divide-line-soft">
-            {stems.map(({ flower }, i) => (
-              <li key={flower.id} className="flex items-center gap-3.5 py-2.5 first:pt-0">
-                <span className="w-5 shrink-0 font-display text-[15px] text-ink-faint">{String(i + 1).padStart(2, "0")}</span>
-                <span
-                  className="h-12 w-12 shrink-0 rounded-full bg-cover bg-center ring-1 ring-line/80"
-                  style={{ backgroundImage: `url("${flower.imageUrl}")` }}
-                />
-                <span className="min-w-0 flex-1">
-                  <span className="block font-display text-[17px] leading-tight text-ink">
-                    {flower.commonName}
-                  </span>
-                  <span className="block truncate text-[12px] italic text-ink-faint">
-                    {FORM_PROSE[flower.form]} · {SCENT_PROSE[flower.scent]}
-                  </span>
-                </span>
-              </li>
-            ))}
-          </ol>
-        </section>
+      {ranked.length > 0 && (
+        <RankedStems
+          ranked={ranked}
+          tiered={!!strengths}
+          finals={finals}
+          onRunFinals={onRunFinals}
+          isSharedView={isSharedView}
+        />
       )}
 
       {/* ---- manual preferences, verbatim ---- */}
@@ -180,6 +169,87 @@ export default function Results({ deck, swipes, scores, prefs, shareUrl, isShare
 
       {!isSharedView && shareUrl && <ShareBlock url={shareUrl} report={report} />}
     </div>
+  );
+}
+
+/**
+ * The ranked stem list. After the finals round this is a real ordering, so it
+ * shows everything -- collapsed after ten -- and labels the tiers, which is what
+ * lets the florist card separate "must include" from "fine as filler".
+ */
+function RankedStems({ ranked, tiered, finals, onRunFinals, isSharedView }) {
+  const [expanded, setExpanded] = useState(false);
+  const shown = expanded ? ranked : ranked.slice(0, 10);
+  // Precomputed rather than tracked with a mutable cursor during render.
+  const tierStarts = new Set(
+    tiered
+      ? shown.map((_, i) => i).filter((i) => i === 0 || tierFor(i).key !== tierFor(i - 1).key)
+      : [],
+  );
+
+  return (
+    <section className="mb-10">
+      <SectionTitle>{tiered ? 'Ranked' : 'Top five stems'}</SectionTitle>
+      {tiered && (
+        <p className="mb-1 mt-2 text-[12px] italic text-ink-faint">
+          Settled by {finals?.round ?? 0} head-to-head comparisons, not by counting likes.
+        </p>
+      )}
+
+      <ol className="mt-3 divide-y divide-line-soft">
+        {shown.map(({ flower }, i) => {
+          const tier = tiered ? tierFor(i) : null;
+          const newTier = tier && tierStarts.has(i);
+          return (
+            <li key={flower.id}>
+              {newTier && (
+                <div className="flex items-center gap-2 pb-1.5 pt-4 first:pt-0">
+                  <span className="label-caps text-rose/80">{tier.label}</span>
+                  <span className="rule-fade flex-1" />
+                </div>
+              )}
+              <div className="flex items-center gap-3.5 py-2.5">
+                <span className="w-5 shrink-0 font-display text-[15px] text-ink-faint">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span
+                  className="h-12 w-12 shrink-0 rounded-full bg-cover bg-center ring-1 ring-line/80"
+                  style={{ backgroundImage: `url("${flower.imageUrl}")` }}
+                />
+                <span className="min-w-0 flex-1">
+                  <span className="block font-display text-[17px] leading-tight text-ink">
+                    {flower.commonName}
+                  </span>
+                  <span className="block truncate text-[12px] italic text-ink-faint">
+                    {FORM_PROSE[flower.form]} · {SCENT_PROSE[flower.scent]}
+                  </span>
+                </span>
+              </div>
+            </li>
+          );
+        })}
+      </ol>
+
+      {ranked.length > 10 && (
+        <button
+          type="button"
+          onClick={() => setExpanded((e) => !e)}
+          className="mt-3 w-full rounded-full border border-line py-2 text-[10px] uppercase tracking-[0.14em] text-ink-faint transition hover:border-ink-faint hover:text-ink-soft"
+        >
+          {expanded ? 'Show fewer' : `Show all ${ranked.length}`}
+        </button>
+      )}
+
+      {!isSharedView && onRunFinals && (
+        <button
+          type="button"
+          onClick={onRunFinals}
+          className="mt-2 w-full text-[10.5px] uppercase tracking-[0.13em] text-ink-faint underline underline-offset-4 transition hover:text-ink-soft"
+        >
+          {tiered ? 'Run the finals again' : 'Rank these head-to-head'}
+        </button>
+      )}
+    </section>
   );
 }
 
@@ -338,10 +408,15 @@ function OrderCard({ bouquet }) {
               className="h-2.5 w-2.5 shrink-0 translate-y-[1px] rounded-full ring-1 ring-black/10"
               style={{ backgroundColor: r.hex }}
             />
-            <span className="text-ink">
+            <span className="flex-1 text-ink">
               {r.name.toLowerCase()}{' '}
               <span className="text-ink-faint">in {r.color}</span>
             </span>
+            {r.tier === 'must' && (
+              <span className="shrink-0 text-[9px] uppercase tracking-[0.14em] text-rose">
+                must
+              </span>
+            )}
           </li>
         ))}
       </ul>

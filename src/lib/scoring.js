@@ -41,6 +41,14 @@ export const TUNING = {
 
   // How much a flower swipe teaches about that flower's colour family.
   flowerToPaletteBleed: 0.7,
+
+  // Once the finals round has run, a like is no longer worth a flat 1. Each
+  // liked flower carries a strength in 0..1 and contributes
+  // `strengthBase + strength * strengthSpan`, so her #1 flower moves the profile
+  // roughly six times as much as the weakest thing she liked. Passes stay at a
+  // flat negative -- "no" carries no gradient.
+  strengthBase: 0.45,
+  strengthSpan: 2.55,
 };
 
 const clamp01 = (x) => Math.max(0, Math.min(1, x));
@@ -154,11 +162,26 @@ export function tagsForCard(card, index) {
 // ---------------------------------------------------------------------------
 
 /**
+ * The weight a single liked card contributes.
+ *
+ * Before the finals round this is the old flat scheme. After it, a liked flower
+ * is weighted by where it actually placed, which is the whole point of running
+ * finals: fifty equal likes tell you almost nothing.
+ */
+function likeWeight(card, verdict, strengths) {
+  const id = card.type === 'flower' ? card.data.id : null;
+  const strength = id != null ? strengths?.[id] : undefined;
+  if (strength === undefined) return TUNING.weights[verdict] ?? 0;
+  return TUNING.strengthBase + strength * TUNING.strengthSpan;
+}
+
+/**
  * @param {Array} deck    every card that was in the deck (for tag frequency)
  * @param {Object} swipes { [cardId]: 'love' | 'pass' | 'obsessed' }
  * @param {Object} index  { byId } lookup over flowers + fillers
+ * @param {Object} opts   { strengths } normalised finals ratings, if any
  */
-export function buildScores(deck, swipes, index) {
+export function buildScores(deck, swipes, index, { strengths } = {}) {
   const freq = new Map();      // tag -> how often it appeared in the deck at all
   const net = new Map();       // tag -> weighted likes minus passes
   const seen = new Map();      // tag -> how often it appeared on a *swiped* card
@@ -170,7 +193,9 @@ export function buildScores(deck, swipes, index) {
     }
     const verdict = swipes[card.id];
     if (!verdict) continue;
-    const w = TUNING.weights[verdict] ?? 0;
+    const w = verdict === 'pass'
+      ? TUNING.weights.pass
+      : likeWeight(card, verdict, strengths);
     for (const { tag, mult } of contributions) {
       net.set(tag, (net.get(tag) ?? 0) + w * mult);
       seen.set(tag, (seen.get(tag) ?? 0) + mult);
@@ -221,7 +246,16 @@ export function topTags(scores, signal, { namespace, limit = 5, confidentOnly = 
  * eucalyptus among her favourite flowers would double-count it and crowd out an
  * actual bloom.
  */
-export function topStems(scores, index, limit = 5) {
+export function topStems(scores, index, limit = 5, strengths = null) {
+  // With finals run, the ranked order IS the answer -- it is a direct
+  // measurement rather than something inferred from tag arithmetic.
+  if (strengths && Object.keys(strengths).length) {
+    return Object.entries(strengths)
+      .sort((a, b) => b[1] - a[1])
+      .map(([id, value]) => ({ flower: index.byId[id], value }))
+      .filter((x) => x.flower && x.flower.scale !== 'filler')
+      .slice(0, limit);
+  }
   return Object.entries(scores.signals.stem)
     .filter(([tag, v]) => tag.startsWith('stem:') && v > 0)
     .sort((a, b) => b[1] - a[1])

@@ -29,7 +29,7 @@ function fromBase64Url(str) {
   return new TextDecoder().decode(bytes);
 }
 
-export function encodeShare({ swipes, prefs, seed, showBouquets = true }) {
+export function encodeShare({ swipes, prefs, seed, showBouquets = true, finals = null }) {
   const swipeStr = Object.entries(swipes)
     .map(([cardId, verdict]) => {
       const [type, id] = cardId.split(':');
@@ -42,6 +42,17 @@ export function encodeShare({ swipes, prefs, seed, showBouquets = true }) {
     s: swipeStr,
     d: seed,
     b: showBouquets === false ? 0 : 1,
+    // Finals ratings travel too, otherwise he sees a different ranking than she
+    // produced. Rounded to whole points and stored as an offset from the seed,
+    // which keeps a 50-flower table to a few hundred characters.
+    f: finals && finals.round
+      ? {
+          r: finals.round,
+          v: Object.entries(finals.ratings)
+            .map(([id, rating]) => `${id}=${Math.round(rating - 1500)}`)
+            .join(','),
+        }
+      : undefined,
     p: {
       note: prefs.note || '',
       never: prefs.neverColors || [],
@@ -77,6 +88,21 @@ export function decodeShare(param) {
       seed: payload.d ?? 1,
       // Older links predate the toggle and always included arrangements.
       showBouquets: payload.b === undefined ? true : payload.b === 1,
+      finals: payload.f?.v
+        ? {
+            ratings: Object.fromEntries(
+              payload.f.v.split(',').filter(Boolean).map((chunk) => {
+                const [id, delta] = chunk.split('=');
+                return [id, 1500 + Number(delta || 0)];
+              }),
+            ),
+            played: [],
+            round: payload.f.r ?? 0,
+            stableFor: 0,
+            lastTop: [],
+            done: true,
+          }
+        : null,
       prefs: {
         note: p.note ?? '',
         neverColors: p.never ?? [],
