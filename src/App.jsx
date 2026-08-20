@@ -25,6 +25,7 @@ function loadState() {
       swipes: parsed.swipes ?? {},
       prefs: { ...EMPTY_PREFS, ...(parsed.prefs ?? {}) },
       history: parsed.history ?? [],
+      showBouquets: parsed.showBouquets !== false,
     };
   } catch {
     return null;
@@ -37,14 +38,22 @@ export default function App() {
 
   const [state, setState] = useState(() => {
     if (shared) {
-      return { seed: shared.seed, swipes: shared.swipes, prefs: { ...EMPTY_PREFS, ...shared.prefs }, history: [] };
+      return {
+        seed: shared.seed, swipes: shared.swipes, prefs: { ...EMPTY_PREFS, ...shared.prefs },
+        history: [], showBouquets: shared.showBouquets !== false,
+      };
     }
-    return loadState() ?? { seed: makeSeed(), swipes: {}, prefs: { ...EMPTY_PREFS }, history: [] };
+    return loadState() ?? {
+      seed: makeSeed(), swipes: {}, prefs: { ...EMPTY_PREFS }, history: [], showBouquets: true,
+    };
   });
 
   const [tab, setTab] = useState(shared ? 'results' : 'deck');
 
-  const deck = useMemo(() => buildDeck(state.seed), [state.seed]);
+  const deck = useMemo(
+    () => buildDeck(state.seed, { includeBouquets: state.showBouquets }),
+    [state.seed, state.showBouquets],
+  );
 
   // Persist everything, so a refresh mid-deck loses nothing. Shared views are
   // read-only and must never overwrite the viewer's own saved session.
@@ -52,7 +61,8 @@ export default function App() {
     if (shared) return;
     try {
       localStorage.setItem(STORE_KEY, JSON.stringify({
-        seed: state.seed, swipes: state.swipes, prefs: state.prefs, history: state.history,
+        seed: state.seed, swipes: state.swipes, prefs: state.prefs,
+        history: state.history, showBouquets: state.showBouquets,
       }));
     } catch { /* storage full or blocked; the session still works in memory */ }
   }, [state, shared]);
@@ -84,9 +94,17 @@ export default function App() {
 
   const setPrefs = useCallback((prefs) => setState((s) => ({ ...s, prefs })), []);
 
+  const toggleBouquets = useCallback(
+    () => setState((s) => ({ ...s, showBouquets: !s.showBouquets })),
+    [],
+  );
+
   const shareUrl = useMemo(() => {
     if (typeof window === 'undefined') return '';
-    return buildShareUrl({ swipes: state.swipes, prefs: state.prefs, seed: state.seed });
+    return buildShareUrl({
+      swipes: state.swipes, prefs: state.prefs, seed: state.seed,
+      showBouquets: state.showBouquets,
+    });
   }, [state]);
 
   function startOver() {
@@ -95,7 +113,7 @@ export default function App() {
     setTab('deck');
   }
 
-  const swiped = Object.keys(state.swipes).length;
+  const swiped = deck.reduce((n, c) => n + (state.swipes[c.id] ? 1 : 0), 0);
 
   return (
     <div className="paper-grain relative flex min-h-full flex-col overflow-x-clip">
@@ -113,6 +131,8 @@ export default function App() {
               onFinish={() => setTab('results')}
               swiped={swiped}
               total={deck.length}
+              showBouquets={state.showBouquets}
+              toggleBouquets={toggleBouquets}
             />
           )}
           {tab === 'prefs' && <Preferences prefs={state.prefs} setPrefs={setPrefs} />}
@@ -192,7 +212,7 @@ function TopBar({ tab, setTab, shared, progress }) {
   );
 }
 
-function DeckView({ remaining, done, decide, undo, canUndo, onFinish, swiped, total }) {
+function DeckView({ remaining, done, decide, undo, canUndo, onFinish, swiped, total, showBouquets, toggleBouquets }) {
   const visible = remaining.slice(0, 3);
 
   // Instagram-style confirmation: a big mark punches in over the deck for a
@@ -314,10 +334,31 @@ function DeckView({ remaining, done, decide, undo, canUndo, onFinish, swiped, to
         </ActionButton>
       </div>
 
-      <div className="mt-5 flex items-center justify-center gap-3 pb-8">
+      <div className="mt-5 flex items-center justify-center gap-3">
         <span className="font-display text-[13px] text-ink-faint">{swiped}<span className="mx-1 opacity-50">/</span>{total}</span>
         <span className="h-3 w-px bg-line" aria-hidden />
         <span className="text-[11.5px] italic text-ink-faint">tap a card for details</span>
+      </div>
+
+      {/* Arrangement cards are the only place the palette and style signals come
+          from, so this says what turning them off actually costs. */}
+      <div className="mt-5 flex flex-col items-center gap-1.5 pb-8">
+        <button
+          type="button"
+          onClick={toggleBouquets}
+          className="flex items-center gap-2 rounded-full border border-line px-4 py-1.5 text-[10px] uppercase tracking-[0.14em] text-ink-soft transition hover:border-ink-faint"
+        >
+          <span
+            className={`h-1.5 w-1.5 rounded-full ${showBouquets ? 'bg-sage' : 'bg-ink-faint/40'}`}
+            aria-hidden
+          />
+          Arrangements {showBouquets ? 'on' : 'off'}
+        </button>
+        <span className="max-w-[15rem] text-center text-[10.5px] italic leading-snug text-ink-faint">
+          {showBouquets
+            ? 'Mixed in with the flowers — they teach it your palette and shape'
+            : 'Single flowers only. Palette and shape fall back to defaults.'}
+        </span>
       </div>
     </div>
   );

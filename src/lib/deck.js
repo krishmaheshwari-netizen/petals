@@ -43,12 +43,14 @@ function shuffle(arr, rand) {
  * same type. At each step it picks the type that is furthest behind schedule,
  * skipping any type that would form a run of three.
  */
-export function buildDeck(seed = 1) {
+export function buildDeck(seed = 1, { includeBouquets = true } = {}) {
   const rand = mulberry32(seed);
 
   const piles = {
     flower: shuffle(FLOWERS.map((f) => ({ id: `flower:${f.id}`, type: 'flower', data: f })), rand),
-    bouquet: shuffle(BOUQUETS.map((b) => ({ id: `bouquet:${b.id}`, type: 'bouquet', data: b })), rand),
+    bouquet: includeBouquets
+      ? shuffle(BOUQUETS.map((b) => ({ id: `bouquet:${b.id}`, type: 'bouquet', data: b })), rand)
+      : [],
     filler: shuffle(FILLERS.map((f) => ({ id: `filler:${f.id}`, type: 'filler', data: f })), rand),
   };
 

@@ -29,7 +29,7 @@ function fromBase64Url(str) {
   return new TextDecoder().decode(bytes);
 }
 
-export function encodeShare({ swipes, prefs, seed }) {
+export function encodeShare({ swipes, prefs, seed, showBouquets = true }) {
   const swipeStr = Object.entries(swipes)
     .map(([cardId, verdict]) => {
       const [type, id] = cardId.split(':');
@@ -41,6 +41,7 @@ export function encodeShare({ swipes, prefs, seed }) {
     v: 1,
     s: swipeStr,
     d: seed,
+    b: showBouquets === false ? 0 : 1,
     p: {
       note: prefs.note || '',
       never: prefs.neverColors || [],
@@ -74,6 +75,8 @@ export function decodeShare(param) {
     return {
       swipes,
       seed: payload.d ?? 1,
+      // Older links predate the toggle and always included arrangements.
+      showBouquets: payload.b === undefined ? true : payload.b === 1,
       prefs: {
         note: p.note ?? '',
         neverColors: p.never ?? [],
