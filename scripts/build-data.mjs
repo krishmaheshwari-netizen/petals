@@ -90,7 +90,16 @@ const TITLE_REJECT = [
   // Pollinator shots -- the insect ends up dead centre of the crop.
   'bombus', 'apis mellifera', 'syrphid', 'hoverfly', 'schwebfliege', 'hummel',
   'pollinat', 'papilio', 'vanessa', 'pieris',
+  // Scanned nursery catalogues and old field guides. Commons has a great many of
+  // these (the Biodiversity Heritage Library uploads) and they rank well, but
+  // they are sepia halftone prints, not photographs of a flower.
+  'catalog', 'catalogue', 'trade list', 'seed annual', 'engrav', 'lithograph',
+  'woodcut', 'plate ', 'flora of', 'field guide', 'for the garden',
+  'garden guide', 'horticultur', 'bulb guide', 'price list',
 ];
+
+// A year before 1960 in the title is a reliable tell for a scanned publication.
+const ARCHIVAL_YEAR = /\b(1[5-9]\d{2})\b/;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -169,6 +178,8 @@ function scoreCandidate(cand, entry) {
 
   if (!/^image\/(jpeg|png)$/.test(cand.mime)) return -Infinity;
   for (const bad of TITLE_REJECT) if (title.includes(bad)) score -= 30;
+  const year = title.match(ARCHIVAL_YEAR);
+  if (year && Number(year[1]) < 1995) score -= 40;
 
   const sci = entry.scientificName.toLowerCase().split(/\s+/);
   const genus = sci[0];

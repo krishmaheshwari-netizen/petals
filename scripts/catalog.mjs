@@ -1020,7 +1020,7 @@ export const FLOWERS = [
     id: 'garden-rose-spray',
     commonName: 'Spray Rose',
     scientificName: 'Rosa hybrida spray',
-    query: 'spray rose Rosa flower cluster',
+    query: 'Rosa floribunda flower',
     colors: [
       { name: 'blush', hex: '#EEC0C6' }, { name: 'cream', hex: '#F4EBD9' },
       { name: 'peach', hex: '#F3B48F' }, { name: 'wine', hex: '#7C2438' },
@@ -1477,7 +1477,7 @@ export const FILLERS = [
     id: 'panicum-grass',
     commonName: 'Panicum Grass',
     scientificName: 'Panicum virgatum',
-    query: 'Panicum virgatum inflorescence',
+    query: 'Panicum virgatum',
     colors: [{ name: 'tawny', hex: '#C9AE7C' }, { name: 'green', hex: '#9BAA7A' }],
     form: 'spiky', scale: 'filler', scent: 'none',
     seasons: ['summer', 'fall'], priceTier: 1,
