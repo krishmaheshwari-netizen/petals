@@ -142,6 +142,7 @@ export default function Results({ deck, swipes, scores, prefs, shareUrl, isShare
           finals={finals}
           onRunFinals={onRunFinals}
           isSharedView={isSharedView}
+          alsoLiked={(finals?.unranked ?? []).map((id) => INDEX.byId[id]).filter(Boolean)}
         />
       )}
 
@@ -177,7 +178,7 @@ export default function Results({ deck, swipes, scores, prefs, shareUrl, isShare
  * shows everything -- collapsed after ten -- and labels the tiers, which is what
  * lets the florist card separate "must include" from "fine as filler".
  */
-function RankedStems({ ranked, tiered, finals, onRunFinals, isSharedView }) {
+function RankedStems({ ranked, tiered, finals, onRunFinals, isSharedView, alsoLiked = [] }) {
   const [expanded, setExpanded] = useState(false);
   const shown = expanded ? ranked : ranked.slice(0, 10);
   // Precomputed rather than tracked with a mutable cursor during render.
@@ -229,6 +230,19 @@ function RankedStems({ ranked, tiered, finals, onRunFinals, isSharedView }) {
           );
         })}
       </ol>
+
+      {tiered && alsoLiked.length > 0 && (
+        <div className="mt-5">
+          <div className="label-caps mb-2">Also liked, not ranked</div>
+          <p className="mb-2 text-[11.5px] italic leading-snug text-ink-faint">
+            Only {ranked.length} go head-to-head — more than that and each one gets
+            too few matchups to place honestly.
+          </p>
+          <p className="text-[13px] leading-relaxed text-ink-soft">
+            {alsoLiked.map((f) => f.commonName).join(' · ')}
+          </p>
+        </div>
+      )}
 
       {ranked.length > 10 && (
         <button

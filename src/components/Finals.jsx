@@ -1,13 +1,14 @@
 // The finals round: two flowers, one question, no way to skip.
 //
 // The forced choice is the mechanic. A skip button would let her avoid exactly
-// the close calls that carry the most information, so "can't decide" exists but
-// is deliberately quiet and records a draw rather than discarding the round.
+// the close calls that carry the most information. "Too close to call" exists
+// because a draw is a real answer -- it says rank these together -- and unlike a
+// skip it still moves both ratings.
 
 import { useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { INDEX } from '../lib/deck.js';
-import { nextPair, ranking, ELO } from '../lib/elo.js';
+import { nextPair, ranking, ELO, completion } from '../lib/elo.js';
 import { Sprig, SprigRule } from './Ornament.jsx';
 
 function Contender({ flower, onPick, side }) {
@@ -45,6 +46,8 @@ export default function Finals({ state, onChoose, onFinish, onRestart }) {
   const pair = useMemo(() => (state ? nextPair(state) : null), [state]);
   const total = Math.max(state?.estimate ?? 0, state?.round ?? 0);
   const complete = !state || state.done || !pair;
+  const progress = state ? completion(state) : 0;
+  const fieldSize = Object.keys(state?.ratings ?? {}).length;
 
   if (!state || Object.keys(state.ratings ?? {}).length < 2) {
     return (
@@ -104,13 +107,17 @@ export default function Finals({ state, onChoose, onFinish, onRestart }) {
         <h1 className="mt-2 font-display text-[27px] leading-tight text-ink">
           Which would you rather get?
         </h1>
-        {/* Progress as a filling hairline, not a chunky bar. */}
+        {/* Progress tracks the work left to do -- covering the field, then giving
+            each contender enough matchups -- not just rounds elapsed. */}
         <div className="mx-auto mt-3.5 h-px w-40 bg-line">
           <div
             className="h-px bg-gradient-to-r from-sage to-rose transition-[width] duration-500"
-            style={{ width: `${Math.min(100, (state.round / Math.max(1, total)) * 100)}%` }}
+            style={{ width: `${Math.round(progress * 100)}%` }}
           />
         </div>
+        <p className="mt-2.5 text-[10.5px] italic text-ink-faint">
+          Each of your {fieldSize} keeps coming back until the order settles
+        </p>
       </header>
 
       <AnimatePresence mode="wait">
@@ -121,13 +128,14 @@ export default function Finals({ state, onChoose, onFinish, onRestart }) {
       </AnimatePresence>
 
       <div className="mt-6 flex flex-col items-center gap-3">
-        {/* Present but quiet: a draw is still information, a skip is not. */}
+        {/* A draw is information -- it says "rank these together" -- so it gets a
+            real button. A skip would say nothing, which is why there isn't one. */}
         <button
           type="button"
           onClick={() => onChoose(aId, bId, 'draw')}
-          className="text-[11.5px] italic text-ink-faint underline underline-offset-4 transition hover:text-ink-soft"
+          className="rounded-full border border-line bg-paper px-5 py-2 text-[11px] uppercase tracking-[0.13em] text-ink-soft transition hover:border-ink-faint"
         >
-          can't decide
+          Too close to call
         </button>
         <button
           type="button"
