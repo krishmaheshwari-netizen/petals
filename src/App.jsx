@@ -6,7 +6,7 @@ import Results from './components/Results.jsx';
 import Finals from './components/Finals.jsx';
 import { buildDeck, makeSeed, INDEX } from './lib/deck.js';
 import { buildScores } from './lib/scoring.js';
-import { createFinals, recordResult, strengths as eloStrengths, hasSignal } from './lib/elo.js';
+import { createBracket, tap as bracketTap, strengths as bracketStrengths, hasSignal } from './lib/bracket.js';
 import { buildShareUrl, readShareFromUrl } from './lib/share.js';
 import { Sprig } from './components/Ornament.jsx';
 
@@ -94,7 +94,7 @@ export default function App() {
 
   // Only trust finals once it has actually measured something.
   const strengths = useMemo(
-    () => (hasSignal(state.finals) ? eloStrengths(state.finals) : null),
+    () => (hasSignal(state.finals) ? bracketStrengths(state.finals) : null),
     [state.finals],
   );
 
@@ -112,12 +112,17 @@ export default function App() {
   );
 
   const startFinals = useCallback(() => {
-    setState((s) => ({ ...s, finals: createFinals(likedFlowerIds, s.swipes) }));
+    setState((s) => ({
+      ...s,
+      finals: createBracket(likedFlowerIds, s.swipes, String(s.seed)),
+    }));
     setTab('finals');
   }, [likedFlowerIds]);
 
-  const chooseFinal = useCallback((a, b, outcome) => {
-    setState((s) => (s.finals ? { ...s, finals: recordResult(s.finals, a, b, outcome) } : s));
+  // Every tap is written straight back to state, and state is persisted, so she
+  // resumes on the exact screen and mid-group selection she left on.
+  const tapFinal = useCallback((flowerId) => {
+    setState((s) => (s.finals ? { ...s, finals: bracketTap(s.finals, flowerId) } : s));
   }, []);
 
   const setPrefs = useCallback((prefs) => setState((s) => ({ ...s, prefs })), []);
@@ -174,7 +179,7 @@ export default function App() {
           {tab === 'finals' && !shared && (
             <Finals
               state={state.finals}
-              onChoose={chooseFinal}
+              onTap={tapFinal}
               onFinish={() => setTab('results')}
               onRestart={startFinals}
             />

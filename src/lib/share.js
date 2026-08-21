@@ -7,6 +7,34 @@
 // Swipes are stored as a single string of `id:verdict` pairs using one-character
 // verdicts, which keeps a full 90-card deck comfortably inside URL length limits.
 
+import { adjustedScores } from './bracket.js';
+
+const finalsScores = (finals) => adjustedScores(finals);
+
+/**
+ * Rebuilds just enough of a bracket for the results screen to rank and tier.
+ * Scores arrive already adjusted, so `faced` is left empty -- that makes the
+ * opponent multiplier 1 and reproduces exactly the numbers she saw.
+ */
+function decodeFinals(f) {
+  const points = {};
+  for (const chunk of f.v.split(',').filter(Boolean)) {
+    const [id, score] = chunk.split('=');
+    points[id] = Number(score || 0) / 10;
+  }
+  const field = Object.keys(points);
+  return {
+    field, points, faced: {},
+    appearances: Object.fromEntries(field.map((id) => [id, 2])),
+    favoritePicks: Object.fromEntries(field.map((id) => [id, 0])),
+    lastPlaces: Object.fromEntries(field.map((id) => [id, 0])),
+    obsessed: [],
+    unranked: (f.u ?? '').split(',').filter(Boolean),
+    screens: [], current: f.n ?? 0, partial: [], plannedTotal: f.n ?? 0,
+    redemptionBuilt: true, done: true,
+  };
+}
+
 const VERDICT_TO_CHAR = { love: 'l', pass: 'p', obsessed: 'o' };
 const CHAR_TO_VERDICT = { l: 'love', p: 'pass', o: 'obsessed' };
 
@@ -45,12 +73,16 @@ export function encodeShare({ swipes, prefs, seed, showBouquets = true, finals =
     // Finals ratings travel too, otherwise he sees a different ranking than she
     // produced. Rounded to whole points and stored as an offset from the seed,
     // which keeps a 50-flower table to a few hundred characters.
-    f: finals && finals.round
+    // The finished standings travel too, otherwise he sees a different ranking
+    // than she produced. Only the adjusted score per flower is needed to
+    // reproduce the ordering and the strengths.
+    f: finals && finals.current
       ? {
-          r: finals.round,
-          v: Object.entries(finals.ratings)
-            .map(([id, rating]) => `${id}=${Math.round(rating - 1500)}`)
+          n: finals.current,
+          v: Object.entries(finalsScores(finals))
+            .map(([id, score]) => `${id}=${Math.round(score * 10)}`)
             .join(','),
+          u: (finals.unranked ?? []).join(','),
         }
       : undefined,
     p: {
@@ -88,21 +120,7 @@ export function decodeShare(param) {
       seed: payload.d ?? 1,
       // Older links predate the toggle and always included arrangements.
       showBouquets: payload.b === undefined ? true : payload.b === 1,
-      finals: payload.f?.v
-        ? {
-            ratings: Object.fromEntries(
-              payload.f.v.split(',').filter(Boolean).map((chunk) => {
-                const [id, delta] = chunk.split('=');
-                return [id, 1500 + Number(delta || 0)];
-              }),
-            ),
-            played: [],
-            round: payload.f.r ?? 0,
-            stableFor: 0,
-            lastTop: [],
-            done: true,
-          }
-        : null,
+      finals: payload.f?.v ? decodeFinals(payload.f) : null,
       prefs: {
         note: p.note ?? '',
         neverColors: p.never ?? [],

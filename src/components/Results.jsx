@@ -16,7 +16,7 @@ import { FLOWERS, FILLERS, BOUQUETS, INDEX } from '../lib/deck.js';
 import { colorLabel, colorHex } from '../lib/preference-options.js';
 import { buildReport, sendReport, mailtoUrl } from '../lib/sendResults.js';
 import { Sprig, Leaf, SprigRule } from './Ornament.jsx';
-import { tierFor } from '../lib/elo.js';
+import { tierFor } from '../lib/bracket.js';
 
 const PALETTE_PROSE = {
   monochrome: 'one colour, held all the way through',
@@ -193,7 +193,7 @@ function RankedStems({ ranked, tiered, finals, onRunFinals, isSharedView, alsoLi
       <SectionTitle>{tiered ? 'Ranked' : 'Top five stems'}</SectionTitle>
       {tiered && (
         <p className="mb-1 mt-2 text-[12px] italic text-ink-faint">
-          Settled by {finals?.round ?? 0} head-to-head comparisons, not by counting likes.
+          Settled over {finals?.current ?? 0} screens of head-to-head groups, not by counting likes.
         </p>
       )}
 
@@ -236,7 +236,7 @@ function RankedStems({ ranked, tiered, finals, onRunFinals, isSharedView, alsoLi
           <div className="label-caps mb-2">Also liked, not ranked</div>
           <p className="mb-2 text-[11.5px] italic leading-snug text-ink-faint">
             Only {ranked.length} go head-to-head — more than that and each one gets
-            too few matchups to place honestly.
+            too few appearances to place honestly.
           </p>
           <p className="text-[13px] leading-relaxed text-ink-soft">
             {alsoLiked.map((f) => f.commonName).join(' · ')}

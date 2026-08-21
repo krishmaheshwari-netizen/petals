@@ -96,44 +96,59 @@ Two things worth knowing if you re-run the build:
 
 ## Finals round
 
-Binary swiping leaves ~50 likes out of 156 cards, which is far too flat to rank
-stems or to sharpen the generator. The finals round fixes that with forced-choice
-comparisons: two flowers, "which would you rather get?", no skip button. There is
-a quiet "can't decide" that records a draw, because a draw is information and a
-skip is not.
+Binary swiping leaves ~50 likes out of 156 cards, far too flat to rank stems or
+sharpen the generator. The finals round fixes that with group brackets: four
+flowers on screen, ordered by three taps.
 
-It starts when the deck finishes, or from the deck once more than 20 flowers are
-liked. State persists to `localStorage`, so she can leave and resume, and it
-travels in the share link.
-
-**Ratings** (`src/lib/elo.js`) seed at 1500, or 1600 for an up-swipe. Standard
-Elo, K=32 for the first ten rounds and K=16 after, so early comparisons move a
-long way and later ones refine. Stops when the top ten has been unchanged for
-five rounds, or at 35 rounds.
-
-**Pairing runs in two phases, and this is a deliberate departure from the obvious
-design.** Pairing purely by closest rating sounds right — the closest matchup
-carries the most information — but simulation showed it ranks badly in practice:
-with ~50 liked flowers and ~25 rounds, adjacent-rating pairs cluster in one part
-of the table and most flowers are never shown at all, leaving them on their seed
-rating and giving a mean rank error around 11 places out of 50. So:
-
-1. **Coverage** — while any flower is unseen, pair from the least-compared ones.
-   Every flower earns a real rating.
-2. **Refine** — then closest-rated unplayed pairs, preferring the top of the
-   table, since that is the part the output uses.
-
-The stopping rule also cannot fire until coverage is complete: a table where
-nothing has moved is trivially "stable".
-
-```bash
-node scripts/finals-sim.mjs   # simulated preferences, 20 runs per case
+```
+  group of 4   3 taps   favourite 3 / next 2 / untouched 1 / least 0
+  group of 3   2 taps   3 / 2 / 0
+  group of 2   1 tap    3 / 1
 ```
 
-Worth knowing what this can and cannot do. Fully sorting 50 items needs roughly
-280 comparisons; the cap is 35. So finals reliably sharpens **the top of the
-ranking** — around 8 of the true top 10 — while the tail stays approximate. That
-is the right trade, because the top is what the recommendations are built from.
+The card she never touches is implicitly third and **scores for it** — the reveal
+holds the finished board for a beat so it is visible that it placed rather than
+being skipped. Because every flower in every group leaves with a distinct number,
+losing to a favourite is worth 2 rather than 0, and nothing is shut out by
+landing in a strong group.
+
+**Fixed length by construction.** Both passes are partitioned up front and the
+redemption set is a known size, so the progress bar is honest from the first
+screen. At a full field: 8 screens for pass A, 8 for pass B, 4 for redemption —
+20 screens, 60 taps.
+
+**The field cap follows from that budget.** Every flower must appear in both
+passes, so the field can hold at most `screensPerPass × groupSize` = 32. Likes
+beyond that are listed on the results screen as ranked-but-not-placed rather than
+silently dropped.
+
+**Opponent-strength adjustment.** Raw points under-credit a flower that drew hard
+groups, so each score is lifted by up to 25% according to how strong its
+opponents turned out to be: `final = raw × (1 + 0.25 × opponentStrength)`.
+Opponent strength is measured from *raw* points — adjusting against already
+adjusted scores would be circular.
+
+**Redemption pass** is built from the top 12 by adjusted score plus anyone whose
+appearances were all in groups won by a top-8 finisher, capped at 16, partitioned
+to avoid rematches where satisfiable.
+
+**Invariant**, asserted by the simulation: every flower in the field appears at
+least twice with a nonzero appearance count. Ties break by favourite-picks, then
+fewest last places, then up-swipe, then a stable per-id jitter.
+
+Every tap is written back to state and persisted, so she resumes on the exact
+screen — including a half-finished group.
+
+```bash
+node scripts/finals-sim.mjs   # simulated preferences, 25 runs per case
+```
+
+One consequence worth knowing: because the adjustment is multiplicative, a flower
+that places last in every appearance scores 0, and 0 × anything is still 0. About
+2–3 flowers per full run finish there. They were genuinely ranked last every time
+they were seen, so it is a real signal rather than an ambiguity — but if you want
+strong-group protection to reach them too, the adjustment would need to be
+additive rather than multiplicative.
 
 ---
 
