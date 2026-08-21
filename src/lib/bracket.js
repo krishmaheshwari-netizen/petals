@@ -305,6 +305,29 @@ export function strengths(state) {
   return out;
 }
 
+/**
+ * Her hand-edited order, folded back into strengths.
+ *
+ * The original spread of scores is kept and simply reassigned by position, so a
+ * run where one flower ran away with it still has a dominant number one after
+ * reordering. Editing the list therefore changes the recommendations, not just
+ * the display -- which is the whole point of letting her edit it.
+ */
+export function strengthsWithManualOrder(state, manualOrder) {
+  const base = strengths(state);
+  if (!manualOrder?.length) return base;
+
+  const spread = Object.values(base).sort((a, b) => b - a);
+  const ordered = manualOrder.filter((id) => id in base);
+  const missing = Object.keys(base).filter((id) => !ordered.includes(id));
+
+  const out = {};
+  [...ordered, ...missing].forEach((id, i) => {
+    out[id] = spread[Math.min(i, spread.length - 1)];
+  });
+  return out;
+}
+
 /** Progress through the fixed-length run, 0..1. */
 export function completion(state) {
   const total = totalScreens(state);

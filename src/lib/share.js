@@ -57,7 +57,7 @@ function fromBase64Url(str) {
   return new TextDecoder().decode(bytes);
 }
 
-export function encodeShare({ swipes, prefs, seed, showBouquets = true, finals = null }) {
+export function encodeShare({ swipes, prefs, seed, showBouquets = true, finals = null, manualOrder = null }) {
   const swipeStr = Object.entries(swipes)
     .map(([cardId, verdict]) => {
       const [type, id] = cardId.split(':');
@@ -85,6 +85,8 @@ export function encodeShare({ swipes, prefs, seed, showBouquets = true, finals =
           u: (finals.unranked ?? []).join(','),
         }
       : undefined,
+    // A hand-edited order overrides the finals result, so it has to travel too.
+    m: manualOrder?.length ? manualOrder.join(',') : undefined,
     p: {
       note: prefs.note || '',
       never: prefs.neverColors || [],
@@ -121,6 +123,7 @@ export function decodeShare(param) {
       // Older links predate the toggle and always included arrangements.
       showBouquets: payload.b === undefined ? true : payload.b === 1,
       finals: payload.f?.v ? decodeFinals(payload.f) : null,
+      manualOrder: payload.m ? payload.m.split(',').filter(Boolean) : null,
       prefs: {
         note: p.note ?? '',
         neverColors: p.never ?? [],

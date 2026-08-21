@@ -139,6 +139,17 @@ fewest last places, then up-swipe, then a stable per-id jitter.
 Every tap is written back to state and persisted, so she resumes on the exact
 screen — including a half-finished group.
 
+**The list is editable.** Finals measures a preference; it doesn't overrule one.
+A *Reorder* toggle on the results screen turns the ranking into a drag list — by
+a grip handle, with up/down arrows alongside, since nudging one place is fiddly
+to drag on a phone. Tier labels update live as things move.
+
+Editing changes the recommendations, not just the display: the original spread of
+scores is kept and reassigned by position, so whatever she puts at number one
+inherits the top score and the generator picks focals accordingly. A hand-edited
+order travels in the share link and can be reset back to the finals result.
+Re-running the finals clears it, since it no longer refers to that run.
+
 ```bash
 node scripts/finals-sim.mjs   # simulated preferences, 25 runs per case
 ```

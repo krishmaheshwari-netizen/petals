@@ -6,7 +6,9 @@ import Results from './components/Results.jsx';
 import Finals from './components/Finals.jsx';
 import { buildDeck, makeSeed, INDEX } from './lib/deck.js';
 import { buildScores } from './lib/scoring.js';
-import { createBracket, tap as bracketTap, strengths as bracketStrengths, hasSignal } from './lib/bracket.js';
+import {
+  createBracket, tap as bracketTap, strengthsWithManualOrder, hasSignal,
+} from './lib/bracket.js';
 import { buildShareUrl, readShareFromUrl } from './lib/share.js';
 import { Sprig } from './components/Ornament.jsx';
 
@@ -29,6 +31,7 @@ function loadState() {
       history: parsed.history ?? [],
       showBouquets: parsed.showBouquets !== false,
       finals: parsed.finals ?? null,
+      manualOrder: parsed.manualOrder ?? null,
     };
   } catch {
     return null;
@@ -45,11 +48,12 @@ export default function App() {
         seed: shared.seed, swipes: shared.swipes, prefs: { ...EMPTY_PREFS, ...shared.prefs },
         history: [], showBouquets: shared.showBouquets !== false,
         finals: shared.finals ?? null,
+        manualOrder: shared.manualOrder ?? null,
       };
     }
     return loadState() ?? {
       seed: makeSeed(), swipes: {}, prefs: { ...EMPTY_PREFS }, history: [],
-      showBouquets: true, finals: null,
+      showBouquets: true, finals: null, manualOrder: null,
     };
   });
 
@@ -68,6 +72,7 @@ export default function App() {
       localStorage.setItem(STORE_KEY, JSON.stringify({
         seed: state.seed, swipes: state.swipes, prefs: state.prefs,
         history: state.history, showBouquets: state.showBouquets, finals: state.finals,
+        manualOrder: state.manualOrder,
       }));
     } catch { /* storage full or blocked; the session still works in memory */ }
   }, [state, shared]);
@@ -94,8 +99,10 @@ export default function App() {
 
   // Only trust finals once it has actually measured something.
   const strengths = useMemo(
-    () => (hasSignal(state.finals) ? bracketStrengths(state.finals) : null),
-    [state.finals],
+    () => (hasSignal(state.finals)
+      ? strengthsWithManualOrder(state.finals, state.manualOrder)
+      : null),
+    [state.finals, state.manualOrder],
   );
 
   const scores = useMemo(
@@ -125,6 +132,21 @@ export default function App() {
     setState((s) => (s.finals ? { ...s, finals: bracketTap(s.finals, flowerId) } : s));
   }, []);
 
+  const setManualOrder = useCallback((order) => {
+    setState((s) => ({ ...s, manualOrder: order }));
+  }, []);
+
+  // Re-running finals discards a hand-edited order, since it no longer refers to
+  // anything the new run produced.
+  const restartFinals = useCallback(() => {
+    setState((s) => ({
+      ...s,
+      manualOrder: null,
+      finals: createBracket(likedFlowerIds, s.swipes, String(s.seed) + '-' + Date.now()),
+    }));
+    setTab('finals');
+  }, [likedFlowerIds]);
+
   const setPrefs = useCallback((prefs) => setState((s) => ({ ...s, prefs })), []);
 
   const toggleBouquets = useCallback(
@@ -137,6 +159,7 @@ export default function App() {
     return buildShareUrl({
       swipes: state.swipes, prefs: state.prefs, seed: state.seed,
       showBouquets: state.showBouquets, finals: state.finals,
+      manualOrder: state.manualOrder,
     });
   }, [state]);
 
@@ -181,7 +204,7 @@ export default function App() {
               state={state.finals}
               onTap={tapFinal}
               onFinish={() => setTab('results')}
-              onRestart={startFinals}
+              onRestart={restartFinals}
             />
           )}
           {tab === 'prefs' && <Preferences prefs={state.prefs} setPrefs={setPrefs} />}
@@ -193,7 +216,9 @@ export default function App() {
               prefs={state.prefs}
               strengths={strengths}
               finals={state.finals}
-              onRunFinals={startFinals}
+              onRunFinals={restartFinals}
+              manualOrder={state.manualOrder}
+              setManualOrder={setManualOrder}
               shareUrl={shareUrl}
               isSharedView={!!shared}
             />

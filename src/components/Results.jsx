@@ -9,6 +9,7 @@
 //      price band, and a copy button that yields plain text for a contact form
 
 import { useMemo, useState } from 'react';
+import { Reorder, useDragControls } from 'framer-motion';
 import BouquetComposition, { PaletteBar } from './BouquetComposition.jsx';
 import { topStems, topTags, likedPriceTier } from '../lib/scoring.js';
 import { generateBouquets } from '../lib/generator.js';
@@ -84,7 +85,10 @@ function profileLines(scores, targets, deck, swipes) {
   return lines;
 }
 
-export default function Results({ deck, swipes, scores, prefs, shareUrl, isSharedView, strengths, finals, onRunFinals }) {
+export default function Results({
+  deck, swipes, scores, prefs, shareUrl, isSharedView, strengths, finals, onRunFinals,
+  manualOrder, setManualOrder,
+}) {
   const result = useMemo(
     () =>
       generateBouquets({
@@ -143,6 +147,8 @@ export default function Results({ deck, swipes, scores, prefs, shareUrl, isShare
           onRunFinals={onRunFinals}
           isSharedView={isSharedView}
           alsoLiked={(finals?.unranked ?? []).map((id) => INDEX.byId[id]).filter(Boolean)}
+          manualOrder={manualOrder}
+          setManualOrder={setManualOrder}
         />
       )}
 
@@ -178,60 +184,191 @@ export default function Results({ deck, swipes, scores, prefs, shareUrl, isShare
  * shows everything -- collapsed after ten -- and labels the tiers, which is what
  * lets the florist card separate "must include" from "fine as filler".
  */
-function RankedStems({ ranked, tiered, finals, onRunFinals, isSharedView, alsoLiked = [] }) {
+/** One row of the ranked list. In edit mode it gains a grip and arrows. */
+function StemRow({ flower, index, tier, editing, onMove, isFirst, isLast }) {
+  const controls = useDragControls();
+
+  const body = (
+    <div className="flex items-center gap-3.5 py-2.5">
+      <span className="w-5 shrink-0 font-display text-[15px] text-ink-faint">
+        {String(index + 1).padStart(2, '0')}
+      </span>
+      <span
+        className="h-12 w-12 shrink-0 rounded-full bg-cover bg-center ring-1 ring-line/80"
+        style={{ backgroundImage: `url("${flower.imageUrl}")` }}
+      />
+      <span className="min-w-0 flex-1">
+        <span className="block font-display text-[17px] leading-tight text-ink">
+          {flower.commonName}
+        </span>
+        {editing && tier ? (
+          <span className="mt-0.5 inline-block rounded-full border border-line px-2 py-px text-[9px] uppercase tracking-[0.14em] text-ink-faint">
+            {tier.label}
+          </span>
+        ) : (
+          <span className="block truncate text-[12px] italic text-ink-faint">
+            {FORM_PROSE[flower.form]} · {SCENT_PROSE[flower.scent]}
+          </span>
+        )}
+      </span>
+
+      {editing && (
+        <span className="flex shrink-0 items-center gap-1">
+          {/* Arrows as well as dragging: a one-place nudge is fiddly to drag on a
+              phone, and this keeps the list usable if a drag misfires. */}
+          <span className="flex flex-col">
+            <button
+              type="button"
+              aria-label="Move up"
+              disabled={isFirst}
+              onClick={() => onMove(index, index - 1)}
+              className="px-1.5 text-ink-faint disabled:opacity-25"
+            >
+              <svg width="13" height="9" viewBox="0 0 14 9" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M2 7l5-5 5 5" /></svg>
+            </button>
+            <button
+              type="button"
+              aria-label="Move down"
+              disabled={isLast}
+              onClick={() => onMove(index, index + 1)}
+              className="px-1.5 text-ink-faint disabled:opacity-25"
+            >
+              <svg width="13" height="9" viewBox="0 0 14 9" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M2 2l5 5 5-5" /></svg>
+            </button>
+          </span>
+          <span
+            onPointerDown={(e) => controls.start(e)}
+            className="cursor-grab px-1 text-ink-faint active:cursor-grabbing"
+            style={{ touchAction: 'none' }}
+            aria-hidden
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <circle cx="6" cy="4" r="1.2" /><circle cx="10" cy="4" r="1.2" />
+              <circle cx="6" cy="8" r="1.2" /><circle cx="10" cy="8" r="1.2" />
+              <circle cx="6" cy="12" r="1.2" /><circle cx="10" cy="12" r="1.2" />
+            </svg>
+          </span>
+        </span>
+      )}
+    </div>
+  );
+
+  if (!editing) return <li>{body}</li>;
+
+  return (
+    <Reorder.Item
+      value={flower.id}
+      dragListener={false}
+      dragControls={controls}
+      className="border-b border-line-soft bg-paper last:border-b-0"
+      whileDrag={{ scale: 1.02, boxShadow: '0 12px 26px -14px rgba(43,37,31,0.5)' }}
+    >
+      {body}
+    </Reorder.Item>
+  );
+}
+
+/**
+ * The ranked stem list. After the finals round this is a real ordering, so it
+ * shows everything -- collapsed after ten -- and labels the tiers, which is what
+ * lets the florist card separate "must include" from "fine as filler".
+ *
+ * It is also editable: the finals round measures a preference, it does not
+ * overrule one, so she can drag the list into the order she actually wants and
+ * that order feeds the generator.
+ */
+function RankedStems({
+  ranked, tiered, finals, onRunFinals, isSharedView, alsoLiked = [],
+  manualOrder, setManualOrder,
+}) {
   const [expanded, setExpanded] = useState(false);
-  const shown = expanded ? ranked : ranked.slice(0, 10);
-  // Precomputed rather than tracked with a mutable cursor during render.
+  const [editing, setEditing] = useState(false);
+
+  const ids = ranked.map((r) => r.flower.id);
+  const shown = expanded || editing ? ranked : ranked.slice(0, 10);
   const tierStarts = new Set(
-    tiered
+    tiered && !editing
       ? shown.map((_, i) => i).filter((i) => i === 0 || tierFor(i).key !== tierFor(i - 1).key)
       : [],
   );
 
+  const commit = (nextIds) => setManualOrder?.(nextIds);
+  const move = (from, to) => {
+    if (to < 0 || to >= ids.length) return;
+    const next = [...ids];
+    next.splice(to, 0, next.splice(from, 1)[0]);
+    commit(next);
+  };
+
+  const byId = Object.fromEntries(ranked.map((r) => [r.flower.id, r.flower]));
+
   return (
     <section className="mb-10">
       <SectionTitle>{tiered ? 'Ranked' : 'Top five stems'}</SectionTitle>
-      {tiered && (
-        <p className="mb-1 mt-2 text-[12px] italic text-ink-faint">
-          Settled over {finals?.current ?? 0} screens of head-to-head groups, not by counting likes.
-        </p>
-      )}
 
-      <ol className="mt-3 divide-y divide-line-soft">
-        {shown.map(({ flower }, i) => {
-          const tier = tiered ? tierFor(i) : null;
-          const newTier = tier && tierStarts.has(i);
-          return (
+      <div className="mb-1 mt-2 flex items-baseline justify-between gap-3">
+        <p className="text-[12px] italic text-ink-faint">
+          {editing
+            ? 'Drag by the handle, or nudge with the arrows.'
+            : tiered
+              ? `Settled over ${finals?.current ?? 0} screens of head-to-head groups.`
+              : 'From your swipes.'}
+        </p>
+        {!isSharedView && tiered && setManualOrder && (
+          <button
+            type="button"
+            onClick={() => setEditing((e) => !e)}
+            className={`shrink-0 rounded-full border px-3.5 py-1 text-[10px] uppercase tracking-[0.13em] transition ${
+              editing ? 'border-rose bg-rose text-paper' : 'border-line text-ink-soft hover:border-ink-faint'
+            }`}
+          >
+            {editing ? 'Done' : 'Reorder'}
+          </button>
+        )}
+      </div>
+
+      {editing ? (
+        <Reorder.Group axis="y" values={ids} onReorder={commit} className="mt-3">
+          {ids.map((id, i) => (
+            <StemRow
+              key={id}
+              flower={byId[id]}
+              index={i}
+              tier={tiered ? tierFor(i) : null}
+              editing
+              onMove={move}
+              isFirst={i === 0}
+              isLast={i === ids.length - 1}
+            />
+          ))}
+        </Reorder.Group>
+      ) : (
+        <ol className="mt-3 divide-y divide-line-soft">
+          {shown.map(({ flower }, i) => (
             <li key={flower.id}>
-              {newTier && (
+              {tierStarts.has(i) && (
                 <div className="flex items-center gap-2 pb-1.5 pt-4 first:pt-0">
-                  <span className="label-caps text-rose/80">{tier.label}</span>
+                  <span className="label-caps text-rose/80">{tierFor(i).label}</span>
                   <span className="rule-fade flex-1" />
                 </div>
               )}
-              <div className="flex items-center gap-3.5 py-2.5">
-                <span className="w-5 shrink-0 font-display text-[15px] text-ink-faint">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <span
-                  className="h-12 w-12 shrink-0 rounded-full bg-cover bg-center ring-1 ring-line/80"
-                  style={{ backgroundImage: `url("${flower.imageUrl}")` }}
-                />
-                <span className="min-w-0 flex-1">
-                  <span className="block font-display text-[17px] leading-tight text-ink">
-                    {flower.commonName}
-                  </span>
-                  <span className="block truncate text-[12px] italic text-ink-faint">
-                    {FORM_PROSE[flower.form]} · {SCENT_PROSE[flower.scent]}
-                  </span>
-                </span>
-              </div>
+              <StemRow flower={flower} index={i} tier={null} editing={false} onMove={move} />
             </li>
-          );
-        })}
-      </ol>
+          ))}
+        </ol>
+      )}
 
-      {tiered && alsoLiked.length > 0 && (
+      {manualOrder?.length > 0 && !isSharedView && (
+        <button
+          type="button"
+          onClick={() => commit(null)}
+          className="mt-3 w-full rounded-full border border-line py-2 text-[10px] uppercase tracking-[0.14em] text-ink-faint transition hover:border-ink-faint hover:text-ink-soft"
+        >
+          Reset to the finals order
+        </button>
+      )}
+
+      {tiered && alsoLiked.length > 0 && !editing && (
         <div className="mt-5">
           <div className="label-caps mb-2">Also liked, not ranked</div>
           <p className="mb-2 text-[11.5px] italic leading-snug text-ink-faint">
@@ -244,7 +381,7 @@ function RankedStems({ ranked, tiered, finals, onRunFinals, isSharedView, alsoLi
         </div>
       )}
 
-      {ranked.length > 10 && (
+      {ranked.length > 10 && !editing && (
         <button
           type="button"
           onClick={() => setExpanded((e) => !e)}
@@ -254,11 +391,11 @@ function RankedStems({ ranked, tiered, finals, onRunFinals, isSharedView, alsoLi
         </button>
       )}
 
-      {!isSharedView && onRunFinals && (
+      {!isSharedView && onRunFinals && !editing && (
         <button
           type="button"
           onClick={onRunFinals}
-          className="mt-2 w-full text-[10.5px] uppercase tracking-[0.13em] text-ink-faint underline underline-offset-4 transition hover:text-ink-soft"
+          className="mt-2 w-full rounded-full border border-line py-2 text-[10px] uppercase tracking-[0.14em] text-ink-faint transition hover:border-ink-faint hover:text-ink-soft"
         >
           {tiered ? 'Run the finals again' : 'Rank these head-to-head'}
         </button>
