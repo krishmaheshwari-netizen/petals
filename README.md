@@ -291,3 +291,55 @@ src/lib/          color.js · scoring.js · generator.js · deck.js · share.js
 src/components/   SwipeCard · BouquetComposition · Preferences · Results
 src/data/         GENERATED — do not edit by hand
 ```
+
+---
+
+## Picking this up again
+
+```bash
+cd ~/petals
+npm install
+npm run dev        # http://localhost:5173
+
+npm run data:verify   # re-check all 122 Commons images still return 200
+npm run sanity        # generator obeys its design constraints
+node scripts/finals-sim.mjs   # finals ranks, holds its invariant, stays in budget
+npm run deploy        # build + push to GitHub Pages
+```
+
+Run those three checks before and after any change to `src/lib` — between them
+they cover the parts that fail silently.
+
+**Where things live**
+
+| File | What it owns |
+|---|---|
+| `scripts/catalog.mjs` | the hand-authored flower facts — edit here to add a flower |
+| `scripts/build-data.mjs` | Commons fetch, image verification, colour sampling |
+| `scripts/bouquets.mjs` | the 34 curated arrangements |
+| `src/lib/color.js` | hue families, palette relationships, the clash test |
+| `src/lib/scoring.js` | the four tag signals, all tunables in one `TUNING` object |
+| `src/lib/bracket.js` | the finals round: groups, scoring, tiers, manual order |
+| `src/lib/generator.js` | hard constraints, then ranking, then the copy |
+| `src/lib/sendResults.js` | the emailed report and the FormSubmit endpoint |
+
+**Knobs worth knowing**
+
+- `TUNING` in `scoring.js` — swipe weights, normalisation, how much a finals
+  placing outweighs a plain like.
+- `BRACKET` in `bracket.js` — group size, screens per pass, the 25% opponent
+  adjustment. `FIELD_CAP` is derived from the budget, not set by hand.
+- `STYLE_RECIPES` in `generator.js` — how many stems of each role a style wants.
+- `DELIVERY` in `sendResults.js` — where the emailed report goes.
+
+**Known trade-offs, deliberate**
+
+- Flower photos hot-link to `upload.wikimedia.org` rather than being bundled, so
+  the app needs a connection. Bundling them is a build-time change if you want it.
+- The `?r=` share payload is a query parameter, so it lands in the host's access
+  logs. A hash fragment would keep it client-side.
+- The repo is public because GitHub Pages requires it on a free account, which
+  means the delivery address is visible in the source.
+- A flower that places last in every finals appearance scores 0, and the
+  opponent-strength adjustment is multiplicative, so it cannot lift them. Making
+  it additive is a one-line change.
